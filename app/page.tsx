@@ -38,9 +38,9 @@ export default function Home() {
           </button>
         </div>
       </div>
-      <div className="relative z-20 flex flex-col items-center justify-center p-10">
-        <h1 className="text-6xl font-normal text-white">A sacred work is underway</h1>
-        <p className="text-white  rency  text-sm font-light text-center w-3/4">We are preparing the official digital space of The Psalmist International, designed to carry the teachings, resources, and ongoing life of the ministry.
+      <div className="relative z-20 flex flex-col items-center justify-center p-5 md:p-10">
+        <h1 className="text-6xl font-normal text-white text-center">A sacred work is underway</h1>
+        <p className="text-white  rency  text-sm font-light text-center w-full md:w-3/4">We are preparing the official digital space of The Psalmist International, designed to carry the teachings, resources, and ongoing life of the ministry.
 
 Through this platform, sermons in audio and video form, along with ministry updates, will be made available in one focused and accessible place.</p>
         {/* Countdown Timer */}
@@ -49,7 +49,7 @@ Through this platform, sermons in audio and video form, along with ministry upda
         </div>
       </div>
       <div className="flex justify-center items-center w-full absolute bottom-10 z-20">
-        <div className="bg-white w-1/3 shadow-[2px_2px_0px_0px] shadow-gray-300 hover:shadow-none transition-shadow duration-300 text-black  px-6 py-3 rounded-md flex flex-col items-start justify-center gap-1 cursor-pointer">
+        <div className="bg-white  w-5/6 md:w-1/3 shadow-[2px_2px_0px_0px] shadow-gray-300 hover:shadow-none transition-shadow duration-300 text-black  px-6 py-3 rounded-md flex flex-col items-start justify-center gap-1 cursor-pointer">
           <span className="text-base  font-semibold">🎉Almost here</span>
           <p className="text-xs text-gray-400 font-light"> Stay tuned for updates and be the first to know when we launch!
           </p>
