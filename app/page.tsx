@@ -2,6 +2,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { buttonVariants } from "../components/animations";
+import SocialsModal from "@/components/SocialsModal";
 
 const page = () => {
   const targetDate = new Date("2026-05-01T00:00:00");
@@ -30,8 +31,8 @@ const page = () => {
     return () => clearInterval(interval);
   }, []);
   return (
-    <div className="bg-blue-600 min-h-screen flex flex-col w-full p-4">
-      <div className="flex flex-col items-center flex-grow justify-center">
+    <div className="bg-blue-900 min-h-screen flex flex-col w-full p-4">
+      <div className="flex flex-col items-center flex-grow justify-center gap-4">
         <h1 className="text-white text-5xl w-full text-center">
           A sacred work is underway
         </h1>
@@ -42,6 +43,18 @@ const page = () => {
           audio and video form, along with ministry updates, will be made
           available in one focused and accessible place.
         </p>
+         <motion.button
+            initial="hidden"
+            animate="visible"
+            variants={buttonVariants}
+            custom={0.3}
+            className="bg-white shadow-[2px_2px_0px_0px] cursor-pointer shadow-gray-300 text-black text-sm font-normal px-4 py-3 rounded-sm flex items-center justify-center"
+            type="button"
+            onClick={() => setShowModal(true)}
+          >
+            {" "}
+            <span> Connect With Us ↪ </span>{" "}
+          </motion.button>
       </div>
 
       <div className="flex flex-col items-center w-full mb-4">
@@ -56,6 +69,7 @@ const page = () => {
           <p className="text-xs rency text-gray-400 font-light">
             Stay tuned for updates and be the first to know when we launch!
           </p>
+         
           <div className="flex flex-row items-center justify-between w-full mt-3 gap-6 ">
             <div className="flex flex-col items-center bg-blue-800 rounded-md px-6 py-2 shadow-[2px_2px_0px_0px] shadow-purple-200">
               <span className="text-lg font-medium text-white">
@@ -84,6 +98,7 @@ const page = () => {
           </div>
         </motion.div>
       </div>
+      <SocialsModal show={showModal} onClose={() => setShowModal(false)} />
     </div>
   );
 };

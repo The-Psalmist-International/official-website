@@ -11,12 +11,12 @@ const socials = [
   {
     name: "Instagram",
     url: "https://instagram.com/yourchurch",
-    bg: "bg-pink-500 hover:bg-pink-600",
+    bg: "border border-black",
   },
   {
     name: "Telegram",
     url: "https://t.me/yourchurch",
-    bg: "bg-blue-500 hover:bg-blue-600",
+    bg: "bg-blue-500 hover:bg-blue-900",
   },
   {
     name: "YouTube",
