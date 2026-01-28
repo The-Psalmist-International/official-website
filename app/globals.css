@@ -7,14 +7,10 @@
 }
 @font-face {
   font-family: NHMedium;
-  src: url('/fonts/NeueHaasDisplayMediu.ttf') format('truetype'),
+  src: url('/fonts/NeueHaasDisplayLight.ttf') format('truetype'),
        /* url('/fonts/rency.woff') format('woff'); */
 }
-@font-face {
-  font-family: Rency;
-  src: url('/fonts/rency.woff2') format('woff2'),
-       /* url('/fonts/rency.woff') format('woff'); */
-}
+
 
 body {
   font-family: 'NHMedium', sans-serif;
