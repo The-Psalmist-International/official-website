@@ -11,17 +11,18 @@ const socials = [
   {
     name: "Instagram",
     url: "https://instagram.com/yourchurch",
-    bg: "border border-black",
+    
+    
   },
   {
     name: "Telegram",
     url: "https://t.me/yourchurch",
-    bg: "bg-blue-500 hover:bg-blue-900",
+   
   },
   {
     name: "YouTube",
     url: "https://youtube.com/yourchurch",
-    bg: "bg-red-600 hover:bg-red-700",
+    
   },
 ];
 
@@ -47,15 +48,9 @@ export default function SocialsModal({ show, onClose }: SocialsModalProps) {
         <h2 className="text-2xl font-medium mb-2">Connect With Us</h2>
         <div className="flex flex-col gap-4 w-full items-center">
           {socials.map((social) => (
-            <a
-              key={social.name}
-              href={social.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={`w-full ${social.bg} text-white font-semibold py-2 px-4 rounded transition-colors flex items-center justify-center gap-2`}
-            >
-              <span>{social.name}</span>
-            </a>
+            <>
+            
+            </>
           ))}
         </div>
       </motion.div>
