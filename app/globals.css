@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Stack+Sans+Headline:wght@400;500;600;700&display=swap');
 @import "tailwindcss";
 
 @font-face {
@@ -7,14 +8,18 @@
 }
 @font-face {
   font-family: NHMedium;
-  src: url('/fonts/NeueHaasDisplayLight.ttf') format('truetype'),
-       /* url('/fonts/rency.woff') format('woff'); */
+  src: url('/fonts/NeueHaasDisplayLight.ttf') format('truetype');
 }
-
+@font-face {
+  font-family: NHMediumBold;
+  src: url('/fonts/NeueHaasDisplayMediu.ttf') format('truetype');
+}
 
 body {
-  font-family: 'NHMedium', sans-serif;
+  font-family: 'Stack Sans Headline', 'NHMedium', sans-serif;
+  overflow-x: hidden;
 }
+
 .rency {
   font-family: 'Rency', sans-serif;
 }

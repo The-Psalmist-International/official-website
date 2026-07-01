@@ -5,7 +5,7 @@ import "./globals.css";
 
 
 export const metadata: Metadata = {
-  title: "The Psalmist International Church",
+  title: "Church of The Martyrs",
   description: "Kings, Priests, and Prophets",
 };
 
