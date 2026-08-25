@@ -3,7 +3,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { motion, useScroll, useTransform, useMotionValueEvent, useSpring } from "framer-motion";
 import { headingVariants, subtextVariants, buttonVariants } from "../components/animations";
 import { TimelineSection } from "../components/TimelineSection";
-
+import LocationsSection from "../components/LocationsSection";
 
 const HomePage = () => {
   // State for the live stream data
@@ -362,6 +362,7 @@ const HomePage = () => {
       </div>
     </div>
     <TimelineSection />
+    <LocationsSection />
     </main>
   );
 }

@@ -1,252 +1,206 @@
 "use client";
-import React, { useRef, useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
 
-// Helper for synthetic clock tick
-class TimelineTickSynth {
-  private ctx: AudioContext | null = null;
-  private isUnlocked = false;
-
-  constructor() {
-    this.unlock = this.unlock.bind(this);
-    if (typeof window !== "undefined") {
-      window.addEventListener("pointerdown", this.unlock, { once: true });
-      window.addEventListener("touchstart", this.unlock, { once: true });
-      window.addEventListener("keydown", this.unlock, { once: true });
-    }
-  }
-
-  private unlock() {
-    if (this.isUnlocked) return;
-    const AudioContextClass = window.AudioContext || (window as any).webkitAudioContext;
-    if (AudioContextClass) {
-      this.ctx = new AudioContextClass();
-      const osc = this.ctx.createOscillator();
-      const gain = this.ctx.createGain();
-      gain.gain.value = 0;
-      osc.connect(gain);
-      gain.connect(this.ctx.destination);
-      osc.start(0);
-      osc.stop(0.01);
-      this.isUnlocked = true;
-    }
-  }
-
-  playTick() {
-    if (!this.ctx || this.ctx.state !== "running") {
-      this.unlock();
-    }
-    if (!this.ctx) return;
-
-    const t = this.ctx.currentTime;
-    const osc = this.ctx.createOscillator();
-    const gain = this.ctx.createGain();
-
-    osc.type = "sine";
-    osc.frequency.setValueAtTime(800, t);
-    osc.frequency.exponentialRampToValueAtTime(100, t + 0.05);
-
-    gain.gain.setValueAtTime(0, t);
-    gain.gain.linearRampToValueAtTime(0.5, t + 0.005);
-    gain.gain.exponentialRampToValueAtTime(0.001, t + 0.05);
-
-    osc.connect(gain);
-    gain.connect(this.ctx.destination);
-
-    osc.start(t);
-    osc.stop(t + 0.05);
-  }
-}
+import Image from "next/image";
+import { useRef, useState } from "react";
+import {
+  motion,
+  MotionValue,
+  useMotionValueEvent,
+  useReducedMotion,
+  useScroll,
+  useTransform,
+} from "framer-motion";
 
 const timelineEvents = [
   {
     title: "The Vision",
-    date: "JANUARY 4, 2020",
-    description: "A divine vision was received revealing God's agenda to raise a family of believers committed to His eternal purposes.",
-    image: "/assets/IMG_7289.JPG"
+    date: "January 4, 2020",
+    description:
+      "A divine vision was received revealing God's agenda to raise a family of believers committed to His eternal purposes.",
+    image: "/assets/IMG_7289.JPG",
   },
   {
     title: "Movement Begins",
-    date: "MARCH 2020",
-    description: "Church of The Martyrs officially began as an apostolic Christian movement established after the pattern of Christ — King, Priest, and Prophet.",
-    image: "/assets/IMG_6718.JPG"
+    date: "March 2020",
+    description:
+      "Church of The Martyrs officially began as an apostolic Christian movement established after the pattern of Christ — King, Priest, and Prophet.",
+    image: "/assets/IMG_6718.JPG",
   },
   {
     title: "Early Gatherings & Discipleship",
-    date: "2020-2021",
-    description: "The ministry began forming a community of believers focused on prayer, spiritual formation, and discipleship.",
-    image: "/assets/hero-bg.JPG"
+    date: "2020–2021",
+    description:
+      "The ministry began forming a community of believers focused on prayer, spiritual formation, and discipleship.",
+    image: "/assets/hero-bg.JPG",
   },
   {
     title: "Campus Expansion",
-    date: "2021-2022",
-    description: "The movement spread across universities as campus communities began to form. These campuses became hubs for discipleship, prayer, and evangelism.",
-    image: "/assets/IMG_7289.JPG"
-  }
+    date: "2021–2022",
+    description:
+      "The movement spread across universities as campus communities became hubs for discipleship, prayer, and evangelism.",
+    image: "/assets/IMG_7178.JPG",
+  },
 ];
 
-export const TimelineSection = () => {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const synthRef = useRef<TimelineTickSynth | null>(null);
-  const [activeIndex, setActiveIndex] = useState(0);
-  const isScrollingRef = useRef(false);
+type TimelineCardProps = {
+  event: (typeof timelineEvents)[number];
+  index: number;
+  activeStep: number;
+  progress: MotionValue<number>;
+};
 
-  useEffect(() => {
-    synthRef.current = new TimelineTickSynth();
-  }, []);
-
-  // Scroll hijacking logic
-  useEffect(() => {
-    const handleWheel = (e: WheelEvent) => {
-      if (!containerRef.current) return;
-      
-      const rect = containerRef.current.getBoundingClientRect();
-      const viewportHeight = window.innerHeight;
-      
-      // Check if container is essentially occupying the full viewport
-      const isFullyInView = rect.top <= 10 && rect.bottom >= viewportHeight - 10;
-
-      if (isFullyInView) {
-        const isScrollingDown = e.deltaY > 0;
-        const isScrollingUp = e.deltaY < 0;
-
-        if (isScrollingDown && activeIndex < timelineEvents.length - 1) {
-          e.preventDefault();
-          if (!isScrollingRef.current) {
-            isScrollingRef.current = true;
-            setActiveIndex(prev => prev + 1);
-            synthRef.current?.playTick();
-            setTimeout(() => { isScrollingRef.current = false; }, 800); // debounce threshold
-          }
-        } else if (isScrollingUp && activeIndex > 0) {
-          e.preventDefault();
-          if (!isScrollingRef.current) {
-            isScrollingRef.current = true;
-            setActiveIndex(prev => prev - 1);
-            synthRef.current?.playTick();
-            setTimeout(() => { isScrollingRef.current = false; }, 800);
-          }
-        }
-      }
-    };
-
-    // Passive false is required to call e.preventDefault()
-    window.addEventListener("wheel", handleWheel, { passive: false });
-    return () => window.removeEventListener("wheel", handleWheel);
-  }, [activeIndex]);
-
-  const currentEvent = timelineEvents[activeIndex];
-  
-  const isPurpleBg = activeIndex === 1 || activeIndex === 3;
-  const bgColor = isPurpleBg ? "#2b0835" : "#ffffff";
-  const textColor = isPurpleBg ? "#ffffff" : "#2b0835";
-  const textMutedColor = isPurpleBg ? "#e5e7eb" : "#666666";
+function TimelineCard({ event, index, activeStep, progress }: TimelineCardProps) {
+  const startPoint = 0.28 + index * (0.72 / timelineEvents.length);
+  const endPoint = 0.28 + (index + 1) * (0.72 / timelineEvents.length);
+  const lineWidth = useTransform(progress, [startPoint, endPoint], ["0%", "100%"]);
+  const isActive = activeStep === index;
+  const hasReached = activeStep >= index;
 
   return (
-    <motion.div 
-      ref={containerRef}
-      className="relative w-full h-screen overflow-hidden flex flex-col justify-between py-8 px-6 md:px-12 lg:px-24 transition-colors duration-1000 ease-in-out"
-      style={{ backgroundColor: bgColor }}
-    >
-      {/* Subtle Noise Texture Overlay */}
-      <div 
-        className="absolute inset-0 opacity-[0.04] mix-blend-overlay pointer-events-none"
-        style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`,
-        }}
-      />
-
-      <div className="w-full max-w-[1100px] mx-auto flex-1 flex flex-col justify-between min-h-0 relative z-10">
-        {/* Header Row */}
-        <div className="flex justify-between items-end mb-4 shrink-0 overflow-hidden">
-          <AnimatePresence mode="wait">
-            <motion.h2 
-              key={currentEvent.title}
-              initial={{ y: 40, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              exit={{ y: -40, opacity: 0 }}
-              transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-              className="text-2xl md:text-4xl font-semibold font-['Stack_Sans_Headline',sans-serif]"
-              style={{ color: textColor }}
-            >
-              {currentEvent.title}
-            </motion.h2>
-          </AnimatePresence>
-          <AnimatePresence mode="wait">
-            <motion.span 
-              key={currentEvent.date}
-              initial={{ y: 20, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              exit={{ y: -20, opacity: 0 }}
-              transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1], delay: 0.1 }}
-              className="text-xs md:text-sm uppercase tracking-widest font-semibold font-['Stack_Sans_Headline',sans-serif]"
-              style={{ color: textColor }}
-            >
-              {currentEvent.date}
-            </motion.span>
-          </AnimatePresence>
+    <article className="relative flex shrink-0 flex-col pt-8">
+      <div className="absolute left-0 top-0 flex w-full items-center" aria-hidden="true">
+        <div
+          className="relative z-10 flex size-6 shrink-0 items-center justify-center rounded-full border-2 transition-[border-color,background-color] duration-500"
+          style={{
+            borderColor: hasReached ? "#6c2a7b" : "#ded8df",
+            backgroundColor: hasReached ? "#f1e7f3" : "#fbfaf8",
+          }}
+        >
+          <div
+            className="size-2 rounded-full bg-[#6c2a7b] transition-opacity duration-500"
+            style={{ opacity: hasReached ? 1 : 0 }}
+          />
         </div>
 
-        {/* Image - Flex-1 min-h-0 forces image container to scale within vertical space */}
-        <div className="flex-1 min-h-0 w-full rounded-[2rem] overflow-hidden mb-4 shadow-xl relative bg-stone-200">
-          <AnimatePresence mode="wait">
-            <motion.img
-              key={currentEvent.image}
-              src={currentEvent.image}
-              alt={currentEvent.title}
-              initial={{ opacity: 0, scale: 1.05 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.95 }}
-              transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-              className="absolute inset-0 w-full h-full object-cover"
+        {index !== timelineEvents.length - 1 && (
+          <div className="relative ml-4 h-px w-[272px] shrink-0 bg-[#e8e2e8] sm:w-[328px] lg:w-[368px]">
+            <motion.div
+              className="absolute inset-y-0 left-0 bg-[#6c2a7b]"
+              style={{ width: lineWidth }}
             />
-          </AnimatePresence>
+          </div>
+        )}
+      </div>
+
+      <div
+        className={`relative mt-10 flex min-h-[390px] w-[272px] shrink-0 flex-col overflow-hidden rounded-[24px] bg-white p-3 shadow-[0_12px_45px_rgba(43,8,53,0.08),0_1px_0_rgba(43,8,53,0.06)] transition-[filter,opacity,transform] duration-700 sm:min-h-[430px] sm:w-[328px] lg:w-[368px] ${
+          isActive
+            ? "scale-100 opacity-100 blur-none"
+            : "scale-[0.96] opacity-40 blur-[6px]"
+        }`}
+      >
+        <div className="relative h-44 w-full overflow-hidden rounded-[16px] bg-stone-200 sm:h-52">
+          <Image
+            src={event.image}
+            alt=""
+            fill
+            sizes="(max-width: 640px) 272px, (max-width: 1024px) 328px, 368px"
+            className="object-cover"
+          />
+          <div className="pointer-events-none absolute inset-0 shadow-[inset_0_0_0_1px_rgba(0,0,0,0.1)]" />
         </div>
 
-        {/* Description */}
-        <div className="max-w-4xl shrink-0 mb-4">
-          <AnimatePresence mode="wait">
-            <motion.p
-              key={currentEvent.description}
-              initial={{ y: 20, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              exit={{ y: -20, opacity: 0 }}
-              transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-              className="text-base md:text-lg leading-relaxed [text-wrap:pretty] font-['Stack_Sans_Headline',sans-serif]"
-              style={{ color: textMutedColor }}
-            >
-              {currentEvent.description}
-            </motion.p>
-          </AnimatePresence>
+        <div className="flex flex-1 flex-col px-3 pb-4 pt-6 sm:px-4">
+          <p className="mb-3 text-[11px] font-medium uppercase tracking-[0.18em] text-[#6c2a7b]">
+            {event.date}
+          </p>
+          <h3 className="max-w-[15ch] text-[25px] font-medium leading-[1.05] tracking-[-0.03em] text-[#2b0835] text-balance sm:text-[29px]">
+            {event.title}
+          </h3>
+          <p className="mt-4 text-[14px] font-normal leading-relaxed text-stone-500 [text-wrap:pretty] sm:text-[15px]">
+            {event.description}
+          </p>
         </div>
 
-        {/* Scrubber */}
-        <div className="w-full h-12 flex items-end justify-between gap-[2px] shrink-0">
-          {Array.from({ length: 60 }).map((_, i) => {
-            const numBarsPerEvent = 60 / timelineEvents.length; // 15 bars per event
-            const eventIndexForBar = Math.floor(i / numBarsPerEvent);
-            const isActive = eventIndexForBar === activeIndex;
-            const isPast = eventIndexForBar < activeIndex;
+        <div
+          className={`pointer-events-none absolute -bottom-12 -right-12 size-44 rounded-full bg-[#c796d1] blur-3xl transition-opacity duration-700 ${
+            isActive ? "opacity-30" : "opacity-0"
+          }`}
+          aria-hidden="true"
+        />
+      </div>
+    </article>
+  );
+}
 
-            const isPulse = isActive && (i % 3 === 0);
-            
-            return (
-              <motion.div
-                key={i}
-                initial={false}
-                animate={{
-                  height: isActive ? (isPulse ? "2.5rem" : "1.5rem") : (isPast ? "1rem" : "0.6rem"),
-                  opacity: isActive ? 1 : 0.3,
-                  width: isActive ? "3px" : "2px",
-                  backgroundColor: textColor
-                }}
-                transition={{ duration: 0.4, ease: "easeOut", delay: i * 0.005 }}
-                className="rounded-t-full"
+export function TimelineSection() {
+  const containerRef = useRef<HTMLElement>(null);
+  const [activeStep, setActiveStep] = useState(0);
+  const reduceMotion = useReducedMotion();
+
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start start", "end end"],
+  });
+
+  const xTranslate = useTransform(scrollYProgress, [0.28, 1], ["0%", "-72%"]);
+  const ourColor = useTransform(scrollYProgress, [0, 0.06], ["#c8c1c9", "#2b0835"]);
+  const storyColor = useTransform(scrollYProgress, [0.04, 0.11], ["#c8c1c9", "#2b0835"]);
+  const beganColor = useTransform(scrollYProgress, [0.09, 0.16], ["#c8c1c9", "#2b0835"]);
+  const withColor = useTransform(scrollYProgress, [0.14, 0.2], ["#c8c1c9", "#2b0835"]);
+  const aColor = useTransform(scrollYProgress, [0.18, 0.23], ["#c8c1c9", "#2b0835"]);
+  const visionColor = useTransform(scrollYProgress, [0.21, 0.28], ["#c8c1c9", "#6c2a7b"]);
+  const underlineWidth = useTransform(scrollYProgress, [0.22, 0.28], ["0%", "100%"]);
+
+  useMotionValueEvent(scrollYProgress, "change", (latest) => {
+    if (latest < 0.28) {
+      setActiveStep(0);
+      return;
+    }
+
+    const cardProgress = (latest - 0.28) / (0.72 / timelineEvents.length);
+    setActiveStep(Math.min(Math.floor(cardProgress), timelineEvents.length - 1));
+  });
+
+  return (
+    <section
+      ref={containerRef}
+      aria-labelledby="timeline-heading"
+      className="relative h-[410vh] w-full bg-[#fbfaf8]"
+    >
+      <div className="sticky top-0 flex h-screen w-full flex-col justify-center overflow-hidden pt-20 sm:pt-24">
+        <div className="mx-auto w-full max-w-[1440px] px-6 py-6 md:px-12 lg:px-20">
+          <p className="mb-5 text-[11px] font-medium uppercase tracking-[0.2em] text-[#6c2a7b] sm:text-xs">
+            Our journey
+          </p>
+
+          <h2
+            id="timeline-heading"
+            className="mb-8 max-w-[1120px] text-[36px] font-medium leading-[1.02] tracking-[-0.045em] text-balance sm:text-[48px] md:mb-10 md:text-[64px] lg:text-[76px]"
+          >
+            <motion.span style={{ color: ourColor }}>Our</motion.span>{" "}
+            <motion.span style={{ color: storyColor }}>story</motion.span>{" "}
+            <motion.span style={{ color: beganColor }}>began</motion.span>{" "}
+            <motion.span style={{ color: withColor }}>with</motion.span>{" "}
+            <motion.span style={{ color: aColor }}>a</motion.span>{" "}
+            <motion.span className="relative inline-block" style={{ color: visionColor }}>
+              vision
+              <motion.span
+                className="absolute -bottom-1 left-0 h-[3px] rounded-full bg-[#c796d1] md:h-1"
+                style={{ width: underlineWidth }}
+                aria-hidden="true"
               />
-            );
-          })}
+            </motion.span>
+          </h2>
+
+          <div className="relative mt-2 w-full sm:mt-8">
+            <motion.div
+              className="flex w-max items-start gap-8 px-1 pb-8"
+              style={{ x: reduceMotion ? "0%" : xTranslate }}
+            >
+              {timelineEvents.map((event, index) => (
+                <TimelineCard
+                  key={`${event.date}-${event.title}`}
+                  event={event}
+                  index={index}
+                  activeStep={activeStep}
+                  progress={scrollYProgress}
+                />
+              ))}
+            </motion.div>
+          </div>
         </div>
       </div>
-    </motion.div>
+    </section>
   );
-};
+}
