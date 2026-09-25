@@ -34,20 +34,20 @@ export default function VisionSection() {
   }, []);
 
   return (
-    <section className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24 font-['Stack_Sans_Headline',sans-serif]">
+    <section className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
       <div className="mb-8">
-        <span className="inline-block px-4 py-1.5 rounded-full bg-[#fae8ff] text-[#2b0835] text-xs sm:text-sm font-medium tracking-wide uppercase mb-4 font-['Stack_Sans_Headline',sans-serif]">
+        <span className="inline-block px-4 py-1.5 rounded-lg bg-[#fae8ff] text-[#2b0835] text-xs sm:text-sm font-medium tracking-wide uppercase mb-4">
           Our Vision
         </span>
-        <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] font-normal text-[#2b0835] mb-3 tracking-tight leading-[1.1] font-['Stack_Sans_Headline',sans-serif]">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] font-normal text-[#2b0835] mb-3 tracking-tight leading-[1.1]">
           A Vision for the Nations
         </h2>
-        <p className="text-[#666666] text-base sm:text-lg max-w-3xl font-light leading-relaxed font-['Stack_Sans_Headline',sans-serif]">
+        <p className="text-[#666666] text-base sm:text-lg max-w-3xl font-light leading-relaxed">
           To disciple believers, raise leaders, and establish God's influence across every sphere of life.
         </p>
       </div>
 
-      <div className="relative w-full aspect-[4/3] sm:aspect-[16/9] md:aspect-[21/9] rounded-2xl overflow-hidden bg-neutral-950 shadow-2xl">
+      <div className="relative w-full aspect-[4/3] sm:aspect-[16/9] md:aspect-[21/9] rounded-lg overflow-hidden bg-neutral-950 shadow-2xl">
         {visionData.map((item, idx) => {
           const isActive = idx === currentIndex;
           return (
@@ -79,14 +79,14 @@ export default function VisionSection() {
                   <motion.span
                     animate={{ y: isActive ? 0 : 10, opacity: isActive ? 1 : 0 }}
                     transition={{ duration: 0.45, delay: isActive ? 0.15 : 0 }}
-                    className="inline-block px-3.5 py-1 rounded-full border border-white/30 bg-black/20 text-white text-xs font-medium tracking-wider uppercase mb-4 backdrop-blur-md font-['Stack_Sans_Headline',sans-serif]"
+                    className="inline-block px-3.5 py-1 rounded-lg border border-white/30 bg-black/20 text-white text-xs font-medium tracking-wider uppercase mb-4 backdrop-blur-md"
                   >
                     {item.tag}
                   </motion.span>
                   <motion.p
                     animate={{ y: isActive ? 0 : 15, opacity: isActive ? 1 : 0 }}
                     transition={{ duration: 0.55, delay: isActive ? 0.2 : 0 }}
-                    className="text-white text-lg sm:text-xl md:text-2xl lg:text-[1.85rem] font-light leading-snug sm:leading-relaxed font-['Stack_Sans_Headline',sans-serif]"
+                    className="text-white text-lg sm:text-xl md:text-2xl lg:text-[1.85rem] font-light leading-snug sm:leading-relaxed"
                   >
                     {item.text}
                   </motion.p>

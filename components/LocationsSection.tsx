@@ -80,7 +80,7 @@ export default function LocationsSection() {
   return (
     <section
       aria-labelledby="locations-heading"
-      className="w-full overflow-hidden bg-[#f8f6f2] px-4 py-20 text-[#2b0835] sm:px-6 sm:py-24 lg:px-8 lg:py-28 font-['Stack_Sans_Headline',sans-serif]"
+      className="w-full overflow-hidden bg-[#f8f6f2] px-4 py-20 text-[#2b0835] sm:px-6 sm:py-24 lg:px-8 lg:py-28"
     >
       <div className="mx-auto max-w-[1440px]">
         <div className="mb-10 flex flex-col justify-between gap-5 md:mb-14 md:flex-row md:items-end">
@@ -113,7 +113,7 @@ export default function LocationsSection() {
                 aria-expanded={isActive}
                 aria-label={`${country.name}: ${country.branches.length} campus locations`}
                 transition={{ type: 'spring', duration: 0.55, bounce: 0 }}
-                className={`group relative min-h-[150px] overflow-hidden rounded-2xl text-left shadow-[0_12px_45px_rgba(43,8,53,0.08)] outline-none transition-[flex-grow,height,transform] duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] focus-visible:ring-2 focus-visible:ring-[#7a3688] focus-visible:ring-offset-4 focus-visible:ring-offset-[#f8f6f2] active:scale-[0.99] md:h-full md:min-w-0 ${
+                className={`group relative min-h-[150px] overflow-hidden rounded-lg text-left shadow-[0_12px_45px_rgba(43,8,53,0.08)] outline-none transition-[flex-grow,height,transform] duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] focus-visible:ring-2 focus-visible:ring-[#7a3688] focus-visible:ring-offset-4 focus-visible:ring-offset-[#f8f6f2] active:scale-[0.99] md:h-full md:min-w-0 ${
                   isActive
                     ? 'h-[520px] flex-[3.4] md:h-full'
                     : 'h-[150px] flex-1 md:h-full'
@@ -149,7 +149,7 @@ export default function LocationsSection() {
                     </h3>
                   </div>
                   <span
-                    className={`flex size-10 items-center justify-center rounded-full border border-white/25 bg-black/10 text-white backdrop-blur-md transition-transform duration-500 ${
+                    className={`flex size-10 items-center justify-center rounded-lg border border-white/25 bg-black/10 text-white backdrop-blur-md transition-transform duration-500 ${
                       isActive ? 'rotate-45' : 'rotate-0'
                     }`}
                     aria-hidden="true"
@@ -168,7 +168,7 @@ export default function LocationsSection() {
                       animate={{ opacity: 1, transform: 'translateY(0px)' }}
                       exit={{ opacity: 0, transform: 'translateY(10px)' }}
                       transition={{ duration: 0.3, ease: [0.23, 1, 0.32, 1] }}
-                      className="absolute bottom-4 left-4 right-4 z-10 rounded-xl bg-white p-5 text-[#2b0835] shadow-[0_14px_40px_rgba(20,4,24,0.2)] sm:bottom-6 sm:left-6 sm:right-6 sm:rounded-2xl sm:p-6"
+                      className="absolute bottom-4 left-4 right-4 z-10 rounded-lg bg-white p-5 text-[#2b0835] shadow-[0_14px_40px_rgba(20,4,24,0.2)] sm:bottom-6 sm:left-6 sm:right-6 sm:p-6"
                     >
                       <div className="flex flex-col justify-between gap-5 lg:flex-row lg:items-end">
                         <div className="max-w-2xl">
@@ -192,7 +192,7 @@ export default function LocationsSection() {
                           {country.branches.map((branch) => (
                             <span
                               key={branch.name}
-                              className="rounded-full bg-[#f5f1f5] px-3 py-1.5 text-[11px] font-medium text-[#5b2667] sm:text-xs"
+                              className="rounded-lg bg-[#f5f1f5] px-3 py-1.5 text-[11px] font-medium text-[#5b2667] sm:text-xs"
                               title={`${branch.address}${branch.time ? ` · ${branch.time}` : ''}`}
                             >
                               {branch.name}

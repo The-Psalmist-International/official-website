@@ -184,7 +184,7 @@ export default function LeadershipSection() {
   const activeCategory = leadershipData.find((cat) => cat.id === activeTabId) || leadershipData[0];
 
   return (
-    <section className="w-full bg-[#180320] text-white py-20 sm:py-28 px-4 sm:px-6 lg:px-8 font-['Stack_Sans_Headline',sans-serif] relative overflow-hidden">
+    <section className="w-full bg-[#180320] text-white py-20 sm:py-28 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
       {/* Subtle background ambient grain & gradient */}
       <div 
         className="absolute inset-0 opacity-[0.05] pointer-events-none mix-blend-overlay"
@@ -218,7 +218,7 @@ export default function LeadershipSection() {
               <button
                 key={category.id}
                 onClick={() => setActiveTabId(category.id)}
-                className={`relative px-5 py-2.5 rounded-full text-xs sm:text-sm font-medium tracking-wide uppercase transition-colors duration-300 focus:outline-none whitespace-nowrap border ${
+                className={`relative px-5 py-2.5 rounded-lg text-xs sm:text-sm font-medium tracking-wide uppercase transition-colors duration-300 focus:outline-none whitespace-nowrap border ${
                   isActive 
                     ? 'border-[#c026d3] text-white' 
                     : 'border-purple-800/50 bg-purple-950/20 text-purple-300/80 hover:border-purple-600 hover:text-white'
@@ -229,7 +229,7 @@ export default function LeadershipSection() {
                   <motion.div
                     layoutId="activeCategoryPill"
                     transition={{ type: 'spring', stiffness: 380, damping: 30 }}
-                    className="absolute inset-0 rounded-full bg-[#c026d3]"
+                    className="absolute inset-0 rounded-lg bg-[#c026d3]"
                   />
                 )}
                 <span className="relative z-10">
@@ -256,7 +256,7 @@ export default function LeadershipSection() {
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: index * 0.05, duration: 0.3 }}
-                className="group flex flex-col relative rounded-2xl bg-[#24032d] border border-purple-800/30 overflow-hidden hover:border-purple-500/50 transition-all duration-400 hover:shadow-[0_15px_35px_rgba(0,0,0,0.45)]"
+                className="group flex flex-col relative rounded-lg bg-[#24032d] border border-purple-800/30 overflow-hidden hover:border-purple-500/50 transition-all duration-400 hover:shadow-[0_15px_35px_rgba(0,0,0,0.45)]"
               >
                 {/* Portrait Photo Container */}
                 <div className="relative aspect-[4/5] w-full overflow-hidden bg-purple-900/20">

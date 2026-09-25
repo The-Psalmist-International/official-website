@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 
 export default function AboutHeroSection() {
   return (
-    <section className="relative w-full pt-28 pb-20 md:pt-36 md:pb-28 overflow-hidden font-['Stack_Sans_Headline',sans-serif] bg-white text-stone-900">
+    <section className="relative w-full pt-28 pb-20 md:pt-36 md:pb-28 overflow-hidden bg-white text-stone-900">
       
       {/* Centered Hero Heading & Subtext */}
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 mb-14 sm:mb-20">
@@ -38,14 +38,14 @@ export default function AboutHeroSection() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="flex flex-col gap-3.5 sm:gap-5 lg:translate-y-8"
           >
-            <div className="group aspect-[4/5] rounded-2xl sm:rounded-3xl overflow-hidden bg-stone-100 border border-stone-200/80 shadow-[0_8px_25px_rgba(0,0,0,0.05)]">
+            <div className="group aspect-[4/5] rounded-lg overflow-hidden bg-stone-100 border border-stone-200/80 shadow-[0_8px_25px_rgba(0,0,0,0.05)]">
               <img
                 src="/assets/IMG_6718.JPG"
                 alt="Community life"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
               />
             </div>
-            <div className="group aspect-[3/4] rounded-2xl sm:rounded-3xl overflow-hidden bg-stone-100 border border-stone-200/80 shadow-[0_8px_25px_rgba(0,0,0,0.05)]">
+            <div className="group aspect-[3/4] rounded-lg overflow-hidden bg-stone-100 border border-stone-200/80 shadow-[0_8px_25px_rgba(0,0,0,0.05)]">
               <img
                 src="/assets/IMG_7194.JPG"
                 alt="Community fellowship"
@@ -61,14 +61,14 @@ export default function AboutHeroSection() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="flex flex-col gap-3.5 sm:gap-5 lg:-translate-y-6"
           >
-            <div className="group aspect-[3/4] rounded-2xl sm:rounded-3xl overflow-hidden bg-stone-100 border border-stone-200/80 shadow-[0_8px_25px_rgba(0,0,0,0.05)]">
+            <div className="group aspect-[3/4] rounded-lg overflow-hidden bg-stone-100 border border-stone-200/80 shadow-[0_8px_25px_rgba(0,0,0,0.05)]">
               <img
                 src="/assets/IMG_6744.JPG"
                 alt="Prayer and worship"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
               />
             </div>
-            <div className="group aspect-[4/5] rounded-2xl sm:rounded-3xl overflow-hidden bg-stone-100 border border-stone-200/80 shadow-[0_8px_25px_rgba(0,0,0,0.05)]">
+            <div className="group aspect-[4/5] rounded-lg overflow-hidden bg-stone-100 border border-stone-200/80 shadow-[0_8px_25px_rgba(0,0,0,0.05)]">
               <img
                 src="/assets/IMG_7255.JPG"
                 alt="Worship team"
@@ -84,14 +84,14 @@ export default function AboutHeroSection() {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="col-span-2 sm:col-span-1 flex flex-col gap-3.5 sm:gap-5 lg:translate-y-2"
           >
-            <div className="group aspect-[4/5] rounded-2xl sm:rounded-3xl overflow-hidden bg-stone-100 border border-stone-200/80 shadow-[0_12px_30px_rgba(43,8,53,0.08)]">
+            <div className="group aspect-[4/5] rounded-lg overflow-hidden bg-stone-100 border border-stone-200/80 shadow-[0_12px_30px_rgba(43,8,53,0.08)]">
               <img
                 src="/assets/IMG_7289.JPG"
                 alt="Apostolic gathering"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
               />
             </div>
-            <div className="group aspect-[3/4] rounded-2xl sm:rounded-3xl overflow-hidden bg-stone-100 border border-stone-200/80 shadow-[0_8px_25px_rgba(0,0,0,0.05)]">
+            <div className="group aspect-[3/4] rounded-lg overflow-hidden bg-stone-100 border border-stone-200/80 shadow-[0_8px_25px_rgba(0,0,0,0.05)]">
               <img
                 src="/assets/IMG_7172.JPG"
                 alt="Ministry leadership"
@@ -107,14 +107,14 @@ export default function AboutHeroSection() {
             transition={{ duration: 0.6, delay: 0.4 }}
             className="flex flex-col gap-3.5 sm:gap-5 lg:-translate-y-8"
           >
-            <div className="group aspect-[3/4] rounded-2xl sm:rounded-3xl overflow-hidden bg-stone-100 border border-stone-200/80 shadow-[0_8px_25px_rgba(0,0,0,0.05)]">
+            <div className="group aspect-[3/4] rounded-lg overflow-hidden bg-stone-100 border border-stone-200/80 shadow-[0_8px_25px_rgba(0,0,0,0.05)]">
               <img
                 src="/assets/IMG_7234.JPG"
                 alt="Joyful community"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
               />
             </div>
-            <div className="group aspect-[4/5] rounded-2xl sm:rounded-3xl overflow-hidden bg-stone-100 border border-stone-200/80 shadow-[0_8px_25px_rgba(0,0,0,0.05)]">
+            <div className="group aspect-[4/5] rounded-lg overflow-hidden bg-stone-100 border border-stone-200/80 shadow-[0_8px_25px_rgba(0,0,0,0.05)]">
               <img
                 src="/assets/IMG_6776.JPG"
                 alt="Church discipleship"
@@ -130,14 +130,14 @@ export default function AboutHeroSection() {
             transition={{ duration: 0.6, delay: 0.5 }}
             className="flex flex-col gap-3.5 sm:gap-5 lg:translate-y-6"
           >
-            <div className="group aspect-[4/5] rounded-2xl sm:rounded-3xl overflow-hidden bg-stone-100 border border-stone-200/80 shadow-[0_8px_25px_rgba(0,0,0,0.05)]">
+            <div className="group aspect-[4/5] rounded-lg overflow-hidden bg-stone-100 border border-stone-200/80 shadow-[0_8px_25px_rgba(0,0,0,0.05)]">
               <img
                 src="/assets/hero-bg.JPG"
                 alt="Ministry campus"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
               />
             </div>
-            <div className="group aspect-[3/4] rounded-2xl sm:rounded-3xl overflow-hidden bg-stone-100 border border-stone-200/80 shadow-[0_8px_25px_rgba(0,0,0,0.05)]">
+            <div className="group aspect-[3/4] rounded-lg overflow-hidden bg-stone-100 border border-stone-200/80 shadow-[0_8px_25px_rgba(0,0,0,0.05)]">
               <img
                 src="/assets/IMG_7283.JPG"
                 alt="Prayer meeting"

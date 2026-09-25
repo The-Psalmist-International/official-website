@@ -37,7 +37,7 @@ export default function PastorLetterSection() {
   return (
     <div ref={containerRef} className="relative w-full h-[280vh]">
       {/* Sticky Viewport fitting exactly h-screen */}
-      <div className="sticky top-0 w-full h-screen flex flex-col items-center justify-center overflow-hidden bg-[#fbfbfa] text-stone-900 font-['Stack_Sans_Headline',sans-serif] px-4 sm:px-6">
+      <div className="sticky top-0 w-full h-screen flex flex-col items-center justify-center overflow-hidden bg-[#fbfbfa] text-stone-900 px-4 sm:px-6">
         
         {/* Google Font for fancy cursive signature */}
         <style jsx global>{`
@@ -51,7 +51,7 @@ export default function PastorLetterSection() {
         <div className="max-w-3xl w-full flex justify-end mb-2 sm:mb-3 pr-2 sm:pr-4 z-20">
           <button
             onClick={() => setIsPlaying(!isPlaying)}
-            className={`p-2.5 sm:p-3 rounded-full border transition-all duration-300 focus:outline-none ${
+            className={`p-2.5 sm:p-3 rounded-lg border transition-all duration-300 focus:outline-none ${
               isPlaying
                 ? 'bg-[#2b0835] text-white border-[#2b0835] shadow-md'
                 : 'bg-white text-stone-600 border-stone-200 hover:border-stone-400 hover:text-stone-950 shadow-sm'

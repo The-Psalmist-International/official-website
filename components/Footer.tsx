@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { motion } from 'framer-motion';
+import Button from '@/components/ui/Button';
 
 const footerLinks = {
   EXPLORE: [
@@ -34,7 +35,7 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-[#2b0835] text-white font-['Stack_Sans_Headline',sans-serif]">
+    <footer className="bg-[#2b0835] text-white">
 
       {/* CTA Hero Strip */}
       <div className="border-b border-white/15 px-6 sm:px-8 lg:px-12 py-14 sm:py-18 md:py-20">
@@ -49,26 +50,9 @@ export default function Footer() {
           </div>
 
           <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
-            <Link
-              href="/connect"
-              className="inline-flex items-center gap-3 border border-white/80 text-white px-7 py-3.5 text-sm font-medium tracking-wide hover:bg-white hover:text-[#2b0835] transition-all duration-300 group whitespace-nowrap"
-            >
+            <Button href="/connect" variant="outline">
               Connect With Us
-              <svg
-                width="16"
-                height="16"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="group-hover:translate-x-1 transition-transform duration-200"
-              >
-                <line x1="5" y1="12" x2="19" y2="12" />
-                <polyline points="12 5 19 12 12 19" />
-              </svg>
-            </Link>
+            </Button>
           </motion.div>
         </div>
       </div>

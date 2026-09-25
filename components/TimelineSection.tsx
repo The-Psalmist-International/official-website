@@ -83,13 +83,13 @@ function TimelineCard({ event, index, activeStep, progress }: TimelineCardProps)
       </div>
 
       <div
-        className={`relative mt-10 flex min-h-[390px] w-[272px] shrink-0 flex-col overflow-hidden rounded-[24px] bg-white p-3 shadow-[0_12px_45px_rgba(43,8,53,0.08),0_1px_0_rgba(43,8,53,0.06)] transition-[filter,opacity,transform] duration-700 sm:min-h-[430px] sm:w-[328px] lg:w-[368px] ${
+        className={`relative mt-10 flex min-h-[390px] w-[272px] shrink-0 flex-col overflow-hidden rounded-lg bg-white p-3 shadow-[0_12px_45px_rgba(43,8,53,0.08),0_1px_0_rgba(43,8,53,0.06)] transition-[filter,opacity,transform] duration-700 sm:min-h-[430px] sm:w-[328px] lg:w-[368px] ${
           isActive
             ? "scale-100 opacity-100 blur-none"
             : "scale-[0.96] opacity-40 blur-[6px]"
         }`}
       >
-        <div className="relative h-44 w-full overflow-hidden rounded-[16px] bg-stone-200 sm:h-52">
+        <div className="relative h-44 w-full overflow-hidden rounded-lg bg-stone-200 sm:h-52">
           <Image
             src={event.image}
             alt=""

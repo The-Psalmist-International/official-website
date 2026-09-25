@@ -4,6 +4,7 @@ import { motion, useScroll, useTransform, useMotionValueEvent, useSpring } from 
 import { headingVariants, subtextVariants, buttonVariants } from "../components/animations";
 import { TimelineSection } from "../components/TimelineSection";
 import LocationsSection from "../components/LocationsSection";
+import Button from "../components/ui/Button";
 
 const HomePage = () => {
   // State for the live stream data
@@ -157,31 +158,18 @@ const HomePage = () => {
         >
           <div className="w-full px-6 md:px-12 lg:px-24 pb-12 md:pb-20">
             <div className="max-w-[700px] flex flex-col gap-6 md:mb-24 lg:mb-32">
-              <h1 className="text-4xl md:text-5xl lg:text-[4.5rem] font-normal leading-[1.05] tracking-tight text-white drop-shadow-2xl font-['Stack_Sans_Headline',sans-serif] [text-wrap:balance]">
+              <h1 className="text-4xl md:text-5xl lg:text-[4.5rem] font-normal leading-[1.05] tracking-tight text-white drop-shadow-2xl [text-wrap:balance]">
                 Preparing God&rsquo;s endtime army
               </h1>
-              <p className="text-sm md:text-base lg:text-[1.05rem] text-white/80 max-w-[600px] leading-relaxed drop-shadow-lg font-['Stack_Sans_Headline',sans-serif] [text-wrap:pretty]">
+              <p className="text-sm md:text-base lg:text-[1.05rem] text-white/80 max-w-[600px] leading-relaxed drop-shadow-lg [text-wrap:pretty]">
                 Church of The Martyrs is an apostolic movement raising a
                 prophetic generation and revealing the witness of God to the
                 nations.
               </p>
               <div className="shrink-0 mt-2">
-                <button type="button" className="group inline-flex items-center justify-center px-8 py-3.5 text-sm font-medium tracking-wide text-black bg-white rounded-full hover:bg-gray-100 active:scale-[0.96] transition-[transform,background-color,box-shadow] duration-200 ease-out shadow-xl hover:shadow-2xl font-['Stack_Sans_Headline',sans-serif]">
-                  <div className="relative flex items-center h-5 overflow-hidden">
-                    <div className="flex flex-col transition-transform duration-500 ease-[cubic-bezier(0.76,0,0.24,1)] group-hover:-translate-y-full">
-                      <span className="flex items-center gap-2 h-5">
-                        Learn More
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
-                      </span>
-                    </div>
-                    <div className="absolute inset-0 flex flex-col translate-y-full transition-transform duration-500 ease-[cubic-bezier(0.76,0,0.24,1)] group-hover:translate-y-0">
-                      <span className="flex items-center gap-2 h-5">
-                        Learn More
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
-                      </span>
-                    </div>
-                  </div>
-                </button>
+                <Button href="/about-us" variant="secondary">
+                  Learn More
+                </Button>
               </div>
             </div>
           </div>
@@ -198,31 +186,18 @@ const HomePage = () => {
         >
           <div className="w-full px-6 md:px-12 lg:px-24 pb-12 md:pb-20">
             <div className="max-w-[700px] flex flex-col gap-6 md:mb-24 lg:mb-32">
-              <h2 className="text-4xl md:text-5xl lg:text-[4.5rem] font-normal leading-[1.05] tracking-tight text-white drop-shadow-2xl font-['Stack_Sans_Headline',sans-serif] [text-wrap:balance]">
+              <h2 className="text-4xl md:text-5xl lg:text-[4.5rem] font-normal leading-[1.05] tracking-tight text-white drop-shadow-2xl [text-wrap:balance]">
                 Kings, Priests &amp; Prophets
               </h2>
-              <p className="text-sm md:text-base lg:text-[1.05rem] text-white/80 max-w-[600px] leading-relaxed drop-shadow-lg font-['Stack_Sans_Headline',sans-serif] [text-wrap:pretty]">
+              <p className="text-sm md:text-base lg:text-[1.05rem] text-white/80 max-w-[600px] leading-relaxed drop-shadow-lg [text-wrap:pretty]">
                 Join a community where you are equipped, empowered, and sent
                 forth to impact your world through the power of God&rsquo;s word
                 and Spirit.
               </p>
               <div className="shrink-0 mt-2">
-                <a href="#join" className="group inline-flex items-center justify-center px-8 py-3.5 text-sm font-medium tracking-wide text-black bg-white rounded-full hover:bg-gray-100 active:scale-[0.96] transition-[transform,background-color,box-shadow] duration-200 ease-out shadow-xl hover:shadow-2xl font-['Stack_Sans_Headline',sans-serif]">
-                  <div className="relative flex items-center h-5 overflow-hidden">
-                    <div className="flex flex-col transition-transform duration-500 ease-[cubic-bezier(0.76,0,0.24,1)] group-hover:-translate-y-full">
-                      <span className="flex items-center gap-2 h-5">
-                        Join Us
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
-                      </span>
-                    </div>
-                    <div className="absolute inset-0 flex flex-col translate-y-full transition-transform duration-500 ease-[cubic-bezier(0.76,0,0.24,1)] group-hover:translate-y-0">
-                      <span className="flex items-center gap-2 h-5">
-                        Join Us
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
-                      </span>
-                    </div>
-                  </div>
-                </a>
+                <Button href="/connect" variant="secondary">
+                  Join Us
+                </Button>
               </div>
             </div>
           </div>
@@ -239,31 +214,23 @@ const HomePage = () => {
         >
           <div className="w-full px-6 md:px-12 lg:px-24 pb-12 md:pb-20">
             <div className="max-w-[700px] flex flex-col gap-6 md:mb-24 lg:mb-32">
-              <h2 className="text-4xl md:text-5xl lg:text-[4.5rem] font-normal leading-[1.05] tracking-tight text-white drop-shadow-2xl font-['Stack_Sans_Headline',sans-serif] [text-wrap:balance]">
+              <h2 className="text-4xl md:text-5xl lg:text-[4.5rem] font-normal leading-[1.05] tracking-tight text-white drop-shadow-2xl [text-wrap:balance]">
                 Experience worship from anywhere
               </h2>
-              <p className="text-sm md:text-base lg:text-[1.05rem] text-white/80 max-w-[600px] leading-relaxed drop-shadow-lg font-['Stack_Sans_Headline',sans-serif] [text-wrap:pretty]">
+              <p className="text-sm md:text-base lg:text-[1.05rem] text-white/80 max-w-[600px] leading-relaxed drop-shadow-lg [text-wrap:pretty]">
                 Our online campus brings the presence of God to wherever you
                 are. Join thousands across the world who worship with us every
                 week.
               </p>
               <div className="shrink-0 mt-2">
-                <a href="https://www.youtube.com/@ChurchOfTheMartyrs?sub_confirmation=1" target="_blank" rel="noopener noreferrer" className="group inline-flex items-center justify-center px-8 py-3.5 text-sm font-medium tracking-wide text-black bg-white rounded-full hover:bg-gray-100 active:scale-[0.96] transition-[transform,background-color,box-shadow] duration-200 ease-out shadow-xl hover:shadow-2xl font-['Stack_Sans_Headline',sans-serif]">
-                  <div className="relative flex items-center h-5 overflow-hidden">
-                    <div className="flex flex-col transition-transform duration-500 ease-[cubic-bezier(0.76,0,0.24,1)] group-hover:-translate-y-full">
-                      <span className="flex items-center gap-2 h-5">
-                        Watch Online
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
-                      </span>
-                    </div>
-                    <div className="absolute inset-0 flex flex-col translate-y-full transition-transform duration-500 ease-[cubic-bezier(0.76,0,0.24,1)] group-hover:translate-y-0">
-                      <span className="flex items-center gap-2 h-5">
-                        Watch Online
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
-                      </span>
-                    </div>
-                  </div>
-                </a>
+                <Button
+                  href="https://www.youtube.com/@ChurchOfTheMartyrs?sub_confirmation=1"
+                  variant="secondary"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Watch Online
+                </Button>
               </div>
             </div>
           </div>
@@ -283,7 +250,7 @@ const HomePage = () => {
                 href={liveStream.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="self-end inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-white/80 hover:text-white transition-colors font-['Stack_Sans_Headline',sans-serif]"
+                className="self-end inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-white/80 hover:text-white transition-colors"
               >
                 {liveStream.isLive ? "Watch Live" : "Watch Latest Sermon"}
                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
@@ -292,7 +259,7 @@ const HomePage = () => {
                 href={liveStream.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block relative bg-white rounded-2xl p-2.5 w-full shadow-2xl hover:shadow-[0_20px_50px_rgba(0,0,0,0.15)] active:scale-[0.98] transition-[transform,box-shadow] duration-200 ease-out overflow-hidden border border-stone-200/50"
+                className="block relative bg-white rounded-lg p-2.5 w-full shadow-2xl hover:shadow-[0_20px_50px_rgba(0,0,0,0.15)] active:scale-[0.98] transition-[transform,box-shadow] duration-200 ease-out overflow-hidden border border-stone-200/50"
               >
                 <div className="relative rounded-md overflow-hidden aspect-[16/9] mb-3 bg-stone-100 border border-black/[0.08]">
                   {liveStream.thumbnail ? (
@@ -303,13 +270,13 @@ const HomePage = () => {
                     </div>
                   )}
                   <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                    <div className="w-12 h-12 bg-white/90 rounded-full flex items-center justify-center backdrop-blur-sm shadow-lg">
+                    <div className="w-12 h-12 bg-white/90 rounded-lg flex items-center justify-center backdrop-blur-sm shadow-lg">
                       <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="black" className="ml-1"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
                     </div>
                   </div>
                 </div>
                 <div className="px-2 pb-2">
-                  <h3 className="text-stone-900 font-semibold text-[15px] leading-snug line-clamp-2 font-['Stack_Sans_Headline',sans-serif]">
+                  <h3 className="text-stone-900 font-semibold text-[15px] leading-snug line-clamp-2">
                     {liveStream.title}
                   </h3>
                 </div>
@@ -334,7 +301,7 @@ const HomePage = () => {
             }}
           />
           <div className="max-w-[1100px] w-full text-left relative z-10">
-            <p className="text-2xl md:text-4xl lg:text-[3rem] font-light leading-[1.25] tracking-tight text-white font-['Stack_Sans_Headline',sans-serif]">
+            <p className="text-2xl md:text-4xl lg:text-[3rem] font-light leading-[1.25] tracking-tight text-white">
               {(() => {
                 const paragraphText = "Church of The Martyrs is an apostolic Christian movement committed to raising a prophetic generation, discipling nations, and revealing the complete witness of God to this age and beyond.";
                 const words = paragraphText.split(" ");

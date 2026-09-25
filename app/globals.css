@@ -1,25 +1,78 @@
-@import url('https://fonts.googleapis.com/css2?family=Stack+Sans+Headline:wght@400;500;600;700&display=swap');
 @import "tailwindcss";
 
 @font-face {
-  font-family: Rency;
-  src: url('/fonts/rency.woff2') format('woff2'),
-       url('/fonts/rency.woff') format('woff');
-}
-@font-face {
-  font-family: NHMedium;
+  font-family: NeueHaasDisplay;
   src: url('/fonts/NeueHaasDisplayLight.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
 }
+
 @font-face {
-  font-family: NHMediumBold;
+  font-family: NeueHaasDisplay;
+  src: url('/fonts/NeueHaasDisplayLight.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: NeueHaasDisplay;
   src: url('/fonts/NeueHaasDisplayMediu.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: NeueHaasDisplay;
+  src: url('/fonts/NeueHaasDisplayMediu.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Graphik;
+  src: url('/fonts/Graphik-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Graphik;
+  src: url('/fonts/Graphik-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Graphik;
+  src: url('/fonts/Graphik-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme {
+  --font-primary: 'Graphik', sans-serif;
+  --font-subtext: 'Graphik', sans-serif;
+  --radius-button: 0.5rem;
+  --radius-card: 0.5rem;
 }
 
 body {
-  font-family: 'Stack Sans Headline', 'NHMedium', sans-serif;
+  font-family: var(--font-primary);
   overflow-x: hidden;
 }
 
-.rency {
-  font-family: 'Rency', sans-serif;
+p,
+.subtext {
+  font-family: var(--font-subtext);
+}
+
+.graphik {
+  font-family: var(--font-subtext);
 }
