@@ -56,7 +56,7 @@ function buttonClassName({
   className = '',
 }: Pick<SharedProps, 'variant' | 'size' | 'className'>) {
   return [
-    'group inline-flex items-center justify-center gap-2 rounded-lg font-medium tracking-wide',
+    'group inline-flex items-center justify-center gap-2 rounded-full font-medium tracking-wide',
     'transition-[transform,background-color,box-shadow,border-color,color] duration-200 ease-out',
     'active:scale-[0.96] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#7028a8]/40 focus-visible:ring-offset-2',
     variantClasses[variant],

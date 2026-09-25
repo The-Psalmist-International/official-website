@@ -80,7 +80,7 @@ export default function LocationsSection() {
   return (
     <section
       aria-labelledby="locations-heading"
-      className="w-full overflow-hidden bg-[#f8f6f2] px-4 py-20 text-[#2b0835] sm:px-6 sm:py-24 lg:px-8 lg:py-28"
+      className="w-full overflow-hidden bg-[#f8f6f2] px-4 py-28 text-[#2b0835] sm:px-6 sm:py-36 lg:px-8 lg:py-40"
     >
       <div className="mx-auto max-w-[1440px]">
         <div className="mb-10 flex flex-col justify-between gap-5 md:mb-14 md:flex-row md:items-end">

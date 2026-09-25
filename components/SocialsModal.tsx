@@ -53,7 +53,7 @@ export default function SocialsModal({ show, onClose }: SocialsModalProps) {
         <h2 className="text-2xl font-medium mb-2">Connect With Us</h2>
         <div className="grid grid-cols-2  md:grid-cols-4 place-items-center gap-4 w-full items-center">
           {socials.map((social) => (
-            <button key={social.url} className="flex justify-center items-center gap-3 bg-gray-200 rounded-lg px-6 py-2 shadow-[2px_2px_0px_0px] shadow-purple-200 text-black">
+            <button key={social.url} className="flex justify-center items-center gap-3 bg-gray-200 rounded-full px-6 py-2 shadow-[2px_2px_0px_0px] shadow-purple-200 text-black">
               <Link href={social.url}>
                {
               social.name

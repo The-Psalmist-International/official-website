@@ -46,7 +46,7 @@ export default function MandateSection() {
   return (
     <section
       aria-labelledby="mandate-heading"
-      className="relative overflow-hidden bg-[#fbfaf8] px-4 py-20 text-[#2b0835] sm:px-6 sm:py-24 lg:px-8 lg:py-28"
+      className="relative overflow-hidden bg-[#fbfaf8] px-4 py-28 text-[#2b0835] sm:px-6 sm:py-36 lg:px-8 lg:py-40"
     >
       <div className="mx-auto max-w-7xl">
         <div className="mb-10 max-w-5xl sm:mb-14">

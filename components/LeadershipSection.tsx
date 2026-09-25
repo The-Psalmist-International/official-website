@@ -184,7 +184,7 @@ export default function LeadershipSection() {
   const activeCategory = leadershipData.find((cat) => cat.id === activeTabId) || leadershipData[0];
 
   return (
-    <section className="w-full bg-[#180320] text-white py-20 sm:py-28 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+    <section className="w-full bg-[#180320] text-white py-28 sm:py-40 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
       {/* Subtle background ambient grain & gradient */}
       <div 
         className="absolute inset-0 opacity-[0.05] pointer-events-none mix-blend-overlay"
