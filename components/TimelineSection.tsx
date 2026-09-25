@@ -158,7 +158,7 @@ export function TimelineSection() {
       aria-labelledby="timeline-heading"
       className="relative h-[410vh] w-full bg-[#fbfaf8]"
     >
-      <div className="sticky top-0 flex h-screen w-full flex-col justify-center overflow-hidden pt-20 sm:pt-24">
+      <div className="sticky top-0 flex h-screen w-full flex-col justify-center overflow-hidden pt-28 sm:pt-36">
         <div className="mx-auto w-full max-w-[1440px] px-6 py-6 md:px-12 lg:px-20">
           <p className="mb-5 text-[11px] font-medium uppercase tracking-[0.2em] text-[#6c2a7b] sm:text-xs">
             Our journey

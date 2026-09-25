@@ -34,7 +34,7 @@ export default function VisionSection() {
   }, []);
 
   return (
-    <section className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
+    <section className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 sm:py-36">
       <div className="mb-8">
         <span className="inline-block px-4 py-1.5 rounded-lg bg-[#fae8ff] text-[#2b0835] text-xs sm:text-sm font-medium tracking-wide uppercase mb-4">
           Our Vision

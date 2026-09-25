@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 
 export default function AboutHeroSection() {
   return (
-    <section className="relative w-full pt-28 pb-20 md:pt-36 md:pb-28 overflow-hidden bg-white text-stone-900">
+    <section className="relative w-full pt-36 pb-28 md:pt-48 md:pb-40 overflow-hidden bg-white text-stone-900">
       
       {/* Centered Hero Heading & Subtext */}
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 mb-14 sm:mb-20">

@@ -5,7 +5,6 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ministries } from '@/data/ministries';
-import Button from '@/components/ui/Button';
 import NavDropdownMenu, { NavDropdownItem, type NavDropdownChild } from '@/components/NavDropdownMenu';
 
 type NavItem =
@@ -62,8 +61,8 @@ const navItems: NavItem[] = [
 function ChevronDown({ className }: { className?: string }) {
   return (
     <svg
-      width="14"
-      height="14"
+      width="12"
+      height="12"
       viewBox="0 0 24 24"
       fill="none"
       stroke="currentColor"
@@ -78,21 +77,7 @@ function ChevronDown({ className }: { className?: string }) {
   );
 }
 
-function ChurchMark({ className }: { className?: string }) {
-  return (
-    <svg
-      viewBox="0 0 32 32"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      className={className}
-      aria-hidden
-    >
-      <circle cx="16" cy="16" r="15" stroke="currentColor" strokeWidth="1.5" opacity="0.35" />
-      <circle cx="16" cy="16" r="10" stroke="currentColor" strokeWidth="1.5" opacity="0.55" />
-      <circle cx="16" cy="16" r="5" fill="currentColor" />
-    </svg>
-  );
-}
+
 
 export default function Navbar() {
   const [isVisible, setIsVisible] = useState(true);
@@ -149,8 +134,8 @@ export default function Navbar() {
   }, []);
 
   const linkColor = isHeroStyle
-    ? 'text-white/85 hover:text-white'
-    : 'text-stone-600 hover:text-[#2b0835]';
+    ? 'text-white/80 hover:text-white'
+    : 'text-stone-500 hover:text-[#2b0835]';
 
   const activeLinkColor = isHeroStyle ? 'text-white' : 'text-[#2b0835]';
 
@@ -179,22 +164,10 @@ export default function Navbar() {
             : 'border-b border-transparent shadow-none'
         }`}
       >
-        <div className="mx-auto flex h-14 max-w-7xl items-center justify-between gap-6 px-4 sm:h-16 sm:px-6 lg:px-8">
-          {/* Logo */}
-          <Link
-            href="/"
-            className={`flex shrink-0 items-center gap-2.5 transition-opacity hover:opacity-80 ${
-              isHeroStyle ? 'text-white' : 'text-[#2b0835]'
-            }`}
-          >
-            <ChurchMark className="size-7 sm:size-8" />
-            <span className="text-lg font-semibold tracking-tight sm:text-xl">
-              The Martyrs Church
-            </span>
-          </Link>
+        <div className="mx-auto flex h-20 max-w-[1400px] items-center px-8 sm:h-[88px] sm:px-12 lg:px-16">
 
-          {/* Desktop nav links */}
-          <div className="hidden flex-1 items-center justify-center gap-1 lg:flex">
+          {/* Left: Nav links */}
+          <div className="hidden items-center gap-7 lg:flex" style={{ flex: '1 1 0%' }}>
             {navItems.map((item) => {
               const hasChildren = 'children' in item && item.children;
               const active = isActive(item.href);
@@ -204,7 +177,7 @@ export default function Navbar() {
                   <Link
                     key={item.label}
                     href={item.href}
-                    className={`rounded-md px-4 py-2.5 text-base font-medium transition-colors lg:text-[17px] ${
+                    className={`text-[13px] font-normal tracking-[0.04em] transition-colors duration-200 ${
                       active ? activeLinkColor : linkColor
                     }`}
                   >
@@ -225,7 +198,7 @@ export default function Navbar() {
                     onClick={() =>
                       setOpenDropdown(openDropdown === item.label ? null : item.label)
                     }
-                    className={`inline-flex items-center gap-1.5 rounded-md px-4 py-2.5 text-base font-medium transition-colors lg:text-[17px] ${
+                    className={`inline-flex items-center gap-1 text-[13px] font-normal tracking-[0.04em] transition-colors duration-200 ${
                       active ? activeLinkColor : linkColor
                     } ${openDropdown === item.label ? (isHeroStyle ? 'text-white' : 'text-[#2b0835]') : ''}`}
                     aria-expanded={openDropdown === item.label}
@@ -252,48 +225,78 @@ export default function Navbar() {
             })}
           </div>
 
-          {/* Desktop CTAs */}
-          <div className="hidden shrink-0 items-center gap-5 lg:flex">
+          {/* Center: Logo */}
+          <div className="flex items-center justify-center lg:flex-none" style={{ flex: '0 0 auto' }}>
+            <Link
+              href="/"
+              className={`flex shrink-0 items-center transition-opacity duration-200 hover:opacity-80 ${
+                isHeroStyle ? 'text-white' : 'text-[#2b0835]'
+              }`}
+            >
+              <span className="text-[19px] font-semibold tracking-[-0.01em] sm:text-[21px]" style={{ fontFamily: 'var(--font-primary)' }}>
+                The Martyrs Church
+              </span>
+            </Link>
+          </div>
+
+          {/* Right: CTA */}
+          <div className="hidden items-center justify-end gap-5 lg:flex" style={{ flex: '1 1 0%' }}>
             <Link
               href="/connect"
-              className={`text-base font-medium transition-colors lg:text-[17px] ${
+              className={`text-[13px] font-normal tracking-[0.04em] transition-colors duration-200 ${
                 isHeroStyle
-                  ? 'text-white hover:text-white/80'
-                  : 'text-[#7028a8] hover:text-[#541460]'
+                  ? 'text-white/80 hover:text-white'
+                  : 'text-stone-500 hover:text-[#2b0835]'
               }`}
             >
               Connect
             </Link>
-            <Button
+            <Link
               href="/give"
-              size="sm"
-              variant={isHeroStyle ? 'ghost-white' : 'primary'}
+              className={`inline-flex items-center justify-center rounded-full px-7 py-2.5 text-[13px] font-medium tracking-[0.04em] transition-all duration-200 ${
+                isHeroStyle
+                  ? 'bg-white/95 text-[#1a1a1a] hover:bg-white shadow-lg shadow-black/5'
+                  : 'bg-[#2b0835] text-white hover:bg-[#3d1149] shadow-sm hover:shadow-md'
+              }`}
             >
               Give
-            </Button>
+            </Link>
           </div>
 
-          {/* Mobile menu toggle */}
-          <button
-            type="button"
-            onClick={() => setMobileOpen((prev) => !prev)}
-            className={`p-2 lg:hidden ${isHeroStyle ? 'text-white' : 'text-[#2b0835]'}`}
-            aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
-            aria-expanded={mobileOpen}
-          >
-            {mobileOpen ? (
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round">
-                <line x1="18" y1="6" x2="6" y2="18" />
-                <line x1="6" y1="6" x2="18" y2="18" />
-              </svg>
-            ) : (
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round">
-                <line x1="3" y1="6" x2="21" y2="6" />
-                <line x1="3" y1="12" x2="21" y2="12" />
-                <line x1="3" y1="18" x2="21" y2="18" />
-              </svg>
-            )}
-          </button>
+          {/* Mobile: Logo left, hamburger right */}
+          <div className="flex flex-1 items-center justify-between lg:hidden">
+            <Link
+              href="/"
+              className={`flex shrink-0 items-center transition-opacity hover:opacity-80 ${
+                isHeroStyle ? 'text-white' : 'text-[#2b0835]'
+              }`}
+            >
+              <span className="text-lg font-semibold tracking-tight">
+                The Martyrs Church
+              </span>
+            </Link>
+
+            <button
+              type="button"
+              onClick={() => setMobileOpen((prev) => !prev)}
+              className={`p-2 ${isHeroStyle ? 'text-white' : 'text-[#2b0835]'}`}
+              aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
+              aria-expanded={mobileOpen}
+            >
+              {mobileOpen ? (
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round">
+                  <line x1="18" y1="6" x2="6" y2="18" />
+                  <line x1="6" y1="6" x2="18" y2="18" />
+                </svg>
+              ) : (
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round">
+                  <line x1="3" y1="6" x2="21" y2="6" />
+                  <line x1="3" y1="12" x2="21" y2="12" />
+                  <line x1="3" y1="18" x2="21" y2="18" />
+                </svg>
+              )}
+            </button>
+          </div>
         </div>
 
         {/* Mobile menu panel */}
@@ -368,9 +371,12 @@ export default function Navbar() {
                   >
                     Connect
                   </Link>
-                  <Button href="/give" className="w-full">
+                  <Link
+                    href="/give"
+                    className="inline-flex items-center justify-center rounded-full bg-[#2b0835] px-8 py-3 text-sm font-medium text-white"
+                  >
                     Give
-                  </Button>
+                  </Link>
                 </div>
               </div>
             </motion.div>

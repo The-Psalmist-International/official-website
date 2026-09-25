@@ -42,7 +42,7 @@ export default function MinistriesShowcase() {
   return (
     <section
       aria-labelledby="ministries-showcase-heading"
-      className="overflow-hidden bg-white py-20 text-[#17243b] sm:py-24 lg:py-28"
+      className="overflow-hidden bg-white py-28 text-[#17243b] sm:py-36 lg:py-40"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mb-10 flex flex-col justify-between gap-7 lg:mb-12 lg:flex-row lg:items-end">

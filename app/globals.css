@@ -1,6 +1,14 @@
 @import "tailwindcss";
 
 @font-face {
+  font-family: 'Season Sans';
+  src: url('/fonts/SeasonCollectionVF-TRIAL.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
   font-family: NeueHaasDisplay;
   src: url('/fonts/NeueHaasDisplayLight.ttf') format('truetype');
   font-weight: 300;
@@ -57,9 +65,9 @@
 }
 
 @theme {
-  --font-primary: 'Graphik', sans-serif;
+  --font-primary: 'Season Sans', sans-serif;
   --font-subtext: 'Graphik', sans-serif;
-  --radius-button: 0.5rem;
+  --radius-button: 9999px;
   --radius-card: 0.5rem;
 }
 
@@ -75,4 +83,17 @@ p,
 
 .graphik {
   font-family: var(--font-subtext);
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  animation: marquee 30s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
 }
