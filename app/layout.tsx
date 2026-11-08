@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
-import { LenisProvider } from "../components/LenisProvider";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
 import "./globals.css";
+import FloatingNavbar from "../components/FloatingNavbar";
 
 export const metadata: Metadata = {
   title: "The Martyrs Church",
@@ -17,11 +15,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="antialiased">
-        <LenisProvider>
-          <Navbar />
-          {children}
-          <Footer />
-        </LenisProvider>
+        {children}
+        <FloatingNavbar />
       </body>
     </html>
   );

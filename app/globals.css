@@ -1,9 +1,9 @@
 @import "tailwindcss";
 
 @font-face {
-  font-family: 'Season Sans';
+  font-family: 'Season Collection';
   src: url('/fonts/SeasonCollectionVF-TRIAL.ttf') format('truetype');
-  font-weight: 100 900;
+  font-weight: 300 900;
   font-style: normal;
   font-display: swap;
 }
@@ -65,24 +65,74 @@
 }
 
 @theme {
-  --font-primary: 'Season Sans', sans-serif;
-  --font-subtext: 'Graphik', sans-serif;
-  --radius-button: 9999px;
-  --radius-card: 0.5rem;
+  --font-primary: 'Season Collection', sans-serif;
+  --font-subtext: 'Season Collection', sans-serif;
+  --radius-button: 0px;
+  --radius-card: 0px;
+}
+
+/* Keep square corners across utilities, inline styles, and interaction states. */
+*,
+*::before,
+*::after {
+  border-radius: 0 !important;
+}
+
+.statement-avatar {
+  border-radius: 50% !important;
+}
+
+.social-marquee-track { animation: social-marquee 55s linear infinite; }
+[data-reveal-state] {
+  transition-property: opacity, filter, translate;
+  transition-duration: 220ms;
+  transition-timing-function: cubic-bezier(.22,1,.36,1);
+}
+[data-reveal-state="hidden"] { opacity: 0; filter: blur(4px); translate: 0 8px; }
+[data-reveal-state="visible"] {
+  opacity: 1; filter: blur(0); translate: 0 0;
+  transition-duration: 500ms;
+  transition-delay: var(--reveal-delay, 0ms);
+}
+[data-reveal-state]:focus-within { opacity: 1; filter: none; translate: none; transition-delay: 0ms; }
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal-state] { opacity: 1; filter: none; translate: none; transition: none; }
+}
+.social-marquee-reverse { animation-direction: reverse; animation-duration: 62s; }
+.social-marquee:is(:hover, :focus-within) .social-marquee-track { animation-play-state: paused; }
+@keyframes social-marquee { to { transform: translateX(-50%); } }
+@media (prefers-reduced-motion: reduce) {
+  .social-marquee { overflow-x: auto; }
+  .social-marquee-track { animation: none; }
+  .social-marquee-track > [aria-hidden="true"] { display: none; }
 }
 
 body {
-  font-family: var(--font-primary);
+  font-family: var(--font-subtext);
+  font-variation-settings: 'SERF' 0;
   overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.font-primary {
+  font-family: var(--font-primary);
+  font-variation-settings: 'SERF' 50;
 }
 
 p,
 .subtext {
   font-family: var(--font-subtext);
+  font-variation-settings: 'SERF' 0;
 }
 
 .graphik {
   font-family: var(--font-subtext);
+  font-variation-settings: 'SERF' 0;
 }
 
 @keyframes marquee {
@@ -96,4 +146,33 @@ p,
 
 .animate-marquee:hover {
   animation-play-state: paused;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .event-action { cursor: none; }
+}
+
+.wall-page { padding-top: var(--wall-nav-bottom, 176px); padding-bottom: 96px; }
+.wall-viewport { scrollbar-width: none; }
+.wall-viewport::-webkit-scrollbar { display: none; }
+.wall-brick:nth-child(5n + 1) { transform: translateY(-16%); }
+.wall-brick:nth-child(5n + 2) { transform: translateY(12%); }
+.wall-brick:nth-child(5n + 4) { transform: translateY(-10%); }
+.wall-brick:nth-child(5n) { transform: translateY(18%); }
+.wall-brick { clip-path: polygon(0 1%, 37% 0, 100% 1.5%, 99.5% 99%, 63% 100%, 0 98.5%); }
+.wall-reveal { opacity: 0; visibility: hidden; transition: opacity .2s .18s, visibility .2s .18s; }
+.wall-brick:is(:hover, :focus-within) .wall-reveal { opacity: 1; visibility: visible; }
+.wall-sweep { transform: translateX(-101%); }
+.wall-brick:is(:hover, :focus-within) .wall-sweep { animation: wall-sweep .7s cubic-bezier(.22,1,.36,1) both; }
+.wall-brick:is(:hover, :focus-within) .wall-sweep-two { animation-delay: .07s; }
+@keyframes wall-sweep { 0% { transform: translateX(-101%); } 45% { transform: translateX(0); } 100% { transform: translateX(101%); } }
+.wall-action::before, .wall-action::after { content: ''; position: absolute; inset: 0; transform: translateX(-101%); transition: transform .4s cubic-bezier(.22,1,.36,1); background: #b897da; pointer-events: none; }
+.wall-action::after { background: #dfcbf1; transition-delay: .07s; }
+.wall-action:is(:hover, :focus-visible)::before, .wall-action:is(:hover, :focus-visible)::after,
+a.wall-action:is(:hover, :focus-visible)::before, a.wall-action:is(:hover, :focus-visible)::after { transform: translateX(0); }
+.wall-action:is(:hover, :focus-visible) { color: #24132e; }
+@media (hover: none) { .wall-brick:focus-within .wall-reveal { opacity: 1; visibility: visible; } }
+@media (prefers-reduced-motion: reduce) {
+  .wall-sweep { display: none; }
+  .wall-reveal, .wall-action::before, .wall-action::after { transition: none; }
 }

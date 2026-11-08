@@ -6,6 +6,7 @@ import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ministries } from '@/data/ministries';
 import NavDropdownMenu, { NavDropdownItem, type NavDropdownChild } from '@/components/NavDropdownMenu';
+import EventBanner from './EventBanner';
 
 type NavItem =
   | { label: string; href: string; children?: never }
@@ -150,7 +151,7 @@ export default function Navbar() {
         ref={navRef}
         initial={false}
         animate={{
-          y: isVisible || mobileOpen ? 0 : -100,
+          y: isVisible || mobileOpen ? 0 : '-100%',
           opacity: isVisible || mobileOpen ? 1 : 0,
         }}
         transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
@@ -164,6 +165,7 @@ export default function Navbar() {
             : 'border-b border-transparent shadow-none'
         }`}
       >
+        <EventBanner />
         <div className="mx-auto flex h-20 max-w-[1400px] items-center px-8 sm:h-[88px] sm:px-12 lg:px-16">
 
           {/* Left: Nav links */}
