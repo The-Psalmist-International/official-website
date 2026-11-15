@@ -142,7 +142,7 @@ export default function LeadershipSection() {
           <p className="max-w-[370px] text-base leading-relaxed text-[#49345f]/65 md:justify-self-end"><CmsText id="components/LeadershipSection:9bd6bccfb9fde7a4" fallback="Stewards of the vision, committed to raising and equipping the body." /></p>
         </div>
 
-        <motion.article initial={reduced ? false : { opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: .15 }} transition={{ duration: reduced ? 0 : .5 }} aria-labelledby="set-man-heading" className="site-card mb-16 grid gap-8 md:grid-cols-[1.25fr_1fr] md:items-center md:gap-12 lg:mb-20 lg:gap-16">
+        <motion.article initial={reduced ? false : { opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: .15 }} transition={{ duration: reduced ? 0 : .5 }} aria-labelledby="set-man-heading" className="site-card mb-16 grid gap-6 p-4 sm:p-6 md:grid-cols-[1.25fr_1fr] md:items-center md:gap-12 lg:mb-20 lg:gap-16">
           {/* Retain the identified portrait until the couple's photograph is supplied. */}
           <div className="relative aspect-[4/3] overflow-hidden rounded-2xl bg-[#eee5f6] md:aspect-[5/4]">
             <Image src={setMan.image} alt={setMan.name} fill sizes="(max-width: 767px) 90vw, (max-width: 1279px) 52vw, 610px" className="object-cover object-top grayscale transition-[filter] duration-500 hover:grayscale-0 motion-reduce:transition-none" />
@@ -154,13 +154,13 @@ export default function LeadershipSection() {
           </div>
         </motion.article>
 
-        <div id="leaders-grid" className="grid grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-3 lg:grid-cols-5 xl:grid-cols-6">
+        <div id="leaders-grid" className="grid grid-cols-1 gap-x-4 gap-y-6 sm:grid-cols-3 sm:gap-y-8 lg:grid-cols-5 xl:grid-cols-6">
           {otherLeaders.map(leader => (
-            <motion.article key={leader.id} initial={reduced ? false : { opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: .15 }} transition={{ duration: reduced ? 0 : .5, ease: [.22, 1, .36, 1] }} className="site-card group">
+            <motion.article key={leader.id} initial={reduced ? false : { opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: .15 }} transition={{ duration: reduced ? 0 : .5, ease: [.22, 1, .36, 1] }} className="site-card group p-3">
               <div className="relative aspect-[4/5] overflow-hidden rounded-2xl bg-[#eee5f6]">
-                <Image src={leader.image} alt={leader.name} fill sizes="(max-width: 639px) 44vw, (max-width: 1023px) 28vw, (max-width: 1279px) 17vw, 180px" className="object-cover grayscale transition-[filter,transform] duration-500 group-hover:grayscale-0 group-hover:scale-[1.025] motion-reduce:transition-none" />
+                <Image src={leader.image} alt={leader.name} fill sizes="(max-width: 639px) 90vw, (max-width: 1023px) 28vw, (max-width: 1279px) 17vw, 180px" className="object-cover grayscale transition-[filter,transform] duration-500 group-hover:grayscale-0 group-hover:scale-[1.025] motion-reduce:transition-none" />
               </div>
-              <div className="pt-3">
+              <div className="px-1 pt-3 pb-1">
                 <p className="text-xs leading-relaxed text-[#75538f]">{leader.role}</p>
                 <h3 className="mt-1.5 text-base leading-snug tracking-tight">{leader.name}</h3>
               </div>
