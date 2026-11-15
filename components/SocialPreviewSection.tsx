@@ -1,7 +1,10 @@
-import Image from "next/image";
+"use client";
+import { useCmsCollection } from '@/components/cms/ContentProvider';
+import CmsText from '@/components/cms/CmsText';
+import Image from '@/components/cms/CmsImage';
 
 
-const moments = [
+const fallbackmoments = [
   { image: "/assets/IMG_7289.JPG", alt: "The church gathered in worship" },
   { image: "/assets/IMG_7174.JPG", alt: "A moment in the church community" },
   { image: "/assets/church-bg-2.jpg", alt: "Baptism at The Martyrs Church" },
@@ -11,16 +14,17 @@ const moments = [
 ];
 
 export default function SocialPreviewSection() {
+  const moments = useCmsCollection("socialMoments", fallbackmoments);
 
   return (
     <section data-nav-theme="dark" aria-labelledby="social-heading" className="overflow-hidden bg-[#24132e] py-20 text-white sm:py-28">
       <div className="mx-auto mb-10 flex max-w-[1536px] flex-wrap items-end justify-between gap-8 px-6 sm:mb-14 sm:px-12">
         <div>
-          <p className="mb-5 text-xs uppercase tracking-[.16em] text-[#cbb6dc]">Beyond the gathering</p>
-          <h2 id="social-heading" className="max-w-[16ch] text-balance text-[clamp(2.75rem,5vw,5rem)] leading-none tracking-[-.045em]">A little closer to our world.</h2>
+
+          <h2 id="social-heading" className="max-w-[16ch] text-balance text-[clamp(2.75rem,5vw,5rem)] leading-none tracking-[-.045em]"><CmsText id="components/SocialPreviewSection:38b6d19784dfe184" fallback="A little closer to our world." /></h2>
         </div>
         <div className="max-w-[300px]">
-          <p className="text-base leading-relaxed text-white/65">Moments of worship, words of faith, and life together.</p>
+          <p className="text-base leading-relaxed text-white/65"><CmsText id="components/SocialPreviewSection:ce0bb5cb0b5aa235" fallback="Moments of worship, words of faith, and life together." /></p>
         </div>
       </div>
       <div id="community-carousels" className="space-y-4">

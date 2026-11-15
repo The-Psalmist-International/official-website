@@ -67,14 +67,15 @@ export default function EventBanner() {
     const info = EVENT_CONFIG[targetKey];
     const dayText = isToday ? 'Today' : (day === 2 || day === 5 ? `Tomorrow (${info.dayName})` : `${info.dayName}s`);
 
-    setEvent({
+    const frame = requestAnimationFrame(() => setEvent({
       name: info.name,
       dayText,
       time: info.time,
       location: info.location,
       link: info.link,
       isToday,
-    });
+    }));
+    return () => cancelAnimationFrame(frame);
   }, []);
 
   if (!event) return null;

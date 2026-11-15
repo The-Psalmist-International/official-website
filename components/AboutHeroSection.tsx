@@ -1,154 +1,33 @@
-'use client';
+"use client";
 
-import { motion } from 'framer-motion';
+import { useCmsCollection } from '@/components/cms/ContentProvider';
+import CmsText from '@/components/cms/CmsText';
+import CmsLink from '@/components/cms/CmsLink';
+import Image from '@/components/cms/CmsImage';
+import { useRef } from "react";
+import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
 
+const fallbackphotos = [
+  { src: "IMG_7289.JPG", alt: "Our church gathered in worship" },
+  { src: "IMG_7172.JPG", alt: "Discipleship in our community" },
+  { src: "IMG_6744.JPG", alt: "Prayer at The Martyrs Church" },
+  { src: "IMG_7234.JPG", alt: "Our church family gathered together" },
+];
 export default function AboutHeroSection() {
-  return (
-    <section className="relative w-full pt-36 pb-28 md:pt-48 md:pb-40 overflow-hidden bg-white text-stone-900">
-      
-      {/* Centered Hero Heading & Subtext */}
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 mb-14 sm:mb-20">
-        <motion.h1
-          initial={{ opacity: 0, y: 25 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-          className="text-4xl sm:text-5xl md:text-6xl lg:text-[4.2rem] font-normal text-[#2b0835] tracking-tight leading-[1.08] mb-6 [text-wrap:balance]"
-        >
-          Raising a prophetic generation for the nations
-        </motion.h1>
+  const photos = useCmsCollection("aboutPhotos", fallbackphotos);
+  const root = useRef<HTMLElement>(null);
+  const reduced = useReducedMotion();
+  const { scrollYProgress } = useScroll({ target: root, offset: ["start start", "end start"] });
+  const photoY = useTransform(scrollYProgress, [0, 1], [0, -160]);
+  return <section ref={root} id="mandate" data-nav-theme="light" aria-labelledby="mandate-heading" className="mandate-hero relative isolate overflow-hidden bg-white px-6 text-[#24132e] sm:px-12">
+    <div className="relative mx-auto flex min-h-svh max-w-[1440px] items-center justify-center pb-16 pt-48 lg:pb-28 lg:pt-44">
+      <div className="mandate-photos">{photos.map((photo, index) => <motion.div style={reduced ? undefined : { y: photoY }} key={photo.src} className={`mandate-photo mandate-photo-${index}`}><Image src={photo.src.startsWith("http") ? photo.src : `/assets/${photo.src}`} alt={photo.alt} fill sizes="(max-width: 767px) 22vw, (max-width: 1023px) 140px, 220px" priority={index < 2} className="object-cover" /></motion.div>)}</div>
+      <div className="mandate-copy relative z-10 mx-auto max-w-[720px] text-center">
 
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
-          className="text-base sm:text-lg md:text-xl text-[#666666] font-light max-w-2xl mx-auto leading-relaxed [text-wrap:pretty]"
-        >
-          We are an apostolic movement committed to spiritual formation, raising leaders, and establishing God's influence across every sphere of life.
-        </motion.p>
+        <h1 id="mandate-heading" className="text-balance text-[clamp(2.5rem,5.1vw,5rem)] font-normal leading-[1.02] tracking-[-.045em]"><CmsText id="components/AboutHeroSection:54809a0bce3825b3" fallback="We exist to bring the complete witness of God to the nations." /></h1>
+        <p className="mx-auto mt-7 max-w-[470px] text-base leading-relaxed text-[#24132e]/65 sm:text-lg"><CmsText id="components/AboutHeroSection:573c063bdfd56c82" fallback="Training men and women into experiential knowledge of God. Discipling believers into a full understanding of their divine purpose." /></p>
+        <CmsLink href="#vision-mission" className="site-button mt-8 inline-flex min-h-12 items-center bg-[#49345f] px-6 text-sm font-medium text-white transition-colors hover:bg-[#75538f] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#75538f]"><CmsText id="components/AboutHeroSection:1445799c033a2d17" fallback="Learn more" /></CmsLink>
       </div>
-
-      {/* Rich Multi-Image Mosaic Collage */}
-      <div className="w-full relative z-10 px-3 sm:px-6 lg:px-8 max-w-[1500px] mx-auto">
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3.5 sm:gap-4 md:gap-5 items-start">
-          
-          {/* Column 1 */}
-          <motion.div
-            initial={{ opacity: 0, y: 35 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="flex flex-col gap-3.5 sm:gap-5 lg:translate-y-8"
-          >
-            <div className="group aspect-[4/5] rounded-lg overflow-hidden bg-stone-100 border border-stone-200/80 shadow-[0_8px_25px_rgba(0,0,0,0.05)]">
-              <img
-                src="/assets/IMG_6718.JPG"
-                alt="Community life"
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
-              />
-            </div>
-            <div className="group aspect-[3/4] rounded-lg overflow-hidden bg-stone-100 border border-stone-200/80 shadow-[0_8px_25px_rgba(0,0,0,0.05)]">
-              <img
-                src="/assets/IMG_7194.JPG"
-                alt="Community fellowship"
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
-              />
-            </div>
-          </motion.div>
-
-          {/* Column 2 */}
-          <motion.div
-            initial={{ opacity: 0, y: 35 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="flex flex-col gap-3.5 sm:gap-5 lg:-translate-y-6"
-          >
-            <div className="group aspect-[3/4] rounded-lg overflow-hidden bg-stone-100 border border-stone-200/80 shadow-[0_8px_25px_rgba(0,0,0,0.05)]">
-              <img
-                src="/assets/IMG_6744.JPG"
-                alt="Prayer and worship"
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
-              />
-            </div>
-            <div className="group aspect-[4/5] rounded-lg overflow-hidden bg-stone-100 border border-stone-200/80 shadow-[0_8px_25px_rgba(0,0,0,0.05)]">
-              <img
-                src="/assets/IMG_7255.JPG"
-                alt="Worship team"
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
-              />
-            </div>
-          </motion.div>
-
-          {/* Column 3 (Centerpiece Column) */}
-          <motion.div
-            initial={{ opacity: 0, y: 35 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="col-span-2 sm:col-span-1 flex flex-col gap-3.5 sm:gap-5 lg:translate-y-2"
-          >
-            <div className="group aspect-[4/5] rounded-lg overflow-hidden bg-stone-100 border border-stone-200/80 shadow-[0_12px_30px_rgba(43,8,53,0.08)]">
-              <img
-                src="/assets/IMG_7289.JPG"
-                alt="Apostolic gathering"
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
-              />
-            </div>
-            <div className="group aspect-[3/4] rounded-lg overflow-hidden bg-stone-100 border border-stone-200/80 shadow-[0_8px_25px_rgba(0,0,0,0.05)]">
-              <img
-                src="/assets/IMG_7172.JPG"
-                alt="Ministry leadership"
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
-              />
-            </div>
-          </motion.div>
-
-          {/* Column 4 */}
-          <motion.div
-            initial={{ opacity: 0, y: 35 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="flex flex-col gap-3.5 sm:gap-5 lg:-translate-y-8"
-          >
-            <div className="group aspect-[3/4] rounded-lg overflow-hidden bg-stone-100 border border-stone-200/80 shadow-[0_8px_25px_rgba(0,0,0,0.05)]">
-              <img
-                src="/assets/IMG_7234.JPG"
-                alt="Joyful community"
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
-              />
-            </div>
-            <div className="group aspect-[4/5] rounded-lg overflow-hidden bg-stone-100 border border-stone-200/80 shadow-[0_8px_25px_rgba(0,0,0,0.05)]">
-              <img
-                src="/assets/IMG_6776.JPG"
-                alt="Church discipleship"
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
-              />
-            </div>
-          </motion.div>
-
-          {/* Column 5 */}
-          <motion.div
-            initial={{ opacity: 0, y: 35 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.5 }}
-            className="flex flex-col gap-3.5 sm:gap-5 lg:translate-y-6"
-          >
-            <div className="group aspect-[4/5] rounded-lg overflow-hidden bg-stone-100 border border-stone-200/80 shadow-[0_8px_25px_rgba(0,0,0,0.05)]">
-              <img
-                src="/assets/hero-bg.JPG"
-                alt="Ministry campus"
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
-              />
-            </div>
-            <div className="group aspect-[3/4] rounded-lg overflow-hidden bg-stone-100 border border-stone-200/80 shadow-[0_8px_25px_rgba(0,0,0,0.05)]">
-              <img
-                src="/assets/IMG_7283.JPG"
-                alt="Prayer meeting"
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
-              />
-            </div>
-          </motion.div>
-
-        </div>
-      </div>
-
-    </section>
-  );
+    </div>
+  </section>;
 }

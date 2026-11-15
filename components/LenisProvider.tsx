@@ -51,7 +51,7 @@ export function LenisProvider({ children }: { children: ReactNode }) {
   const getLenis = useCallback(() => lenisRef.current, []);
   const scrollTo = useCallback(
     (target: number | HTMLElement, opts?: { immediate?: boolean }) => {
-      lenisRef.current?.scrollTo(target as any, opts);
+      lenisRef.current?.scrollTo(target, opts);
     },
     []
   );

@@ -1,0 +1,5 @@
+import { getCmsMetadata } from '@/lib/cms/metadata';
+import CmsText from '@/components/cms/CmsText';
+export default function Terms() { return <main className="min-h-screen bg-[#24132e] px-6 py-40 text-white"><article className="site-card mx-auto max-w-2xl space-y-6"><h1 className="text-4xl"><CmsText id="app/terms-and-conditions/page:34e6faf15abddcd4" fallback="Terms and Conditions" /></h1><p><CmsText id="app/terms-and-conditions/page:79b085d43248d4c8" fallback="This website provides information about The Martyrs Church and its gatherings. Event details may change; check the linked event information before making arrangements." /></p><p><CmsText id="app/terms-and-conditions/page:abfc8a15505099bb" fallback="When preparing a testimony, share your own experience and avoid including another person’s private information without their permission." /></p><p><CmsText id="app/terms-and-conditions/page:83143c4d4e024265" fallback="External websites and services have their own terms and conditions." /></p></article></main>; }
+
+export async function generateMetadata() { return getCmsMetadata("terms-and-conditions", { title: "Terms and Conditions | The Martyrs Church" }); }

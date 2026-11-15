@@ -1,0 +1,618 @@
+{
+  "leaders": [
+    {
+      "id": "1",
+      "name": "Reverend Elorm John Tetteh",
+      "role": "Global Lead & Setman",
+      "image": "/assets/IMG_7172.JPG"
+    },
+    {
+      "id": "2",
+      "name": "Joseph Blay Mensah",
+      "role": "Administrator",
+      "image": "/assets/IMG_7174.JPG"
+    },
+    {
+      "id": "3",
+      "name": "Bishop Derek Agbeko",
+      "role": "Assistant Administrator",
+      "image": "/assets/IMG_7178.JPG"
+    },
+    {
+      "id": "4",
+      "name": "Episcopal Leader",
+      "role": "Assistant Administrator",
+      "image": "/assets/IMG_7191.JPG"
+    },
+    {
+      "id": "5",
+      "name": "Pastor Michael Brown",
+      "role": "Campus Ministry Coordinator",
+      "image": "/assets/IMG_7194.JPG"
+    },
+    {
+      "id": "6",
+      "name": "Sarah Mensah",
+      "role": "Discipleship Lead",
+      "image": "/assets/IMG_7234.JPG"
+    },
+    {
+      "id": "7",
+      "name": "David Osei",
+      "role": "Outreach & Community Lead",
+      "image": "/assets/IMG_7237.JPG"
+    },
+    {
+      "id": "8",
+      "name": "Grace Ampofo",
+      "role": "Worship Coordinator",
+      "image": "/assets/IMG_7255.JPG"
+    },
+    {
+      "id": "9",
+      "name": "Elder Joshua Mensah",
+      "role": "Chief Intercessor",
+      "image": "/assets/IMG_7283.JPG"
+    },
+    {
+      "id": "10",
+      "name": "Minister Samuel Addo",
+      "role": "Prophetic Watchman",
+      "image": "/assets/IMG_7289.JPG"
+    },
+    {
+      "id": "11",
+      "name": "Daniel Kojo",
+      "role": "Night Watch Coordinator",
+      "image": "/assets/IMG_7294.JPG"
+    },
+    {
+      "id": "12",
+      "name": "Lady Pastor Deborah",
+      "role": "Lead Intercessor",
+      "image": "/assets/IMG_7255.JPG"
+    },
+    {
+      "id": "13",
+      "name": "Minister Abigail Boateng",
+      "role": "Altar Ministry Coordinator",
+      "image": "/assets/IMG_7295.JPG"
+    },
+    {
+      "id": "14",
+      "name": "Pastor Peter Kwakye",
+      "role": "Global Missions Director",
+      "image": "/assets/IMG_6718.JPG"
+    },
+    {
+      "id": "15",
+      "name": "Timothy Ansah",
+      "role": "Unreached Nations Coordinator",
+      "image": "/assets/IMG_6744.JPG"
+    },
+    {
+      "id": "16",
+      "name": "Minister Caleb Arthur",
+      "role": "24/7 Prayer Hub Lead",
+      "image": "/assets/IMG_6756.JPG"
+    },
+    {
+      "id": "17",
+      "name": "Esther Appiah",
+      "role": "Spiritual Formation Lead",
+      "image": "/assets/IMG_6776.JPG"
+    },
+    {
+      "id": "18",
+      "name": "Pasteur Jean-Paul Koffi",
+      "role": "Francophone Ministry Lead",
+      "image": "/assets/IMG_7139.JPG"
+    }
+  ],
+  "ministries": [
+    {
+      "id": "house-of-prayer",
+      "name": "House of Prayer",
+      "eyebrow": "Prayer & intercession",
+      "summary": "A people devoted to the altar.",
+      "description": "House of Prayer gathers believers to contend in prayer, cultivate intimacy with God, and stand in the gap for the church, communities, and nations.",
+      "image": "/assets/IMG_6744.JPG",
+      "background": "#12233f",
+      "foreground": "#ffffff",
+      "accent": "#d8b56a"
+    },
+    {
+      "id": "watchmen",
+      "name": "The Watchmen",
+      "eyebrow": "Discernment & intercession",
+      "summary": "Awake, discerning, and steadfast.",
+      "description": "The Watchmen are committed to spiritual vigilance—discerning the times, guarding the work of God, and faithfully interceding for His purposes.",
+      "image": "/assets/IMG_7283.JPG",
+      "background": "#6b1f36",
+      "foreground": "#fff8f8",
+      "accent": "#e6a1af"
+    },
+    {
+      "id": "zemirot",
+      "name": "Zemirot",
+      "eyebrow": "Music & worship",
+      "summary": "Giving sound to the worship of heaven.",
+      "description": "Zemirot serves the church through music and worship, leading people into reverence, joy, and a deeper awareness of the presence of God.",
+      "image": "/assets/IMG_7255.JPG",
+      "background": "#f5f3ef",
+      "foreground": "#111111",
+      "accent": "#111111"
+    },
+    {
+      "id": "oracles",
+      "name": "The Oracles",
+      "eyebrow": "Word & teaching",
+      "summary": "Rooted in truth. Formed by the Word.",
+      "description": "The Oracles strengthen believers through sound doctrine, biblical teaching, and the faithful communication of the whole counsel of God.",
+      "image": "/assets/IMG_7172.JPG",
+      "background": "#b56a22",
+      "foreground": "#fffaf0",
+      "accent": "#f2d39b"
+    },
+    {
+      "id": "mystic-theatre",
+      "name": "Mystic Theatre",
+      "eyebrow": "Drama & creative arts",
+      "summary": "Revealing eternal truth through story.",
+      "description": "Mystic Theatre uses drama, movement, and visual storytelling to communicate the gospel and make spiritual realities tangible to every generation.",
+      "image": "/assets/IMG_7237.JPG",
+      "background": "#24204f",
+      "foreground": "#ffffff",
+      "accent": "#a9a0ff"
+    },
+    {
+      "id": "priestesses",
+      "name": "Priestesses of the Altar",
+      "eyebrow": "Women & consecration",
+      "summary": "Women formed in devotion and purpose.",
+      "description": "Priestesses of the Altar equips women to live consecrated lives, grow in spiritual authority, and serve God faithfully in the church and every sphere of society.",
+      "image": "/assets/IMG_7295.JPG",
+      "background": "#7028a8",
+      "foreground": "#ffffff",
+      "accent": "#e5b9ff"
+    },
+    {
+      "id": "french",
+      "name": "French Community",
+      "eyebrow": "Francophone community",
+      "summary": "One family, worshipping across languages.",
+      "description": "The French Community creates a spiritual home for French-speaking believers through worship, fellowship, discipleship, and pastoral care.",
+      "image": "/assets/IMG_7139.JPG",
+      "background": "#175f83",
+      "foreground": "#ffffff",
+      "accent": "#9dddf5"
+    }
+  ],
+  "churchHistory": [
+    {
+      "title": "The Vision",
+      "date": "January 4, 2020",
+      "dateTime": "2020-01-04",
+      "description": "A divine vision was received revealing God's agenda to raise a family of believers committed to His eternal purposes.",
+      "image": "/assets/IMG_7289.JPG"
+    },
+    {
+      "title": "Movement Begins",
+      "date": "March 2020",
+      "dateTime": "2020-03",
+      "description": "Church of The Martyrs officially began as an apostolic Christian movement established after the pattern of Christ — King, Priest, and Prophet.",
+      "image": "/assets/IMG_6718.JPG"
+    },
+    {
+      "title": "Early Gatherings & Discipleship",
+      "date": "2020–2021",
+      "dateTime": "2020",
+      "description": "The ministry began forming a community of believers focused on prayer, spiritual formation, and discipleship.",
+      "image": "/assets/hero-bg.JPG"
+    },
+    {
+      "title": "Campus Expansion",
+      "date": "2021–2022",
+      "dateTime": "2021",
+      "description": "The movement spread across universities as campus communities became hubs for discipleship, prayer, and evangelism.",
+      "image": "/assets/IMG_7178.JPG"
+    }
+  ],
+  "events": [
+    {
+      "name": "Nouthesia S10 Day 2",
+      "image": "/assets/IMG_7289.JPG",
+      "alt": "The church gathered in worship",
+      "action": "Subscribe",
+      "href": "https://www.youtube.com/@ChurchOfTheMartyrs?sub_confirmation=1"
+    },
+    {
+      "name": "Adullam",
+      "image": "/assets/IMG_7234.JPG",
+      "alt": "A gathering of The Martyrs Church",
+      "action": "Register",
+      "href": null
+    }
+  ],
+  "locations": [
+    {
+      "name": "Ghana",
+      "region": "West Africa",
+      "landmark": "Black Star Gate, Accra",
+      "background": "#eee5f6",
+      "image": "/assets/landmarks/ghana.svg",
+      "imageClass": "-right-3 -bottom-2 h-[290px] w-[425px] lg:h-[325px] lg:w-[475px]"
+    },
+    {
+      "name": "Canada",
+      "region": "North America",
+      "landmark": "CN Tower, Toronto",
+      "background": "#eee5f6",
+      "image": "/assets/landmarks/canada.svg",
+      "imageClass": "-right-16 -bottom-2 h-[325px] w-[245px] lg:h-[370px] lg:w-[280px]"
+    },
+    {
+      "name": "United States",
+      "region": "North America",
+      "landmark": "Statue of Liberty, New York",
+      "background": "#eee5f6",
+      "image": "/assets/landmarks/usa.svg",
+      "imageClass": "-right-5 -bottom-2 h-[320px] w-[225px] lg:h-[365px] lg:w-[260px]"
+    },
+    {
+      "name": "London",
+      "region": "United Kingdom",
+      "landmark": "Elizabeth Tower, London",
+      "background": "#eee5f6",
+      "image": "/assets/landmarks/london.svg",
+      "imageClass": "-right-8 -bottom-2 h-[325px] w-[245px] lg:h-[370px] lg:w-[280px]"
+    },
+    {
+      "name": "Nigeria",
+      "region": "West Africa",
+      "landmark": "National Theatre, Lagos",
+      "background": "#eee5f6",
+      "image": "/assets/landmarks/nigeria.svg",
+      "imageClass": "-right-3 -bottom-2 h-[290px] w-[425px] lg:h-[325px] lg:w-[475px]"
+    }
+  ],
+  "visionMission": [
+    {
+      "id": "vision",
+      "label": "Our vision",
+      "title": "A vision for the nations.",
+      "text": "To disciple believers, raise leaders, and establish God's influence across every sphere of life."
+    },
+    {
+      "id": "mission",
+      "label": "Our mission",
+      "title": "Raising a prophetic generation.",
+      "text": "Restoring the apostolic tradition of martyrdom by the Spirit. Raising a prophetic generation capable of discerning and manifesting the desires of God in every sphere of life."
+    }
+  ],
+  "socialMoments": [
+    {
+      "image": "/assets/IMG_7289.JPG",
+      "alt": "The church gathered in worship"
+    },
+    {
+      "image": "/assets/IMG_7174.JPG",
+      "alt": "A moment in the church community"
+    },
+    {
+      "image": "/assets/church-bg-2.jpg",
+      "alt": "Baptism at The Martyrs Church"
+    },
+    {
+      "image": "/assets/IMG_7234.JPG",
+      "alt": "A gathering of The Martyrs Church"
+    },
+    {
+      "image": "/assets/IMG_7178.JPG",
+      "alt": "Life together at The Martyrs Church"
+    },
+    {
+      "image": "/assets/IMG_7283.JPG",
+      "alt": "A moment from a church gathering"
+    }
+  ],
+  "aboutPhotos": [
+    {
+      "src": "IMG_7289.JPG",
+      "alt": "Our church gathered in worship"
+    },
+    {
+      "src": "IMG_7172.JPG",
+      "alt": "Discipleship in our community"
+    },
+    {
+      "src": "IMG_6744.JPG",
+      "alt": "Prayer at The Martyrs Church"
+    },
+    {
+      "src": "IMG_7234.JPG",
+      "alt": "Our church family gathered together"
+    }
+  ],
+  "introFrames": [
+    "IMG_6718.JPG",
+    "IMG_7174.JPG",
+    "IMG_7234.JPG",
+    "IMG_7289.JPG",
+    "IMG_7295.JPG",
+    "church-bg-4.jpg",
+    "IMG_7194.JPG",
+    "church-bg-2.jpg"
+  ],
+  "missionGallery": [
+    "/assets/church-bg-1.jpg",
+    "/assets/church-bg-2.jpg",
+    "/assets/church-bg-3.jpg",
+    "/assets/church-bg-4.jpg"
+  ],
+  "missionActivities": [
+    {
+      "title": "Evangelism",
+      "description": "Sharing the gospel and the witness of Christ.",
+      "image": "/assets/church-bg-1.jpg"
+    },
+    {
+      "title": "Medical outreach",
+      "description": "Serving communities through medical outreach.",
+      "image": "/assets/church-bg-4.jpg"
+    },
+    {
+      "title": "Crusades",
+      "description": "Gathering people for worship and the proclamation of the word.",
+      "image": "/assets/church-bg-3.jpg"
+    },
+    {
+      "title": "Discipleship",
+      "description": "Grounding believers in truth and equipping them to grow.",
+      "image": "/assets/church-bg-2.jpg"
+    }
+  ],
+  "missionMetrics": [
+    {
+      "label": "People reached",
+      "value": 5000,
+      "suffix": "+"
+    },
+    {
+      "label": "Communities visited",
+      "value": 24
+    },
+    {
+      "label": "Medical outreaches",
+      "value": 12
+    },
+    {
+      "label": "Disciples trained",
+      "value": 350,
+      "suffix": "+"
+    }
+  ],
+  "resources": [
+    {
+      "id": "2025-devotional",
+      "title": "2025 Devotional",
+      "edition": "2025",
+      "type": "Devotional",
+      "color": "#dfdcd2"
+    },
+    {
+      "id": "discipleship-manual-1",
+      "title": "Discipleship Manual",
+      "edition": "Volume 1",
+      "type": "Discipleship",
+      "color": "#e6daee"
+    },
+    {
+      "id": "discipleship-manual-2",
+      "title": "Discipleship Manual",
+      "edition": "Volume 2",
+      "type": "Discipleship",
+      "color": "#d8c3e5"
+    },
+    {
+      "id": "prophetic-breed-1",
+      "title": "Prophetic Breed",
+      "edition": "Volume 1",
+      "type": "Prophetic Breed",
+      "color": "#d5ddd5"
+    }
+  ],
+  "serviceSchedule": [
+    {
+      "name": "Midweek Service",
+      "day": 3,
+      "minute": 1170,
+      "time": "7:30pm",
+      "dayName": "Wednesday"
+    },
+    {
+      "name": "Shabbat Service",
+      "day": 6,
+      "minute": 840,
+      "time": "2pm",
+      "dayName": "Saturday"
+    }
+  ],
+  "footerLinks": [
+    {
+      "label": "About the church",
+      "href": "/about-us"
+    },
+    {
+      "label": "Services",
+      "href": "/services"
+    },
+    {
+      "label": "Missions",
+      "href": "/missions"
+    },
+    {
+      "label": "Discipleship",
+      "href": "/discipleship"
+    },
+    {
+      "label": "Resources",
+      "href": "/resources"
+    },
+    {
+      "label": "Leadership",
+      "href": "/about-us#leadership"
+    },
+    {
+      "label": "The testimony wall",
+      "href": "/testimony-wall"
+    }
+  ],
+  "testimonies": [
+    {
+      "title": "18 Years of Fibroid Turned Baby",
+      "program": "Nouthesia S09",
+      "youtubeId": null
+    },
+    {
+      "title": "Fatty Liver of 5 Years Returned to Normal",
+      "program": "Nouthesia S09",
+      "youtubeId": null
+    }
+  ],
+  "wallTestimonies": [
+    {
+      "title": "18 Years of Fibroid Turned Baby",
+      "program": "Nouthesia S09",
+      "youtubeId": null
+    },
+    {
+      "title": "Fatty Liver of 5 Years Returned to Normal",
+      "program": "Nouthesia S09",
+      "youtubeId": null
+    },
+    {
+      "title": "A New Beginning for Our Family",
+      "program": "Sample testimony",
+      "youtubeId": null,
+      "sample": true
+    },
+    {
+      "title": "Peace in the Midst of the Storm",
+      "program": "Sample testimony",
+      "youtubeId": null,
+      "sample": true
+    },
+    {
+      "title": "An Unexpected Open Door",
+      "program": "Sample testimony",
+      "youtubeId": null,
+      "sample": true
+    },
+    {
+      "title": "Hope Restored After Years of Waiting",
+      "program": "Sample testimony",
+      "youtubeId": null,
+      "sample": true
+    },
+    {
+      "title": "A Family Reunited",
+      "program": "Sample testimony",
+      "youtubeId": null,
+      "sample": true
+    },
+    {
+      "title": "Strength for a New Season",
+      "program": "Sample testimony",
+      "youtubeId": null,
+      "sample": true
+    },
+    {
+      "title": "From Fear to Faith",
+      "program": "Sample testimony",
+      "youtubeId": null,
+      "sample": true
+    },
+    {
+      "title": "Provision at the Right Time",
+      "program": "Sample testimony",
+      "youtubeId": null,
+      "sample": true
+    },
+    {
+      "title": "Joy After a Season of Grief",
+      "program": "Sample testimony",
+      "youtubeId": null,
+      "sample": true
+    },
+    {
+      "title": "A Journey of Restoration",
+      "program": "Sample testimony",
+      "youtubeId": null,
+      "sample": true
+    },
+    {
+      "title": "Finding Purpose Again",
+      "program": "Sample testimony",
+      "youtubeId": null,
+      "sample": true
+    },
+    {
+      "title": "Grace for Every Step",
+      "program": "Sample testimony",
+      "youtubeId": null,
+      "sample": true
+    }
+  ],
+  "navigation": [
+    {
+      "label": "About",
+      "href": "/about-us"
+    },
+    {
+      "label": "Services",
+      "href": "/services"
+    },
+    {
+      "label": "Missions",
+      "href": "/missions"
+    },
+    {
+      "label": "Discipleship",
+      "href": "/discipleship"
+    },
+    {
+      "label": "Resources",
+      "href": "/resources"
+    },
+    {
+      "label": "Contact",
+      "href": "/contact"
+    }
+  ],
+  "publishingSettings": [
+    {
+      "missionMetricsAreExamples": true,
+      "discipleshipApplicationsOpen": false,
+      "discipleshipApplicationUrl": ""
+    }
+  ],
+  "socialProfiles": [
+    {
+      "name": "Instagram",
+      "href": ""
+    },
+    {
+      "name": "TikTok",
+      "href": ""
+    },
+    {
+      "name": "YouTube",
+      "href": "https://www.youtube.com/@ChurchOfTheMartyrs"
+    },
+    {
+      "name": "Facebook",
+      "href": ""
+    }
+  ]
+}

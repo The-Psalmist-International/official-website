@@ -1,9 +1,13 @@
 "use client";
 
+import { useCmsCollection } from '@/components/cms/ContentProvider';
+import CmsText from '@/components/cms/CmsText';
+import CmsLink from '@/components/cms/CmsLink';
+import Image from "@/components/cms/CmsImage";
 import { useEffect, useRef, useState } from "react";
 import { motion, useReducedMotion, useInView } from "framer-motion";
 
-const locations = [
+const fallbacklocations = [
   { name: "Ghana", region: "West Africa", landmark: "Black Star Gate, Accra", background: "#eee5f6", image: "/assets/landmarks/ghana.svg", imageClass: "-right-3 -bottom-2 h-[290px] w-[425px] lg:h-[325px] lg:w-[475px]" },
   { name: "Canada", region: "North America", landmark: "CN Tower, Toronto", background: "#eee5f6", image: "/assets/landmarks/canada.svg", imageClass: "-right-16 -bottom-2 h-[325px] w-[245px] lg:h-[370px] lg:w-[280px]" },
   { name: "United States", region: "North America", landmark: "Statue of Liberty, New York", background: "#eee5f6", image: "/assets/landmarks/usa.svg", imageClass: "-right-5 -bottom-2 h-[320px] w-[225px] lg:h-[365px] lg:w-[260px]" },
@@ -16,12 +20,13 @@ function AnimatedLandmark({ src, label }: { src: string; label: string }) {
   const visible = useInView(root, { once: true, amount: .2 });
   return (
     <div ref={root} className="relative h-full w-full">
-      {visible && <img src={src} alt={`Animated vector illustration of ${label}`} className="h-full w-full object-contain object-bottom" />}
+      {visible && <Image fill unoptimized src={src} alt={`Animated vector illustration of ${label}`} className="h-full w-full object-contain object-bottom" />}
     </div>
   );
 }
 
 export default function GlobalPresence() {
+  const locations = useCmsCollection("locations", fallbacklocations);
   const reduced = useReducedMotion();
   const track = useRef<HTMLDivElement>(null);
   const [edges, setEdges] = useState({ start: true, end: false });
@@ -46,20 +51,19 @@ export default function GlobalPresence() {
       <div className="mx-auto max-w-[1160px]">
         <div className="mb-12 flex flex-col justify-between gap-8 sm:flex-row sm:items-end">
           <div className="max-w-[650px]">
-            <p className="mb-5 text-xs font-medium uppercase tracking-[.16em] text-stone-400">Our presence</p>
-            <h2 id="presence-title" className="text-4xl font-normal leading-[1.08] tracking-[-.035em] sm:text-5xl lg:text-6xl">One church, across nations.</h2>
-            <p className="mt-5 max-w-[480px] text-base leading-relaxed text-stone-500">Across borders, we gather as one family to worship, grow in the Word, and reveal the witness of God to the nations.</p>
+
+            <h2 id="presence-title" className="text-4xl font-normal leading-[1.08] tracking-[-.035em] sm:text-5xl lg:text-6xl"><CmsText id="components/GlobalPresence:4ad6f1ac7e223c36" fallback="One church, across nations." /></h2>
+            <p className="mt-5 max-w-[480px] text-base leading-relaxed text-stone-500"><CmsText id="components/GlobalPresence:08c514530066992d" fallback="Across borders, we gather as one family to worship, grow in the Word, and reveal the witness of God to the nations." /></p>
           </div>
-          <a href="https://share.google/ONIqoMH5HO69gJyGj" target="_blank" rel="noopener noreferrer" className="group relative isolate inline-flex min-h-12 shrink-0 items-center justify-center gap-8 self-start overflow-hidden border border-black/15 px-6 text-sm font-semibold focus-visible:outline-2 focus-visible:outline-offset-4 sm:self-auto">
+          <CmsLink href="https://share.google/ONIqoMH5HO69gJyGj" target="_blank" rel="noopener noreferrer" className="site-button group relative isolate inline-flex min-h-12 shrink-0 items-center justify-center gap-8 self-start overflow-hidden border border-black/15 px-6 text-sm font-semibold focus-visible:outline-2 focus-visible:outline-offset-4 sm:self-auto">
             <span aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10 -translate-x-full bg-[#b897da] transition-transform duration-500 ease-[cubic-bezier(.22,1,.36,1)] group-hover:translate-x-0 group-focus-visible:translate-x-0 motion-reduce:transition-none" />
             <span aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10 -translate-x-full bg-[#c9abe6] transition-transform delay-75 duration-500 ease-[cubic-bezier(.22,1,.36,1)] group-hover:translate-x-0 group-focus-visible:translate-x-0 motion-reduce:transition-none" />
-            <span aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10 -translate-x-full bg-[#dfcbf1] transition-transform delay-150 duration-500 ease-[cubic-bezier(.22,1,.36,1)] group-hover:translate-x-0 group-focus-visible:translate-x-0 motion-reduce:transition-none" />
-            Join us <span aria-hidden="true">&#8594;</span>
-          </a>
+            <span aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10 -translate-x-full bg-[#dfcbf1] transition-transform delay-150 duration-500 ease-[cubic-bezier(.22,1,.36,1)] group-hover:translate-x-0 group-focus-visible:translate-x-0 motion-reduce:transition-none" /><CmsText id="components/GlobalPresence:cb3f33576b181310" fallback="Join us " /><span aria-hidden="true">&#8594;</span>
+          </CmsLink>
         </div>
         <div ref={track} id="location-carousel" role="region" aria-roledescription="carousel" aria-label="Our locations" tabIndex={0} onKeyDown={event => { if (event.key === "ArrowRight" || event.key === "ArrowLeft") { event.preventDefault(); move(event.key === "ArrowRight" ? 1 : -1); } }} className="flex snap-x snap-mandatory gap-4 overflow-x-auto pb-3 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#a283bc]">
           {locations.map((location, index) => (
-            <motion.article key={location.name} initial={false} animate={{ opacity: 1 }} transition={{ duration: .5, delay: index * .08 }} role="group" aria-roledescription="slide" aria-label={`${index + 1} of ${locations.length}: ${location.name}`} className="group relative w-[88%] shrink-0 snap-start sm:w-[calc((100%-16px)/2)] lg:w-[calc((100%-32px)/3)] min-h-[370px] overflow-hidden p-7 lg:min-h-[420px]" style={{ backgroundColor: location.background }}>
+            <motion.article key={location.name} initial={false} animate={{ opacity: 1 }} transition={{ duration: .5, delay: index * .08 }} role="group" aria-roledescription="slide" aria-label={`${index + 1} of ${locations.length}: ${location.name}`} className="site-card group relative w-[88%] shrink-0 snap-start sm:w-[calc((100%-16px)/2)] lg:w-[calc((100%-32px)/3)] min-h-[370px] overflow-hidden p-7 lg:min-h-[420px]" style={{ backgroundColor: location.background }}>
               <p className="text-[10px] font-medium uppercase tracking-[.14em] text-black/40">{location.region}</p>
               <h3 className="mt-2 text-3xl font-normal tracking-[-.025em]">{location.name}</h3>
               <motion.div initial={reduced ? false : { opacity: 0, y: 30, scale: .97 }} whileInView={{ opacity: 1, y: 0, scale: 1 }} viewport={{ once: true, amount: .2 }} transition={{ duration: .8, delay: .12 + index * .08, ease: [.22, 1, .36, 1] }} className={`absolute origin-bottom-right ${location.imageClass}`}>
@@ -72,8 +76,8 @@ export default function GlobalPresence() {
         </div>
         <div className="mt-6 flex items-center justify-end">
           <div className="flex gap-2">
-            <button type="button" aria-label="Previous locations" aria-controls="location-carousel" disabled={edges.start} onClick={() => move(-1)} className="flex size-11 items-center justify-center border border-black/15 transition-colors hover:bg-[#eee5f6] disabled:opacity-25 disabled:hover:bg-transparent">&#8592;</button>
-            <button type="button" aria-label="Next locations" aria-controls="location-carousel" disabled={edges.end} onClick={() => move(1)} className="flex size-11 items-center justify-center border border-black/15 transition-colors hover:bg-[#eee5f6] disabled:opacity-25 disabled:hover:bg-transparent">&#8594;</button>
+            <button type="button" aria-label="Previous locations" aria-controls="location-carousel" disabled={edges.start} onClick={() => move(-1)} className="site-button flex size-11 items-center justify-center border border-black/15 transition-colors hover:bg-[#eee5f6] disabled:opacity-25 disabled:hover:bg-transparent">&#8592;</button>
+            <button type="button" aria-label="Next locations" aria-controls="location-carousel" disabled={edges.end} onClick={() => move(1)} className="site-button flex size-11 items-center justify-center border border-black/15 transition-colors hover:bg-[#eee5f6] disabled:opacity-25 disabled:hover:bg-transparent">&#8594;</button>
           </div>
         </div>
       </div>

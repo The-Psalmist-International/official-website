@@ -46,13 +46,11 @@ export default function MandateSection() {
   return (
     <section
       aria-labelledby="mandate-heading"
-      className="relative overflow-hidden bg-[#fbfaf8] px-4 py-28 text-[#2b0835] sm:px-6 sm:py-36 lg:px-8 lg:py-40"
+      className="relative overflow-hidden bg-white px-4 py-28 text-[#2b0835] sm:px-6 sm:py-36 lg:px-8 lg:py-40"
     >
       <div className="mx-auto max-w-7xl">
         <div className="mb-10 max-w-5xl sm:mb-14">
-          <span className="mb-5 inline-flex rounded-lg bg-[#f7d5f4] px-4 py-1.5 text-[11px] font-medium uppercase tracking-[0.08em] text-[#4a0752]">
-            Our mandate
-          </span>
+
           <h2
             id="mandate-heading"
             className="max-w-[22ch] text-balance text-[34px] font-normal leading-[1.06] tracking-[-0.04em] sm:text-5xl lg:text-[62px]"
@@ -72,7 +70,7 @@ export default function MandateSection() {
                   type="button"
                   onClick={() => setActiveIndex(index)}
                   aria-pressed={isActive}
-                  className="group relative flex min-h-20 w-full items-center border-b border-[#2b0835]/15 py-5 pr-9 text-left outline-none focus-visible:bg-[#f5edf5] sm:min-h-24 sm:py-6"
+                  className="site-button group relative flex min-h-20 w-full items-center border-b border-[#2b0835]/15 py-5 pr-9 text-left outline-none focus-visible:bg-[#f5edf5] sm:min-h-24 sm:py-6"
                 >
                   <span
                     className={`text-pretty text-[15px] leading-[1.2] transition-[color,opacity,transform] duration-300 sm:max-w-[38ch] sm:text-lg ${

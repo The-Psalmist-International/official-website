@@ -57,13 +57,13 @@ function TimelineCard({ event, index, activeStep, progress }: TimelineCardProps)
   const hasReached = activeStep >= index;
 
   return (
-    <article className="relative flex shrink-0 flex-col pt-8">
+    <article className="site-card relative flex shrink-0 flex-col pt-8">
       <div className="absolute left-0 top-0 flex w-full items-center" aria-hidden="true">
         <div
           className="relative z-10 flex size-6 shrink-0 items-center justify-center rounded-full border-2 transition-[border-color,background-color] duration-500"
           style={{
             borderColor: hasReached ? "#6c2a7b" : "#ded8df",
-            backgroundColor: hasReached ? "#f1e7f3" : "#fbfaf8",
+            backgroundColor: hasReached ? "#f1e7f3" : "#ffffff",
           }}
         >
           <div
@@ -156,13 +156,11 @@ export function TimelineSection() {
     <section
       ref={containerRef}
       aria-labelledby="timeline-heading"
-      className="relative h-[410vh] w-full bg-[#fbfaf8]"
+      className="relative h-[410vh] w-full bg-white"
     >
       <div className="sticky top-0 flex h-screen w-full flex-col justify-center overflow-hidden pt-28 sm:pt-36">
         <div className="mx-auto w-full max-w-[1440px] px-6 py-6 md:px-12 lg:px-20">
-          <p className="mb-5 text-[11px] font-medium uppercase tracking-[0.2em] text-[#6c2a7b] sm:text-xs">
-            Our journey
-          </p>
+
 
           <h2
             id="timeline-heading"

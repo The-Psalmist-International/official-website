@@ -1,11 +1,14 @@
 "use client";
 
-import Image from "next/image";
+import { useCmsCollection } from '@/components/cms/ContentProvider';
+import CmsText from '@/components/cms/CmsText';
+import Image from '@/components/cms/CmsImage';
 import { AnimatePresence, motion, useScroll, useTransform, useMotionValueEvent, useReducedMotion } from "framer-motion";
 import { useRef, useState } from "react";
-import { ministries } from "@/data/ministries";
+import { ministries as fallbackministries } from "@/data/ministries";
 
 export default function MinistriesSection() {
+  const ministries = useCmsCollection("ministries", fallbackministries);
   const root = useRef<HTMLElement>(null);
   const reduced = useReducedMotion();
   const [active, setActive] = useState(0);
@@ -26,9 +29,9 @@ export default function MinistriesSection() {
       <div className="px-6 pb-8 pt-28 sm:px-12 md:sticky md:top-0 md:flex md:h-svh md:flex-col lg:px-20">
       <div className="mx-auto w-full max-w-[1160px] md:flex md:min-h-0 md:flex-1 md:flex-col">
         <div className="mb-7 shrink-0 max-w-[650px]">
-          <p className="mb-3 text-xs font-medium uppercase tracking-[.16em] text-stone-400">Find your place</p>
-          <h2 id="ministries-heading" className="text-4xl font-normal leading-tight tracking-[-.035em] sm:text-5xl">Life in our ministries</h2>
-          <p className="mt-3 max-w-[520px] text-base leading-relaxed text-stone-500">Serve, grow, and build community through a ministry shaped around your gifts and calling.</p>
+
+          <h2 id="ministries-heading" className="text-4xl font-normal leading-tight tracking-[-.035em] sm:text-5xl"><CmsText id="components/MinistriesSection:42fc4bbd7bbb3cc1" fallback="Life in our ministries" /></h2>
+          <p className="mt-3 max-w-[520px] text-base leading-relaxed text-stone-500"><CmsText id="components/MinistriesSection:1761baf1e0c0dc17" fallback="Serve, grow, and build community through a ministry shaped around your gifts and calling." /></p>
         </div>
         <div className="grid min-h-0 flex-1 gap-10 md:grid-cols-[minmax(240px,1fr)_1.45fr] md:grid-rows-[minmax(0,1fr)] lg:gap-24">
           <div className="min-h-0 md:overflow-hidden">
@@ -45,7 +48,7 @@ export default function MinistriesSection() {
             </motion.div>
           </div>
           <div className="relative h-[440px] overflow-hidden bg-[#eee5f6] md:h-full md:min-h-0" aria-label={ministries[active].name}>
-            {ministries.map((ministry, index) => <motion.div data-motion-custom key={ministry.id} aria-hidden={active !== index} initial={false} animate={{ opacity: active === index ? 1 : 0, scale: reduced || active === index ? 1 : 1.035, filter: reduced ? "none" : active === index ? "blur(0px)" : "blur(4px)" }} transition={{ duration: reduced ? 0 : active === index ? .5 : .2, ease: [.22, 1, .36, 1] }} className="absolute inset-0"><Image src={ministry.image} alt={ministry.name} fill sizes="(max-width: 768px) 100vw, 700px" className="object-cover object-[center_30%]" /><div aria-hidden="true" className="absolute inset-0 bg-linear-to-t from-black/65 via-transparent to-transparent" /><div className="absolute inset-x-0 bottom-0 p-7 text-white"><p className="mb-3 text-[10px] uppercase tracking-[.14em] text-white/65">{ministry.eyebrow}</p><h3 className="text-3xl font-normal leading-tight">{ministry.summary}</h3></div></motion.div>)}
+            {ministries.map((ministry, index) => <motion.div data-motion-custom key={ministry.id} aria-hidden={active !== index} initial={false} animate={{ opacity: active === index ? 1 : 0, scale: reduced || active === index ? 1 : 1.035, filter: reduced ? "none" : active === index ? "blur(0px)" : "blur(4px)" }} transition={{ duration: reduced ? 0 : active === index ? .5 : .2, ease: [.22, 1, .36, 1] }} className="absolute inset-0"><Image src={ministry.image} alt={ministry.name} fill sizes="(max-width: 768px) 100vw, 700px" className="object-cover object-[center_30%]" /><div aria-hidden="true" className="absolute inset-0 bg-linear-to-t from-black/65 via-transparent to-transparent" /><div className="absolute inset-x-0 bottom-0 p-7 text-white"><h3 className="text-3xl font-normal leading-tight">{ministry.summary}</h3></div></motion.div>)}
           </div>
         </div>
       </div>
