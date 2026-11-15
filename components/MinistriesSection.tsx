@@ -38,7 +38,7 @@ export default function MinistriesSection() {
             <motion.div animate={{ y: active > 2 ? -(active - 2) * 48 : 0 }} transition={{ duration: reduced ? 0 : .35 }}>
             {ministries.map((ministry, index) => (
               <div key={ministry.id} className="relative border-b border-stone-200">
-                <button id={`ministry-trigger-${ministry.id}`} type="button" aria-expanded={active === index} aria-controls={`ministry-copy-${ministry.id}`} onClick={() => select(index)} className={`flex min-h-12 w-full items-center gap-4 py-3 text-left text-lg font-medium transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 ${active === index ? "text-black" : "text-stone-400 hover:text-black"}`}><span className="text-xs tabular-nums">{String(index + 1).padStart(2, "0")}</span>{ministry.name}</button>
+                <button id={`ministry-trigger-${ministry.id}`} type="button" aria-expanded={active === index} aria-controls={`ministry-copy-${ministry.id}`} onClick={() => select(index)} className={`flex min-h-12 w-full items-center gap-4 py-3 text-left text-lg font-medium transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 ${active === index ? "text-black" : "text-stone-500 hover:text-black"}`}><span className="text-xs tabular-nums">{String(index + 1).padStart(2, "0")}</span>{ministry.name}</button>
                 <AnimatePresence initial={false}>
                   {active === index && <motion.div id={`ministry-copy-${ministry.id}`} data-motion-custom role="region" aria-labelledby={`ministry-trigger-${ministry.id}`} initial={{ height: 0, opacity: 0, filter: reduced ? "none" : "blur(4px)" }} animate={{ height: "auto", opacity: 1, filter: "blur(0px)" }} exit={{ height: 0, opacity: 0, filter: reduced ? "none" : "blur(4px)", transition: { duration: reduced ? 0 : .2 } }} transition={{ duration: reduced ? 0 : .3, ease: [.22, 1, .36, 1] }} className="overflow-hidden"><p className="max-w-[370px] pb-7 pl-8 text-sm leading-relaxed text-stone-500">{ministry.description}</p></motion.div>}
                 </AnimatePresence>
@@ -47,7 +47,7 @@ export default function MinistriesSection() {
             ))}
             </motion.div>
           </div>
-          <div className="relative h-[440px] overflow-hidden bg-[#eee5f6] md:h-full md:min-h-0" aria-label={ministries[active].name}>
+          <div className="relative h-[440px] overflow-hidden bg-[#eee5f6] md:h-full md:min-h-0">
             {ministries.map((ministry, index) => <motion.div data-motion-custom key={ministry.id} aria-hidden={active !== index} initial={false} animate={{ opacity: active === index ? 1 : 0, scale: reduced || active === index ? 1 : 1.035, filter: reduced ? "none" : active === index ? "blur(0px)" : "blur(4px)" }} transition={{ duration: reduced ? 0 : active === index ? .5 : .2, ease: [.22, 1, .36, 1] }} className="absolute inset-0"><Image src={ministry.image} alt={ministry.name} fill sizes="(max-width: 768px) 100vw, 700px" className="object-cover object-[center_30%]" /><div aria-hidden="true" className="absolute inset-0 bg-linear-to-t from-black/65 via-transparent to-transparent" /><div className="absolute inset-x-0 bottom-0 p-7 text-white"><h3 className="text-3xl font-normal leading-tight">{ministry.summary}</h3></div></motion.div>)}
           </div>
         </div>

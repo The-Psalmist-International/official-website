@@ -21,7 +21,7 @@ function Milestone({ event, index, total }: { event: (typeof fallbackchurchHisto
     <motion.div initial={reduced ? false : { opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: .3 }} transition={{ duration: reduced ? 0 : .6, delay: reduced ? 0 : .1, ease: [.22, 1, .36, 1] }} className={`md:row-start-1 ${rightImage ? "md:col-start-1 md:pr-8" : "md:col-start-3 md:pl-8"}`}>
       <time dateTime={event.dateTime} className="text-xs font-medium uppercase tracking-[.14em] text-[#75538f]">{event.date}</time>
       <h3 className="mt-4 max-w-[18ch] text-balance text-3xl leading-[1.08] tracking-[-.035em] sm:text-4xl">{event.title}</h3>
-      <p className="mt-5 max-w-[420px] text-base leading-relaxed text-[#49345f]/70">{event.description}</p>
+      <p className="mt-5 max-w-[420px] text-base leading-relaxed text-[#49345f]/85">{event.description}</p>
     </motion.div>
   </li>;
 }

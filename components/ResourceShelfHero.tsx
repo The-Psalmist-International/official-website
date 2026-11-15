@@ -40,7 +40,7 @@ export default function ResourceShelfHero({ resources }: { resources: ShelfBook[
     if (focus) book.focus({ preventScroll: true });
   }
   return <section ref={root} data-nav-theme="light" data-motion-custom aria-labelledby="resources-heading" className="resource-shelf-hero relative flex flex-col items-center justify-center overflow-hidden bg-white px-6 text-[#24132e] sm:px-12">
-    <div className="resource-shelf" aria-label="Books from our resource library">
+    <div className="resource-shelf" role="group" aria-label="Books from our resource library">
       <div ref={shelf} className="resource-shelf-books" onKeyDown={event => {
         if (!["ArrowLeft", "ArrowRight", "Home", "End"].includes(event.key)) return;
         event.preventDefault();
@@ -64,7 +64,7 @@ export default function ResourceShelfHero({ resources }: { resources: ShelfBook[
     </div>
     <motion.div className="shelf-hero-copy relative flex max-w-[800px] flex-col items-center text-center" style={reduced ? undefined : { opacity, y }}>
       <h1 id="resources-heading" className="max-w-[17ch] text-balance font-normal leading-[1.02] tracking-[-.045em]"><CmsText id="components/ResourceShelfHero:6ccbe5336e4c3f8d" fallback="Rooted in the Word. Growing in faith." /></h1>
-      <p className="max-w-[490px] leading-relaxed text-[#24132e]/60"><CmsText id="components/ResourceShelfHero:5d3e2f1e001cd475" fallback="Discipleship manuals, devotionals, and resources to help you know God more deeply and live out your faith every day." /></p>
+      <p className="max-w-[490px] leading-relaxed text-[#24132e]/75"><CmsText id="components/ResourceShelfHero:5d3e2f1e001cd475" fallback="Discipleship manuals, devotionals, and resources to help you know God more deeply and live out your faith every day." /></p>
       <CmsLink href="#library" className="inline-flex min-h-11 items-center gap-6 text-sm font-medium focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#75538f]"><CmsText id="components/ResourceShelfHero:f7ac1a99518f873d" fallback="Explore resources" /></CmsLink>
     </motion.div>
   </section>;

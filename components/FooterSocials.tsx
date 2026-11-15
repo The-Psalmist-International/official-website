@@ -18,8 +18,8 @@ const paths: Record<string, string> = {
 
 export default function FooterSocials() {
   const socials = useCmsCollection('socialProfiles', fallback);
-  return <div className="mt-5 flex items-center gap-1" aria-label="Social media">{socials.map(social => {
+  return <div className="mt-5 flex items-center gap-1" role="group" aria-label="Social media">{socials.map(social => {
     const icon = <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" className="size-5"><path d={paths[social.name] || paths.Instagram} /></svg>;
-    return social.href ? <CmsLink key={social.name} href={social.href} target="_blank" rel="noopener noreferrer" aria-label={social.name} className="flex size-10 items-center justify-center text-white/70 transition-colors hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2">{icon}</CmsLink> : <span key={social.name} role="img" aria-label={`${social.name}: profile coming soon`} title={`${social.name}: profile coming soon`} className="flex size-10 items-center justify-center text-white/30">{icon}</span>;
+    return social.href ? <CmsLink key={social.name} href={social.href} target="_blank" rel="noopener noreferrer" aria-label={social.name} className="flex size-10 items-center justify-center text-white/70 transition-colors hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2">{icon}</CmsLink> : <span key={social.name} role="img" aria-label={`${social.name}: profile coming soon`} title={`${social.name}: profile coming soon`} className="flex size-10 items-center justify-center text-white/50">{icon}</span>;
   })}</div>;
 }

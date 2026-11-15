@@ -139,7 +139,7 @@ export default function LeadershipSection() {
 
             <h2 id="leadership-heading" className="text-[clamp(2.5rem,4.5vw,4.75rem)] leading-[1.04] tracking-[-.045em]"><CmsText id="components/LeadershipSection:087f2a0e575641e7" fallback="The leadership." /></h2>
           </div>
-          <p className="max-w-[370px] text-base leading-relaxed text-[#49345f]/65 md:justify-self-end"><CmsText id="components/LeadershipSection:9bd6bccfb9fde7a4" fallback="Stewards of the vision, committed to raising and equipping the body." /></p>
+          <p className="max-w-[370px] text-base leading-relaxed text-[#49345f]/85 md:justify-self-end"><CmsText id="components/LeadershipSection:9bd6bccfb9fde7a4" fallback="Stewards of the vision, committed to raising and equipping the body." /></p>
         </div>
 
         <motion.article initial={reduced ? false : { opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: .15 }} transition={{ duration: reduced ? 0 : .5 }} aria-labelledby="set-man-heading" className="site-card mb-16 grid gap-6 p-4 sm:p-6 md:grid-cols-[1.25fr_1fr] md:items-center md:gap-12 lg:mb-20 lg:gap-16">
@@ -150,7 +150,7 @@ export default function LeadershipSection() {
           <div className="max-w-[440px] py-2 md:py-8">
             <p className="mb-4 text-xs uppercase tracking-[.14em] text-[#75538f]">{setMan.role}</p>
             <h3 id="set-man-heading" className="text-[clamp(2rem,3.5vw,3.5rem)] leading-[1.08] tracking-[-.035em]">{setMan.name}</h3>
-            <p className="mt-6 text-base leading-relaxed text-[#49345f]/70">{setMan.bio || <CmsText id="components/LeadershipSection:da74bb398bb4ebd3" fallback="Reverend Elorm John Tetteh serves as the Global Lead and Setman of Church of The Martyrs. His vision is to raise a people grounded in truth, shaped by the Spirit, and committed to God's eternal purposes." />}</p>
+            <p className="mt-6 text-base leading-relaxed text-[#49345f]/85">{setMan.bio || <CmsText id="components/LeadershipSection:da74bb398bb4ebd3" fallback="Reverend Elorm John Tetteh serves as the Global Lead and Setman of Church of The Martyrs. His vision is to raise a people grounded in truth, shaped by the Spirit, and committed to God's eternal purposes." />}</p>
           </div>
         </motion.article>
 

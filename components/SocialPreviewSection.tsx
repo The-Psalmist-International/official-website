@@ -2,6 +2,7 @@
 import { useCmsCollection } from '@/components/cms/ContentProvider';
 import CmsText from '@/components/cms/CmsText';
 import Image from '@/components/cms/CmsImage';
+import { useState } from "react";
 
 
 const fallbackmoments = [
@@ -15,6 +16,7 @@ const fallbackmoments = [
 
 export default function SocialPreviewSection() {
   const moments = useCmsCollection("socialMoments", fallbackmoments);
+  const [paused, setPaused] = useState(false);
 
   return (
     <section data-nav-theme="dark" aria-labelledby="social-heading" className="overflow-hidden bg-[#24132e] py-20 text-white sm:py-28">
@@ -25,12 +27,17 @@ export default function SocialPreviewSection() {
         </div>
         <div className="max-w-[300px]">
           <p className="text-base leading-relaxed text-white/65"><CmsText id="components/SocialPreviewSection:ce0bb5cb0b5aa235" fallback="Moments of worship, words of faith, and life together." /></p>
+          {/* WCAG 2.2.2: moving content needs a pause control that works without hover or focus. */}
+          <button type="button" aria-pressed={paused} aria-controls="community-carousels" onClick={() => setPaused(value => !value)} className="site-button mt-5 inline-flex min-h-11 items-center gap-2 border border-white/25 px-4 text-sm transition-colors hover:bg-white/10 motion-reduce:hidden">
+            <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">{paused ? <path d="m8 5 11 7-11 7Z" /> : <><path d="M8 5v14" /><path d="M16 5v14" /></>}</svg>
+            {paused ? "Play photos" : "Pause photos"}
+          </button>
         </div>
       </div>
       <div id="community-carousels" className="space-y-4">
         {[0, 1].map(row => {
           const images = row === 0 ? moments : [...moments.slice(3), ...moments.slice(0, 3)].reverse();
-          return <div data-reveal-media key={row} tabIndex={0} aria-label={`Community photo carousel ${row + 1}. Focus to pause.`} className="social-marquee overflow-hidden focus-visible:outline-2 focus-visible:outline-offset-[-4px] focus-visible:outline-[#dfcbf1]">
+          return <div data-reveal-media key={row} tabIndex={0} role="group" aria-label={`Community photo carousel ${row + 1}. Focus to pause.`} className={`social-marquee ${paused ? "social-marquee-paused" : ""} overflow-hidden focus-visible:outline-2 focus-visible:outline-offset-[-4px] focus-visible:outline-[#dfcbf1]`}>
             <div className={`social-marquee-track flex w-max ${row === 1 ? "social-marquee-reverse" : ""}`}>
               {[0, 1].map(copy => <div key={copy} aria-hidden={copy === 1 ? true : undefined} className="flex min-w-[100vw] shrink-0 gap-4 pr-4">
                 {images.map((moment, index) => <div key={moment.image} className="relative h-[210px] w-[170px] shrink-0 overflow-hidden bg-white/5 sm:h-[280px] sm:w-[230px] lg:h-[320px] lg:w-[270px]">

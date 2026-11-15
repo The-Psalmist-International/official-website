@@ -80,6 +80,11 @@ body:has(.studio-surface) .cookie-banner { display: none; }
   --radius-3xl: 8px;
 }
 
+/* Accessibility: keyboard focus is always visible; component utilities can refine it. */
+:where(a, button, input, textarea, select, summary, [tabindex]):focus-visible { outline: 2px solid currentColor; outline-offset: 2px; }
+.skip-link { position: fixed; top: 12px; left: 12px; z-index: 1100; padding: 12px 18px; border-radius: var(--radius-button); background: #24132e; color: #fff; font-size: 14px; font-weight: 600; transform: translateY(calc(-100% - 24px)); }
+.skip-link:focus { transform: none; outline: 2px solid #dfcbf1; outline-offset: 2px; }
+
 /* Shared rounded surfaces; explicit circular and book shapes retain their geometry. */
 :where(article, dialog, aside, [role="dialog"]) { border-radius: var(--radius-card); }
 :where(button, input, textarea, select, a.inline-flex) { border-radius: var(--radius-button); }
@@ -132,7 +137,8 @@ body:has(.studio-surface) .cookie-banner { display: none; }
   [data-reveal-state] { opacity: 1; filter: none; translate: none; transition: none; }
 }
 .social-marquee-reverse { animation-direction: reverse; animation-duration: 62s; }
-.social-marquee:is(:hover, :focus-within) .social-marquee-track { animation-play-state: paused; }
+.social-marquee:is(:hover, :focus-within) .social-marquee-track,
+.social-marquee-paused .social-marquee-track { animation-play-state: paused; }
 @keyframes social-marquee { to { transform: translateX(-50%); } }
 @media (prefers-reduced-motion: reduce) {
   .social-marquee { overflow-x: auto; }

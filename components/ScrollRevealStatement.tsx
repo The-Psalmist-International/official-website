@@ -42,7 +42,8 @@ export default function ScrollRevealStatement() {
     <section data-motion-custom data-nav-theme="light" ref={section} aria-label="Our purpose" className="relative bg-white px-6 py-28 text-stone-950 sm:px-12 sm:py-40 lg:min-h-[160svh] lg:px-20">
       <div className="mx-auto max-w-[1160px] lg:sticky lg:top-[24vh]">
 
-        <p className="font-primary text-[clamp(1.9rem,4.2vw,4rem)] font-normal leading-[1.3] tracking-[-.035em]" aria-label={words.join(" ")}>
+        <p className="font-primary text-[clamp(1.9rem,4.2vw,4rem)] font-normal leading-[1.3] tracking-[-.035em]">
+          <span className="sr-only">{words.join(" ")}</span>
           <span aria-hidden="true">
             {words.map((word, index) => (
               <span key={index}>

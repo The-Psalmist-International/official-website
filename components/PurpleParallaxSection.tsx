@@ -62,8 +62,8 @@ export default function PurpleParallaxSection() {
 
             <h2 id="events-title" className="text-3xl font-normal leading-tight tracking-[-.035em] sm:text-4xl lg:text-5xl"><CmsText id="components/PurpleParallaxSection:a7f95b69f7636e93" fallback="Upcoming Events." /></h2>
           </div>
-          <div className="flex items-center gap-1" aria-label="Choose event">
-            {events.map((event, index) => <button key={event.name} type="button" aria-label={`Show ${event.name}`} aria-current={active === index ? "true" : undefined} onClick={() => { setPaused(true); select(index); }} className="site-button flex size-10 items-center justify-center focus-visible:outline-2 focus-visible:outline-offset-2"><span className={`size-2 rounded-full transition-opacity ${active === index ? "bg-white" : "bg-white/30 hover:bg-white/60"}`} /></button>)}
+          <div className="flex items-center gap-1" role="group" aria-label="Choose event">
+            {events.map((event, index) => <button key={event.name} type="button" aria-label={`Show ${event.name}`} aria-current={active === index ? "true" : undefined} onClick={() => { setPaused(true); select(index); }} className="site-button flex size-10 items-center justify-center focus-visible:outline-2 focus-visible:outline-offset-2"><span className={`size-2 rounded-full transition-opacity ${active === index ? "bg-white" : "bg-white/60 hover:bg-white/80"}`} /></button>)}
           </div>
         </div>
         <div className="min-h-0 flex-1">

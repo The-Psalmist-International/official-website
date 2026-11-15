@@ -29,7 +29,7 @@ export default async function ResourcesPage() {
       <div className="mx-auto max-w-[1376px]">
         <div className="mb-16 grid gap-6 md:grid-cols-2 md:items-end">
           <h2 id="library-title" className="text-[clamp(2.5rem,4.5vw,4.75rem)] leading-[1.04] tracking-[-.045em]"><CmsText id="app/resources/page:2988927b36704f59" fallback="Resources for your walk." /></h2>
-          <p className="max-w-[420px] text-base leading-relaxed text-[#24132e]/65 md:justify-self-end"><CmsText id="app/resources/page:1fa538f35e5abd4e" fallback="Explore our devotionals and manuals. PDF downloads will be available here as resources are added." /></p>
+          <p className="max-w-[420px] text-base leading-relaxed text-[#24132e]/75 md:justify-self-end"><CmsText id="app/resources/page:1fa538f35e5abd4e" fallback="Explore our devotionals and manuals. PDF downloads will be available here as resources are added." /></p>
         </div>
         <ResourceBooks resources={resources} />
       </div>
