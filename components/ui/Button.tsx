@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import Link from '@/components/cms/CmsLink';
 import type { AnchorHTMLAttributes, ButtonHTMLAttributes, ReactNode } from 'react';
 import ChevronIcon from './ChevronIcon';
 
@@ -14,15 +14,15 @@ type ButtonSize = 'default' | 'sm';
 
 const variantClasses: Record<ButtonVariant, string> = {
   primary:
-    'bg-[#2b0835] text-white hover:bg-[#541460] shadow-sm hover:shadow-md',
+    'bg-[#2b0835] text-white hover:bg-[#541460]',
   secondary:
-    'bg-white text-black hover:bg-gray-100 shadow-xl hover:shadow-2xl',
+    'bg-white text-black hover:bg-gray-100',
   black: 'bg-black text-white hover:bg-[#2b0835]',
   outline:
     'border border-white/80 text-white hover:bg-white hover:text-[#2b0835]',
   'outline-dark':
     'border border-[#2b0835]/15 bg-white text-[#2b0835] hover:bg-[#f2e7f4]',
-  'ghost-white': 'bg-white text-[#2b0835] hover:bg-white/90 shadow-xl hover:shadow-2xl',
+  'ghost-white': 'bg-white text-[#2b0835] hover:bg-white/90',
 };
 
 const sizeClasses: Record<ButtonSize, string> = {
@@ -56,7 +56,7 @@ function buttonClassName({
   className = '',
 }: Pick<SharedProps, 'variant' | 'size' | 'className'>) {
   return [
-    'group inline-flex items-center justify-center gap-2 rounded-full font-medium tracking-wide',
+    'site-button group inline-flex items-center justify-center gap-2 rounded-sm font-medium tracking-wide',
     'transition-[transform,background-color,box-shadow,border-color,color] duration-200 ease-out',
     'active:scale-[0.96] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#7028a8]/40 focus-visible:ring-offset-2',
     variantClasses[variant],

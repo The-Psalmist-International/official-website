@@ -80,14 +80,12 @@ export default function LocationsSection() {
   return (
     <section
       aria-labelledby="locations-heading"
-      className="w-full overflow-hidden bg-[#f8f6f2] px-4 py-28 text-[#2b0835] sm:px-6 sm:py-36 lg:px-8 lg:py-40"
+      className="w-full overflow-hidden bg-white px-4 py-28 text-[#2b0835] sm:px-6 sm:py-36 lg:px-8 lg:py-40"
     >
       <div className="mx-auto max-w-[1440px]">
         <div className="mb-10 flex flex-col justify-between gap-5 md:mb-14 md:flex-row md:items-end">
           <div>
-            <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-[#7a3688]">
-              Our reach
-            </p>
+
             <h2
               id="locations-heading"
               className="text-balance text-4xl font-medium leading-none tracking-[-0.045em] sm:text-5xl lg:text-6xl"
@@ -113,7 +111,7 @@ export default function LocationsSection() {
                 aria-expanded={isActive}
                 aria-label={`${country.name}: ${country.branches.length} campus locations`}
                 transition={{ type: 'spring', duration: 0.55, bounce: 0 }}
-                className={`group relative min-h-[150px] overflow-hidden rounded-lg text-left shadow-[0_12px_45px_rgba(43,8,53,0.08)] outline-none transition-[flex-grow,height,transform] duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] focus-visible:ring-2 focus-visible:ring-[#7a3688] focus-visible:ring-offset-4 focus-visible:ring-offset-[#f8f6f2] active:scale-[0.99] md:h-full md:min-w-0 ${
+                className={`site-button group relative min-h-[150px] overflow-hidden rounded-lg text-left shadow-[0_12px_45px_rgba(43,8,53,0.08)] outline-none transition-[flex-grow,height,transform] duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] focus-visible:ring-2 focus-visible:ring-[#7a3688] focus-visible:ring-offset-4 focus-visible:ring-offset-[#f8f6f2] active:scale-[0.99] md:h-full md:min-w-0 ${
                   isActive
                     ? 'h-[520px] flex-[3.4] md:h-full'
                     : 'h-[150px] flex-1 md:h-full'

@@ -1,0 +1,810 @@
+[
+  {
+    "source": "app/contact/page",
+    "title": "contact page",
+    "entries": [
+      {
+        "key": "app/contact/page:300b663cde291133",
+        "text": "We'd love to hear from you."
+      },
+      {
+        "key": "app/contact/page:254bcfc6ba0fd88a",
+        "text": "Planning a visit, looking for a community, or have a question? Get in touch with The Martyrs Church."
+      },
+      {
+        "key": "app/contact/page:1b1771176dcd4379",
+        "text": "Call the church"
+      },
+      {
+        "key": "app/contact/page:7c01795782fe2bc4",
+        "text": "Opening hours"
+      },
+      {
+        "key": "app/contact/page:ed1d53de835bf592",
+        "text": "Open daily, 24 hours"
+      },
+      {
+        "key": "app/contact/page:74479df5201f9d72",
+        "text": "Adjiringanor–East Legon / Madina,"
+      },
+      {
+        "key": "app/contact/page:dde3e355e75b87d5",
+        "text": "Accra, Ghana"
+      },
+      {
+        "key": "app/contact/page:ae9652aaccaddf0a",
+        "text": "Get directions "
+      },
+      {
+        "key": "app/contact/page:6efa7eff9b8fdc36",
+        "text": "For updates, announcements, and services, "
+      },
+      {
+        "key": "app/contact/page:e8d499197f1b4b61",
+        "text": "follow the church on YouTube"
+      },
+      {
+        "key": "app/contact/page:92d969094f6366f3",
+        "text": "Find your way here."
+      },
+      {
+        "key": "app/contact/page:8b8ada6f8ae374f7",
+        "text": "Need help finding the auditorium? "
+      },
+      {
+        "key": "app/contact/page:35563c1ffad3e5ce",
+        "text": "Give us a call."
+      },
+      {
+        "key": "app/contact/page:5d994f039420afb2",
+        "text": "+233 50 908 1558"
+      }
+    ]
+  },
+  {
+    "source": "app/discipleship/page",
+    "title": "discipleship page",
+    "entries": [
+      {
+        "key": "app/discipleship/page:5005c469f76c48a0",
+        "text": "Applications closed"
+      },
+      {
+        "key": "app/discipleship/page:e28035971c87f853",
+        "text": "Discipleship at The Martyrs Church."
+      },
+      {
+        "key": "app/discipleship/page:d2c35bc184a1e895",
+        "text": "Grow in your understanding of the Word, deepen your walk with God, and be equipped to live out your faith through discipleship."
+      },
+      {
+        "key": "app/discipleship/page:45dfdc51802b33f2",
+        "text": "Registration is currently closed. Details of the next intake will be shared here when applications reopen."
+      },
+      {
+        "key": "app/discipleship/page:76c5505ff2e27ef4",
+        "text": "Back to home"
+      },
+      {
+        "key": "app/discipleship/page:5005c469f76c48a0-2",
+        "text": "Applications closed"
+      }
+    ]
+  },
+  {
+    "source": "app/missions/page",
+    "title": "missions page",
+    "entries": [
+      {
+        "key": "app/missions/page:53d6141920e6661d",
+        "text": "A vision for the nations."
+      },
+      {
+        "key": "app/missions/page:aa670f39d521df25",
+        "text": "To disciple believers, raise leaders, and establish God's influence across every sphere of life."
+      },
+      {
+        "key": "app/missions/page:708451645cd401ad",
+        "text": "The Great Commission."
+      },
+      {
+        "key": "app/missions/page:daa96f42ca9ba61d",
+        "text": "“Go ye therefore, and teach all nations, baptizing them in the name of the Father, and of the Son, and of the Holy Ghost: Teaching them to observe all things whatsoever I have commanded you: and, lo, I am with you alway, even unto the end of the world. Amen.”"
+      },
+      {
+        "key": "app/missions/page:2a0eb55c387d37c1",
+        "text": "Matthew 28:19–20 (KJV)"
+      },
+      {
+        "key": "app/missions/page:ced8def7d102621e",
+        "text": "Upcoming outreach."
+      },
+      {
+        "key": "app/missions/page:fb3cdfe630d14f2c",
+        "text": "Our next outreach will be announced here. Check back for the date, location, and ways to take part."
+      },
+      {
+        "key": "app/missions/page:5b05c5a5a0f6804d",
+        "text": "The next mission."
+      },
+      {
+        "key": "app/missions/page:99c40ab405926cb5",
+        "text": "Date"
+      },
+      {
+        "key": "app/missions/page:934363fbc2f80ebe",
+        "text": "To be announced"
+      },
+      {
+        "key": "app/missions/page:15b61974b2707a7b",
+        "text": "Location"
+      },
+      {
+        "key": "app/missions/page:934363fbc2f80ebe-2",
+        "text": "To be announced"
+      }
+    ]
+  },
+  {
+    "source": "app/not-found",
+    "title": "not-found",
+    "entries": [
+      {
+        "key": "app/not-found:b6662d284a8fdbfb",
+        "text": "This page couldn't be found."
+      },
+      {
+        "key": "app/not-found:520a3b4640551bd0",
+        "text": "The page may have moved, or the link may be out of date. Let's help you find your way."
+      },
+      {
+        "key": "app/not-found:76c5505ff2e27ef4",
+        "text": "Back to home"
+      },
+      {
+        "key": "app/not-found:47aaf31b83d6bfd7",
+        "text": "Contact us"
+      },
+      {
+        "key": "app/not-found:6b3c238ebcf1f3c0",
+        "text": "404"
+      }
+    ]
+  },
+  {
+    "source": "app/page",
+    "title": "page",
+    "entries": [
+      {
+        "key": "app/page:1e974a82e61251e0",
+        "text": "Preparing God’s endtime army"
+      },
+      {
+        "key": "app/page:cbb0934941cda8fa",
+        "text": "Church of The Martyrs is an apostolic movement raising a prophetic generation and revealing the witness of God to the nations."
+      },
+      {
+        "key": "app/page:f055ae437f3f7ceb",
+        "text": "Fellowship with us "
+      }
+    ]
+  },
+  {
+    "source": "app/privacy-policy/page",
+    "title": "privacy-policy page",
+    "entries": [
+      {
+        "key": "app/privacy-policy/page:506ff394621596dd",
+        "text": "Privacy Policy"
+      },
+      {
+        "key": "app/privacy-policy/page:f66f1ef04dccef3a",
+        "text": "Your cookie preference is stored in your browser. Optional cookies are not currently enabled on this website."
+      },
+      {
+        "key": "app/privacy-policy/page:5f26e58c826830cf",
+        "text": "The testimony form downloads the details you enter to your own device. It does not currently send those details to the church."
+      },
+      {
+        "key": "app/privacy-policy/page:1393ab52c94c4c93",
+        "text": "Links to third-party services, including YouTube, are governed by those services’ privacy policies."
+      }
+    ]
+  },
+  {
+    "source": "app/resources/page",
+    "title": "resources page",
+    "entries": [
+      {
+        "key": "app/resources/page:2988927b36704f59",
+        "text": "Resources for your walk."
+      },
+      {
+        "key": "app/resources/page:1fa538f35e5abd4e",
+        "text": "Explore our devotionals and manuals. PDF downloads will be available here as resources are added."
+      }
+    ]
+  },
+  {
+    "source": "app/terms-and-conditions/page",
+    "title": "terms-and-conditions page",
+    "entries": [
+      {
+        "key": "app/terms-and-conditions/page:34e6faf15abddcd4",
+        "text": "Terms and Conditions"
+      },
+      {
+        "key": "app/terms-and-conditions/page:79b085d43248d4c8",
+        "text": "This website provides information about The Martyrs Church and its gatherings. Event details may change; check the linked event information before making arrangements."
+      },
+      {
+        "key": "app/terms-and-conditions/page:abfc8a15505099bb",
+        "text": "When preparing a testimony, share your own experience and avoid including another person’s private information without their permission."
+      },
+      {
+        "key": "app/terms-and-conditions/page:83143c4d4e024265",
+        "text": "External websites and services have their own terms and conditions."
+      }
+    ]
+  },
+  {
+    "source": "components/AboutHeroSection",
+    "title": "AboutHeroSection",
+    "entries": [
+      {
+        "key": "components/AboutHeroSection:54809a0bce3825b3",
+        "text": "We exist to bring the complete witness of God to the nations."
+      },
+      {
+        "key": "components/AboutHeroSection:573c063bdfd56c82",
+        "text": "Training men and women into experiential knowledge of God. Discipling believers into a full understanding of their divine purpose."
+      },
+      {
+        "key": "components/AboutHeroSection:1445799c033a2d17",
+        "text": "Learn more"
+      }
+    ]
+  },
+  {
+    "source": "components/ChurchSiteEnding",
+    "title": "ChurchSiteEnding",
+    "entries": [
+      {
+        "key": "components/ChurchSiteEnding:a28162df04f8c19e",
+        "text": "Partner with us."
+      },
+      {
+        "key": "components/ChurchSiteEnding:cd42de8d778ff388",
+        "text": "Help carry the gospel further. Partner with The Martyrs Church as we raise a prophetic generation and reveal the witness of God to the nations."
+      },
+      {
+        "key": "components/ChurchSiteEnding:eded8902f15c92e4",
+        "text": "Partner with us"
+      },
+      {
+        "key": "components/ChurchSiteEnding:115e410f01dc4013",
+        "text": "Get in touch"
+      },
+      {
+        "key": "components/ChurchSiteEnding:0e603afb4d23eed1",
+        "text": "The Martyrs Church"
+      },
+      {
+        "key": "components/ChurchSiteEnding:a1f4e4ec5bd29b99",
+        "text": "An apostolic movement raising a prophetic generation and revealing the witness of God to the nations."
+      },
+      {
+        "key": "components/ChurchSiteEnding:3cbfe44ebc2194d2",
+        "text": "Quick links"
+      },
+      {
+        "key": "components/ChurchSiteEnding:4d7c144d408933d6",
+        "text": "Send an enquiry ↗"
+      },
+      {
+        "key": "components/ChurchSiteEnding:15b61974b2707a7b",
+        "text": "Location"
+      },
+      {
+        "key": "components/ChurchSiteEnding:74479df5201f9d72",
+        "text": "Adjiringanor–East Legon / Madina,"
+      },
+      {
+        "key": "components/ChurchSiteEnding:dde3e355e75b87d5",
+        "text": "Accra, Ghana"
+      },
+      {
+        "key": "components/ChurchSiteEnding:ed1d53de835bf592",
+        "text": "Open daily, 24 hours"
+      },
+      {
+        "key": "components/ChurchSiteEnding:108acb501cfe7c73",
+        "text": "Get directions ↗"
+      },
+      {
+        "key": "components/ChurchSiteEnding:cd4b8e49c86bec93",
+        "text": "YouTube ↗"
+      },
+      {
+        "key": "components/ChurchSiteEnding:ba445cff3898a3f2",
+        "text": "Privacy policy"
+      },
+      {
+        "key": "components/ChurchSiteEnding:b9b8461b32dad59d",
+        "text": "Terms & conditions"
+      },
+      {
+        "key": "components/ChurchSiteEnding:ab877d08d3ca8c23",
+        "text": "Powered by the Mystic Engineering Team."
+      },
+      {
+        "key": "components/ChurchSiteEnding:115e410f01dc4013-2",
+        "text": "Get in touch"
+      },
+      {
+        "key": "components/ChurchSiteEnding:0e603afb4d23eed1-2",
+        "text": "The Martyrs Church"
+      },
+      {
+        "key": "components/ChurchSiteEnding:5d994f039420afb2",
+        "text": "+233 50 908 1558"
+      }
+    ]
+  },
+  {
+    "source": "components/ContactForm",
+    "title": "ContactForm",
+    "entries": [
+      {
+        "key": "components/ContactForm:dcd1d5223f73b3a9",
+        "text": "Name"
+      },
+      {
+        "key": "components/ContactForm:969ccbd3cf6300ec",
+        "text": "Email"
+      },
+      {
+        "key": "components/ContactForm:8549beac5d40fef9",
+        "text": "Phone "
+      },
+      {
+        "key": "components/ContactForm:0059798b7f7023e4",
+        "text": "(optional)"
+      },
+      {
+        "key": "components/ContactForm:80d7546c2da066f8",
+        "text": "What can we help with?"
+      },
+      {
+        "key": "components/ContactForm:7a057bd996a32915",
+        "text": "Your message"
+      },
+      {
+        "key": "components/ContactForm:b5a229ac8becc603",
+        "text": "Website"
+      },
+      {
+        "key": "components/ContactForm:c33aec4ebf662cf1",
+        "text": "We'll use the contact details you provide to respond to your enquiry."
+      },
+      {
+        "key": "components/ContactForm:d24c612bae1b070b",
+        "text": "Online enquiries will be available soon. For now, please "
+      },
+      {
+        "key": "components/ContactForm:0f10db98e796e4c2",
+        "text": "call +233 50 908 1558"
+      }
+    ]
+  },
+  {
+    "source": "components/CookieBanner",
+    "title": "CookieBanner",
+    "entries": [
+      {
+        "key": "components/CookieBanner:3a21d95073a46589",
+        "text": "Your privacy matters"
+      },
+      {
+        "key": "components/CookieBanner:2965139d6862a2c3",
+        "text": "Choose whether to accept optional cookies. Read our "
+      },
+      {
+        "key": "components/CookieBanner:506ff394621596dd",
+        "text": "Privacy Policy"
+      },
+      {
+        "key": "components/CookieBanner:427a379ae3e6b749",
+        "text": "and "
+      },
+      {
+        "key": "components/CookieBanner:34e6faf15abddcd4",
+        "text": "Terms and Conditions"
+      },
+      {
+        "key": "components/CookieBanner:24a18b506184877a",
+        "text": "Necessary only"
+      },
+      {
+        "key": "components/CookieBanner:70cf33bad78fa634",
+        "text": "Accept cookies"
+      }
+    ]
+  },
+  {
+    "source": "components/FloatingNavbar",
+    "title": "FloatingNavbar",
+    "entries": [
+      {
+        "key": "components/FloatingNavbar:0e603afb4d23eed1",
+        "text": "The Martyrs Church"
+      }
+    ]
+  },
+  {
+    "source": "components/GlobalPresence",
+    "title": "GlobalPresence",
+    "entries": [
+      {
+        "key": "components/GlobalPresence:4ad6f1ac7e223c36",
+        "text": "One church, across nations."
+      },
+      {
+        "key": "components/GlobalPresence:08c514530066992d",
+        "text": "Across borders, we gather as one family to worship, grow in the Word, and reveal the witness of God to the nations."
+      },
+      {
+        "key": "components/GlobalPresence:cb3f33576b181310",
+        "text": "Join us "
+      }
+    ]
+  },
+  {
+    "source": "components/HomepageIntro",
+    "title": "HomepageIntro",
+    "entries": [
+      {
+        "key": "components/HomepageIntro:0e603afb4d23eed1",
+        "text": "The Martyrs Church"
+      },
+      {
+        "key": "components/HomepageIntro:1e974a82e61251e0",
+        "text": "Preparing God’s endtime army"
+      },
+      {
+        "key": "components/HomepageIntro:0e603afb4d23eed1-2",
+        "text": "The Martyrs Church"
+      }
+    ]
+  },
+  {
+    "source": "components/JourneyTimeline",
+    "title": "JourneyTimeline",
+    "entries": [
+      {
+        "key": "components/JourneyTimeline:5daa47c4bb3e8860",
+        "text": "Our journey so far."
+      }
+    ]
+  },
+  {
+    "source": "components/LeadershipSection",
+    "title": "LeadershipSection",
+    "entries": [
+      {
+        "key": "components/LeadershipSection:087f2a0e575641e7",
+        "text": "The leadership."
+      },
+      {
+        "key": "components/LeadershipSection:9bd6bccfb9fde7a4",
+        "text": "Stewards of the vision, committed to raising and equipping the body."
+      },
+      {
+        "key": "components/LeadershipSection:da74bb398bb4ebd3",
+        "text": "Reverend Elorm John Tetteh serves as the Global Lead and Setman of Church of The Martyrs. His vision is to raise a people grounded in truth, shaped by the Spirit, and committed to God's eternal purposes."
+      }
+    ]
+  },
+  {
+    "source": "components/MinistriesSection",
+    "title": "MinistriesSection",
+    "entries": [
+      {
+        "key": "components/MinistriesSection:42fc4bbd7bbb3cc1",
+        "text": "Life in our ministries"
+      },
+      {
+        "key": "components/MinistriesSection:1761baf1e0c0dc17",
+        "text": "Serve, grow, and build community through a ministry shaped around your gifts and calling."
+      }
+    ]
+  },
+  {
+    "source": "components/MissionsGallery",
+    "title": "MissionsGallery",
+    "entries": [
+      {
+        "key": "components/MissionsGallery:972fd5d8ac5e7ec2",
+        "text": "Gallery."
+      },
+      {
+        "key": "components/MissionsGallery:0c1e4ce8b05f196e",
+        "text": "Church photo previews. Mission photographs coming soon."
+      }
+    ]
+  },
+  {
+    "source": "components/MissionsImpact",
+    "title": "MissionsImpact",
+    "entries": [
+      {
+        "key": "components/MissionsImpact:256c572e98c8adf7",
+        "text": "Missions impact"
+      },
+      {
+        "key": "components/MissionsImpact:30cdddadbee6d0a8",
+        "text": "Illustrative figures."
+      },
+      {
+        "key": "components/MissionsImpact:7a945f895df5e8de",
+        "text": "Impact figures to be confirmed."
+      }
+    ]
+  },
+  {
+    "source": "components/MissionsJoinButton",
+    "title": "MissionsJoinButton",
+    "entries": [
+      {
+        "key": "components/MissionsJoinButton:5e21cf464514617c",
+        "text": "Join the missions team "
+      },
+      {
+        "key": "components/MissionsJoinButton:24daf99b6fcbea00",
+        "text": "Join the missions team"
+      },
+      {
+        "key": "components/MissionsJoinButton:f383bb81fd7e49f9",
+        "text": "Details on joining the missions team will be available here soon."
+      }
+    ]
+  },
+  {
+    "source": "components/MissionsSupportButton",
+    "title": "MissionsSupportButton",
+    "entries": [
+      {
+        "key": "components/MissionsSupportButton:d2618c47d8e17759",
+        "text": "Support the missions team "
+      },
+      {
+        "key": "components/MissionsSupportButton:572b770c532d717a",
+        "text": "Support the missions team"
+      },
+      {
+        "key": "components/MissionsSupportButton:f1effce9c3206950",
+        "text": "Details on how to support the missions team will be available here soon."
+      }
+    ]
+  },
+  {
+    "source": "components/PurpleParallaxSection",
+    "title": "PurpleParallaxSection",
+    "entries": [
+      {
+        "key": "components/PurpleParallaxSection:a7f95b69f7636e93",
+        "text": "Upcoming Events."
+      },
+      {
+        "key": "components/PurpleParallaxSection:5f1a2542e4e4ca5e",
+        "text": "Upcoming"
+      }
+    ]
+  },
+  {
+    "source": "components/ResourceBooks",
+    "title": "ResourceBooks",
+    "entries": [
+      {
+        "key": "components/ResourceBooks:08b87eb1ccc59216",
+        "text": "The Martyrs"
+      },
+      {
+        "key": "components/ResourceBooks:837aa0d985b27908",
+        "text": "Church"
+      },
+      {
+        "key": "components/ResourceBooks:6183be0883d2a89c",
+        "text": "Download PDF"
+      }
+    ]
+  },
+  {
+    "source": "components/ResourceShelfHero",
+    "title": "ResourceShelfHero",
+    "entries": [
+      {
+        "key": "components/ResourceShelfHero:6ccbe5336e4c3f8d",
+        "text": "Rooted in the Word. Growing in faith."
+      },
+      {
+        "key": "components/ResourceShelfHero:5d3e2f1e001cd475",
+        "text": "Discipleship manuals, devotionals, and resources to help you know God more deeply and live out your faith every day."
+      },
+      {
+        "key": "components/ResourceShelfHero:f7ac1a99518f873d",
+        "text": "Explore resources"
+      }
+    ]
+  },
+  {
+    "source": "components/ServicesLibrary",
+    "title": "ServicesLibrary",
+    "entries": [
+      {
+        "key": "components/ServicesLibrary:a3eaecdba55a4ab6",
+        "text": "Browse services "
+      },
+      {
+        "key": "components/ServicesLibrary:5b980982fa251af0",
+        "text": "All services"
+      },
+      {
+        "key": "components/ServicesLibrary:b0276cb17d84d68a",
+        "text": "are temporarily unavailable."
+      },
+      {
+        "key": "components/ServicesLibrary:4adadbcd63d7a4d5",
+        "text": "No service broadcasts are available yet. "
+      },
+      {
+        "key": "components/ServicesLibrary:7229f03ac7a47c73",
+        "text": "Visit our YouTube channel"
+      },
+      {
+        "key": "components/ServicesLibrary:36bb6d29c462815b",
+        "text": "Watch on YouTube ↗"
+      }
+    ]
+  },
+  {
+    "source": "components/SocialPreviewSection",
+    "title": "SocialPreviewSection",
+    "entries": [
+      {
+        "key": "components/SocialPreviewSection:38b6d19784dfe184",
+        "text": "A little closer to our world."
+      },
+      {
+        "key": "components/SocialPreviewSection:ce0bb5cb0b5aa235",
+        "text": "Moments of worship, words of faith, and life together."
+      }
+    ]
+  },
+  {
+    "source": "components/TestimoniesSection",
+    "title": "TestimoniesSection",
+    "entries": [
+      {
+        "key": "components/TestimoniesSection:2a3093a254cd5ab1",
+        "text": "Testaments of God’s Goodness and Mercy"
+      },
+      {
+        "key": "components/TestimoniesSection:6bedea64eaa7d459",
+        "text": "Video coming soon"
+      },
+      {
+        "key": "components/TestimoniesSection:3765564a1cd8af73",
+        "text": "Watch full video"
+      },
+      {
+        "key": "components/TestimoniesSection:19cfa70fafd87173",
+        "text": "Explore all testimonies"
+      },
+      {
+        "key": "components/TestimoniesSection:3765564a1cd8af73-2",
+        "text": "Watch full video"
+      }
+    ]
+  },
+  {
+    "source": "components/TestimonyButton",
+    "title": "TestimonyButton",
+    "entries": [
+      {
+        "key": "components/TestimonyButton:f5a2d0a9ce41c3da",
+        "text": "Share a testimony "
+      },
+      {
+        "key": "components/TestimonyButton:6682c61f0b71f4b5",
+        "text": "Share a testimony"
+      },
+      {
+        "key": "components/TestimonyButton:571d2dab15a1dc2e",
+        "text": "Tell us what God has done in your life."
+      },
+      {
+        "key": "components/TestimonyButton:f13a64ba2fea87ef",
+        "text": "Full name"
+      },
+      {
+        "key": "components/TestimonyButton:deab68a05f90d172",
+        "text": "Email or phone number"
+      },
+      {
+        "key": "components/TestimonyButton:306ab3df954774da",
+        "text": "Associated event "
+      },
+      {
+        "key": "components/TestimonyButton:0059798b7f7023e4",
+        "text": "(optional)"
+      },
+      {
+        "key": "components/TestimonyButton:72377a194b26c381",
+        "text": "Your testimony"
+      },
+      {
+        "key": "components/TestimonyButton:4a42c5be6e4053d7",
+        "text": "Online submission is not available yet. You can download your testimony to keep a copy."
+      },
+      {
+        "key": "components/TestimonyButton:ee7567736933d61d",
+        "text": "Download testimony"
+      }
+    ]
+  },
+  {
+    "source": "components/TestimonyWall",
+    "title": "TestimonyWall",
+    "entries": [
+      {
+        "key": "components/TestimonyWall:34bff38d8941cbe3",
+        "text": "The Testimony Wall"
+      },
+      {
+        "key": "components/TestimonyWall:f4f4ccffcc11f4aa",
+        "text": "And they overcame him by the blood of the Lamb, and by the word of their testimony…"
+      },
+      {
+        "key": "components/TestimonyWall:f3f2dc61d2869c5f",
+        "text": "Revelation 12:11 · KJV"
+      },
+      {
+        "key": "components/TestimonyWall:b79bbba252f0eb09",
+        "text": "Watch full video →"
+      },
+      {
+        "key": "components/TestimonyWall:6bedea64eaa7d459",
+        "text": "Video coming soon"
+      },
+      {
+        "key": "components/TestimonyWall:3765564a1cd8af73",
+        "text": "Watch full video"
+      }
+    ]
+  },
+  {
+    "source": "components/UpcomingService",
+    "title": "UpcomingService",
+    "entries": [
+      {
+        "key": "components/UpcomingService:5f1a2542e4e4ca5e",
+        "text": "Upcoming"
+      },
+      {
+        "key": "components/UpcomingService:ff611baeaed77265",
+        "text": "Mountain of Light Auditorium "
+      }
+    ]
+  },
+  {
+    "source": "components/ScrollRevealStatement",
+    "title": "Homepage purpose statement",
+    "entries": [
+      {
+        "key": "home.statement",
+        "text": "Church of The Martyrs is an apostolic Christian movement committed to raising a prophetic generation, discipling nations, and revealing the complete witness of God to this age and beyond."
+      }
+    ]
+  }
+]

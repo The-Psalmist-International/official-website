@@ -1,0 +1,5 @@
+import { getCmsMetadata } from '@/lib/cms/metadata';
+import CmsText from '@/components/cms/CmsText';
+export default function PrivacyPolicy() { return <main className="min-h-screen bg-[#24132e] px-6 py-40 text-white"><article className="site-card mx-auto max-w-2xl space-y-6"><h1 className="text-4xl"><CmsText id="app/privacy-policy/page:506ff394621596dd" fallback="Privacy Policy" /></h1><p><CmsText id="app/privacy-policy/page:f66f1ef04dccef3a" fallback="Your cookie preference is stored in your browser. Optional cookies are not currently enabled on this website." /></p><p><CmsText id="app/privacy-policy/page:5f26e58c826830cf" fallback="The testimony form downloads the details you enter to your own device. It does not currently send those details to the church." /></p><p><CmsText id="app/privacy-policy/page:1393ab52c94c4c93" fallback="Links to third-party services, including YouTube, are governed by those services’ privacy policies." /></p></article></main>; }
+
+export async function generateMetadata() { return getCmsMetadata("privacy-policy", { title: "Privacy Policy | The Martyrs Church" }); }

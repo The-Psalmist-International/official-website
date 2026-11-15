@@ -1,14 +1,19 @@
-import Link from "next/link";
-import { testimonies } from "@/content/testimonies";
+import { getCmsContent } from '@/lib/cms/server';
+import { resolveCollection } from '@/lib/cms/types';
+import CmsText from '@/components/cms/CmsText';
+import CmsLink from '@/components/cms/CmsLink';
+import Link from '@/components/cms/CmsLink';
+import { testimonies as fallbacktestimonies } from "@/content/testimonies";
 
-export default function TestimoniesSection() {
+export default async function TestimoniesSection() {
+  const testimonies = resolveCollection((await getCmsContent()).collections["testimonies"], fallbacktestimonies);
   return (
-    <section data-nav-theme="light" aria-labelledby="testimonies-heading" className="bg-[#f7f4fa] px-6 py-20 text-[#24132e] sm:px-12 sm:py-28">
+    <section data-nav-theme="light" aria-labelledby="testimonies-heading" className="bg-white px-6 py-20 text-[#24132e] sm:px-12 sm:py-28">
       <div className="mx-auto max-w-[1440px]">
-        <h2 id="testimonies-heading" className="mb-10 max-w-[18ch] text-balance text-[clamp(2.75rem,5vw,5rem)] font-normal leading-none tracking-[-.045em] sm:mb-14">Testaments of God&rsquo;s Goodness and Mercy</h2>
+        <h2 id="testimonies-heading" className="mb-10 max-w-[18ch] text-balance text-[clamp(2.75rem,5vw,5rem)] font-normal leading-none tracking-[-.045em] sm:mb-14"><CmsText id="components/TestimoniesSection:2a3093a254cd5ab1" fallback="Testaments of God’s Goodness and Mercy" /></h2>
         <div className="space-y-6 sm:space-y-8">
           {testimonies.map((testimony, index) => (
-            <article key={testimony.title} aria-labelledby={`testimony-${index}`} className="grid overflow-hidden bg-white md:grid-cols-2">
+            <article key={testimony.title} aria-labelledby={`testimony-${index}`} className="site-card grid overflow-hidden bg-white md:grid-cols-2">
               <div data-reveal-media className="relative aspect-video bg-[#24132e] md:aspect-auto md:min-h-[360px]">
                 {testimony.youtubeId ? (
                   <iframe
@@ -25,7 +30,7 @@ export default function TestimoniesSection() {
                       <path d="M6 10h36v28H6z" />
                       <path d="m20 17 11 7-11 7V17Z" />
                     </svg>
-                    <p className="text-sm">Video coming soon</p>
+                    <p className="text-sm"><CmsText id="components/TestimoniesSection:6bedea64eaa7d459" fallback="Video coming soon" /></p>
                   </div>
                 )}
               </div>
@@ -34,12 +39,12 @@ export default function TestimoniesSection() {
                 <p className="mt-5 text-base text-[#725d80]">{testimony.program}</p>
                 <div className="mt-auto pt-10">
                   {testimony.youtubeId ? (
-                    <a href={`https://www.youtube.com/watch?v=${testimony.youtubeId}`} target="_blank" rel="noopener noreferrer" aria-label={`Watch full video: ${testimony.title} (opens in a new tab)`} className="wall-action relative overflow-hidden inline-flex min-h-12 items-center gap-8 bg-[#24132e] px-5 text-sm font-medium text-white transition-colors focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#51335f]">
-                      <span className="relative z-10">Watch full video</span> <span className="relative z-10" aria-hidden="true">&#8594;</span>
-                    </a>
+                    <CmsLink href={`https://www.youtube.com/watch?v=${testimony.youtubeId}`} target="_blank" rel="noopener noreferrer" aria-label={`Watch full video: ${testimony.title} (opens in a new tab)`} className="site-button wall-action relative overflow-hidden inline-flex min-h-12 items-center gap-8 bg-[#24132e] px-5 text-sm font-medium text-white transition-colors focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#51335f]">
+                      <span className="relative z-10"><CmsText id="components/TestimoniesSection:3765564a1cd8af73" fallback="Watch full video" /></span> <span className="relative z-10" aria-hidden="true">&#8594;</span>
+                    </CmsLink>
                   ) : (
-                    <button type="button" disabled className="wall-action relative overflow-hidden inline-flex min-h-12 items-center gap-8 bg-[#eee8f2] px-5 text-sm font-medium text-[#796987] disabled:cursor-not-allowed">
-                      <span className="relative z-10">Watch full video</span> <span className="relative z-10" aria-hidden="true">&#8594;</span>
+                    <button type="button" disabled className="site-button wall-action relative overflow-hidden inline-flex min-h-12 items-center gap-8 bg-[#eee8f2] px-5 text-sm font-medium text-[#796987] disabled:cursor-not-allowed">
+                      <span className="relative z-10"><CmsText id="components/TestimoniesSection:3765564a1cd8af73-2" fallback="Watch full video" /></span> <span className="relative z-10" aria-hidden="true">&#8594;</span>
                     </button>
                   )}
                 </div>
@@ -48,8 +53,8 @@ export default function TestimoniesSection() {
           ))}
         </div>
         <div className="mt-10 flex justify-center sm:mt-14">
-          <Link href="/testimony-wall" className="wall-action relative overflow-hidden inline-flex min-h-14 items-center gap-10 bg-[#24132e] px-7 text-sm font-medium text-white transition-colors focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#51335f]">
-            <span className="relative z-10">Explore all testimonies</span> <span className="relative z-10" aria-hidden="true">&#8594;</span>
+          <Link href="/testimony-wall" className="site-button wall-action relative overflow-hidden inline-flex min-h-14 items-center gap-10 bg-[#24132e] px-7 text-sm font-medium text-white transition-colors focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#51335f]">
+            <span className="relative z-10"><CmsText id="components/TestimoniesSection:19cfa70fafd87173" fallback="Explore all testimonies" /></span> <span className="relative z-10" aria-hidden="true">&#8594;</span>
           </Link>
         </div>
       </div>

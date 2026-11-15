@@ -20,7 +20,7 @@ const footerLinks = {
     { label: 'Priestesses of the Altar', href: '/ministries#priestesses' },
   ],
   COMMUNITY: [
-    { label: 'Events', href: '/events' },
+    { label: 'Services', href: '/services' },
     { label: 'French Community', href: '/ministries#french' },
     { label: 'Connect', href: '/connect' },
   ],
@@ -45,7 +45,7 @@ export default function Footer() {
               Come journey with us.
             </h2>
             <p className="text-white/65 text-base sm:text-lg font-light leading-relaxed max-w-md">
-              Whether you're new to faith or walking deep in the Spirit — there's a place for you here at The Martyrs Church.
+              Whether you&apos;re new to faith or walking deep in the Spirit — there&apos;s a place for you here at The Martyrs Church.
             </p>
           </div>
 

@@ -1,13 +1,18 @@
+import { getCmsMetadata } from '@/lib/cms/metadata';
 import type { Metadata } from "next";
 import "./globals.css";
-import FloatingNavbar from "../components/FloatingNavbar";
+import { ContentProvider } from '@/components/cms/ContentProvider';
+import { getCmsContent } from '@/lib/cms/server';
+import SiteChrome from '@/components/SiteChrome';
 
-export const metadata: Metadata = {
+export const revalidate = 300;
+
+const fallbackMetadata: Metadata = {
   title: "The Martyrs Church",
   description: "Kings, Priests, and Prophets",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
@@ -15,9 +20,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="antialiased">
-        {children}
-        <FloatingNavbar />
+        <ContentProvider value={await getCmsContent()}>
+          {children}
+          <SiteChrome />
+        </ContentProvider>
       </body>
     </html>
   );
 }
+
+
+export async function generateMetadata() { return getCmsMetadata("site", fallbackMetadata); }

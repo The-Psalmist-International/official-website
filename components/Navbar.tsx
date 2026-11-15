@@ -56,7 +56,10 @@ const navItems: NavItem[] = [
     ],
   },
   { label: 'Sermons', href: '/sermons' },
-  { label: 'Events', href: '/events' },
+  { label: 'Services', href: '/services' },
+  { label: 'Missions', href: '/missions' },
+  { label: 'Discipleship', href: '/discipleship' },
+  { label: 'Contact', href: '/contact' },
 ];
 
 function ChevronDown({ className }: { className?: string }) {
@@ -113,8 +116,11 @@ export default function Navbar() {
   }, []);
 
   useEffect(() => {
-    setMobileOpen(false);
-    setOpenDropdown(null);
+    const frame = requestAnimationFrame(() => {
+      setMobileOpen(false);
+      setOpenDropdown(null);
+    });
+    return () => cancelAnimationFrame(frame);
   }, [pathname]);
 
   useEffect(() => {

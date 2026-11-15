@@ -36,14 +36,12 @@ export default function VisionSection() {
   return (
     <section className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 sm:py-36">
       <div className="mb-8">
-        <span className="inline-block px-4 py-1.5 rounded-lg bg-[#fae8ff] text-[#2b0835] text-xs sm:text-sm font-medium tracking-wide uppercase mb-4">
-          Our Vision
-        </span>
+
         <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] font-normal text-[#2b0835] mb-3 tracking-tight leading-[1.1]">
           A Vision for the Nations
         </h2>
         <p className="text-[#666666] text-base sm:text-lg max-w-3xl font-light leading-relaxed">
-          To disciple believers, raise leaders, and establish God's influence across every sphere of life.
+          To disciple believers, raise leaders, and establish God&apos;s influence across every sphere of life.
         </p>
       </div>
 
@@ -66,13 +64,13 @@ export default function VisionSection() {
               className={`absolute inset-0 w-full h-full ${isActive ? 'pointer-events-auto' : 'pointer-events-none'}`}
             >
               {/* Background Image */}
-              <div 
+              <div
                 className="absolute inset-0 w-full h-full bg-cover bg-center"
                 style={{ backgroundImage: `url(${item.image})` }}
               />
               {/* Overlay */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-transparent" />
-              
+
               {/* Content */}
               <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-10 md:p-12 z-10 flex flex-col justify-end h-full">
                 <div className="max-w-4xl">
@@ -102,7 +100,7 @@ export default function VisionSection() {
             <button
               key={idx}
               onClick={() => setCurrentIndex(idx)}
-              className={`h-1.5 sm:h-2 rounded-full transition-all duration-300 ${
+              className={`site-button h-1.5 sm:h-2 rounded-full transition-all duration-300 ${
                 idx === currentIndex ? 'w-8 sm:w-12 bg-white' : 'w-4 sm:w-6 bg-white/40 hover:bg-white/60'
               }`}
               aria-label={`Go to slide ${idx + 1}`}

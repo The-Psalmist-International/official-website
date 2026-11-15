@@ -1,0 +1,42 @@
+[
+  {
+    "key": "site",
+    "title": "The Martyrs Church",
+    "description": "Kings, Priests, and Prophets"
+  },
+  {
+    "key": "about-us",
+    "title": "About Us | The Martyrs Church",
+    "description": "Our mandate, vision, and mission at The Martyrs Church."
+  },
+  {
+    "key": "contact",
+    "title": "Contact | The Martyrs Church",
+    "description": "Find The Martyrs Church in Accra, get directions, call us, or make an enquiry."
+  },
+  {
+    "key": "discipleship",
+    "title": "Discipleship | The Martyrs Church",
+    "description": "Grow in the Word and be equipped through discipleship at The Martyrs Church. Applications are currently closed."
+  },
+  {
+    "key": "missions",
+    "title": "Missions | The Martyrs Church",
+    "description": "A vision for the nations: discipling believers, raising leaders, and carrying the witness of Christ."
+  },
+  {
+    "key": "resources",
+    "title": "Resources | The Martyrs Church",
+    "description": "Discipleship manuals and devotionals to support your walk with God."
+  },
+  {
+    "key": "services",
+    "title": "Services | The Martyrs Church",
+    "description": "Join live services and revisit broadcasts from Church of The Martyrs."
+  },
+  {
+    "key": "testimony-wall",
+    "title": "The Testimony Wall | The Martyrs Church",
+    "description": "Testaments of God's goodness and mercy at The Martyrs Church."
+  }
+]
