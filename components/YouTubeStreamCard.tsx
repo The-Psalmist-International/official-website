@@ -8,6 +8,7 @@ import { useEffect, useState } from "react";
 /** Preserved hero card. Fetches the live stream, falling back to the latest completed stream. */
 export default function YouTubeStreamCard() {
   const [liveStream, setLiveStream] = useState<{ title: string; url: string; isLive: boolean; thumbnail: string } | null>(null);
+  const [pillDismissed, setPillDismissed] = useState(false);
 
   useEffect(() => {
     const controller = new AbortController();
@@ -32,15 +33,56 @@ export default function YouTubeStreamCard() {
 
   if (!liveStream) return null;
 
+  const label = liveStream.isLive ? "Watch Live" : "Watch Latest Sermon";
+
   return (
-<div className="group flex flex-col gap-3 w-full max-w-[280px] shrink-0">
+    <>
+      {/* Mobile: floating pill pinned to the bottom of the viewport. */}
+      {!pillDismissed && (
+        <div className="fixed inset-x-4 bottom-[max(1rem,env(safe-area-inset-bottom))] z-40 md:hidden">
+          <div className="flex items-center gap-3 rounded-full border border-white/15 bg-stone-950/85 p-1.5 pr-2 text-white shadow-[0_10px_30px_rgba(0,0,0,0.35)] backdrop-blur-md">
+            <CmsLink
+              href={liveStream.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex min-w-0 flex-1 items-center gap-3 rounded-full"
+            >
+              <span className="relative size-11 shrink-0 overflow-hidden rounded-full bg-white/10">
+                {liveStream.thumbnail && (
+                  <Image unoptimized fill sizes="44px" src={liveStream.thumbnail} alt="" className="object-cover" />
+                )}
+                <span className="absolute inset-0 flex items-center justify-center bg-black/30">
+                  <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="white" className="ml-0.5"><polygon points="5 3 19 12 5 21 5 3" /></svg>
+                </span>
+              </span>
+              <span className="flex min-w-0 flex-col">
+                <span className="flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-wider text-white/90">
+                  {liveStream.isLive && <span aria-hidden="true" className="size-1.5 rounded-full bg-red-500 motion-safe:animate-pulse" />}
+                  {label}
+                </span>
+                <span className="truncate text-sm text-white/65">{liveStream.title}</span>
+              </span>
+            </CmsLink>
+            <button
+              type="button"
+              aria-label="Dismiss stream link"
+              onClick={() => setPillDismissed(true)}
+              className="flex size-9 shrink-0 items-center justify-center rounded-full text-white/60 transition-colors hover:bg-white/10 hover:text-white"
+            >
+              <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round"><line x1="6" y1="6" x2="18" y2="18" /><line x1="18" y1="6" x2="6" y2="18" /></svg>
+            </button>
+          </div>
+        </div>
+      )}
+
+<div className="group hidden md:flex flex-col gap-3 w-full max-w-[280px] shrink-0">
               <CmsLink
                 href={liveStream.url}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="self-end inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-white/80 hover:text-white transition-colors"
               >
-                {liveStream.isLive ? "Watch Live" : "Watch Latest Sermon"}
+                {label}
                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="transition-transform group-hover:translate-x-0.5 "><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
               </CmsLink>
               <CmsLink
@@ -70,5 +112,6 @@ export default function YouTubeStreamCard() {
                 </div>
               </CmsLink>
             </div>
+    </>
   );
 }
