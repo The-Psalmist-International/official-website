@@ -19,7 +19,7 @@ function VideoCard({ video, onSelect }: { video: ServiceVideo; onSelect: (video:
       <span aria-hidden="true" className="absolute inset-0 flex items-center justify-center opacity-0 transition-opacity group-hover:opacity-100 group-focus-visible:opacity-100"><span className="flex size-11 items-center justify-center rounded-lg bg-white text-[#24132e]">&#9654;</span></span>
     </span>
     <span className="mt-3 block line-clamp-2 text-sm font-medium leading-relaxed text-white/90">{video.title}</span>
-    <span className="mt-1 block text-xs text-white/45">{video.status === 'completed' ? date(video.publishedAt) : video.status === 'live' ? 'Join the service' : 'View broadcast'}</span>
+    <span className="mt-1 block text-xs text-white/60">{video.status === 'completed' ? date(video.publishedAt) : video.status === 'live' ? 'Join the service' : 'View broadcast'}</span>
   </button>;
 }
 

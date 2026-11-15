@@ -21,8 +21,9 @@ export default async function RootLayout({
     <html lang="en">
       <body className="antialiased">
         <ContentProvider value={await getCmsContent()}>
-          {children}
+          <a href="#main-content" className="skip-link">Skip to main content</a>
           <SiteChrome />
+          <div id="main-content" tabIndex={-1} className="outline-none">{children}</div>
         </ContentProvider>
       </body>
     </html>

@@ -76,7 +76,7 @@ export default function MandateSection() {
                     className={`text-pretty text-[15px] leading-[1.2] transition-[color,opacity,transform] duration-300 sm:max-w-[38ch] sm:text-lg ${
                       isActive
                         ? 'translate-x-0 text-[#4a0752] opacity-100'
-                        : 'translate-x-0 text-stone-400 opacity-55 group-hover:translate-x-1 group-hover:text-[#4a0752] group-hover:opacity-80'
+                        : 'translate-x-0 text-stone-600 opacity-100 group-hover:translate-x-1 group-hover:text-[#4a0752]'
                     }`}
                   >
                     {mandate.text}

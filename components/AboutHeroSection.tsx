@@ -25,7 +25,7 @@ export default function AboutHeroSection() {
       <div className="mandate-copy relative z-10 mx-auto max-w-[720px] text-center">
 
         <h1 id="mandate-heading" className="text-balance text-[clamp(2.5rem,5.1vw,5rem)] font-normal leading-[1.02] tracking-[-.045em]"><CmsText id="components/AboutHeroSection:54809a0bce3825b3" fallback="We exist to bring the complete witness of God to the nations." /></h1>
-        <p className="mx-auto mt-7 max-w-[470px] text-base leading-relaxed text-[#24132e]/65 sm:text-lg"><CmsText id="components/AboutHeroSection:573c063bdfd56c82" fallback="Training men and women into experiential knowledge of God. Discipling believers into a full understanding of their divine purpose." /></p>
+        <p className="mx-auto mt-7 max-w-[470px] text-base leading-relaxed text-[#24132e]/75 sm:text-lg"><CmsText id="components/AboutHeroSection:573c063bdfd56c82" fallback="Training men and women into experiential knowledge of God. Discipling believers into a full understanding of their divine purpose." /></p>
         <CmsLink href="#vision-mission" className="site-button mt-8 inline-flex min-h-12 items-center bg-[#49345f] px-6 text-sm font-medium text-white transition-colors hover:bg-[#75538f] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#75538f]"><CmsText id="components/AboutHeroSection:1445799c033a2d17" fallback="Learn more" /></CmsLink>
       </div>
     </div>

@@ -49,7 +49,7 @@ export default function TestimonyWall() {
             </figure>;
             return <article key={index} tabIndex={0} className="site-card wall-brick group relative flex min-w-0 flex-col justify-center overflow-hidden p-8 focus-visible:outline-2 focus-visible:outline-offset-[-5px]" style={{ backgroundColor: ["#ded0e8", "#e8dfee", "#d3bfdf", "#eee7f2"][index % 4] }}>
               <h2 className="max-w-[20ch] text-balance text-[clamp(1.3rem,2vw,2rem)] leading-[1.12] tracking-[-.035em]">{testimony.title}</h2>
-              <p className="mt-4 text-xs text-[#725d80]">{testimony.program}</p>
+              <p className="mt-4 text-xs text-[#49345f]">{testimony.program}</p>
               <div className="wall-reveal absolute inset-0 flex flex-col justify-end bg-[#24132e] p-7 text-white">
                 {/* Only actual testimony thumbnails are shown once video IDs are supplied. */}
                 {testimony.youtubeId && <Image unoptimized fill sizes="500px" src={`https://i.ytimg.com/vi/${testimony.youtubeId}/hqdefault.jpg`} alt="" className="object-cover" />}

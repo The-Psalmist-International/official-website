@@ -120,7 +120,7 @@ export default function Footer() {
           <div className="flex-1 grid grid-cols-2 sm:grid-cols-4 gap-8 sm:gap-6">
             {Object.entries(footerLinks).map(([category, links]) => (
               <div key={category}>
-                <p className="text-white/40 text-[11px] font-semibold tracking-[0.12em] uppercase mb-4">
+                <p className="text-white/60 text-[11px] font-semibold tracking-[0.12em] uppercase mb-4">
                   {category}
                 </p>
                 <ul className="space-y-2.5">
@@ -144,7 +144,7 @@ export default function Footer() {
 
       {/* Bottom Bar */}
       <div className="border-t border-white/10 px-6 sm:px-8 lg:px-12 py-5">
-        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3 text-white/35 text-xs font-light">
+        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3 text-white/60 text-xs font-light">
           <p>© {currentYear} The Martyrs Church. All rights reserved.</p>
           <div className="flex items-center gap-5">
             <Link href="/privacy" className="hover:text-white/70 transition-colors">Privacy Policy</Link>

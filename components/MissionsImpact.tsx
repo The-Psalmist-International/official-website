@@ -40,7 +40,7 @@ export default function MissionsImpact() {
   return <div className="absolute inset-0 z-10">
     {missionMetrics.map((metric, index) => <div key={metric.label} className={`site-card absolute flex w-[min(285px,90%)] items-center gap-3 rounded-lg bg-white px-3 py-3 text-[#24132e] shadow-[0_8px_25px_-8px_rgba(0,0,0,0.25)] sm:w-[300px] sm:px-4 ${positions[index]}`}>
         <span aria-hidden="true" className={`flex size-9 shrink-0 items-center justify-center rounded-full ${accents[index]}`}><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"><path d={icons[index]} /></svg></span>
-        <div className="min-w-0"><p className="text-xs font-medium leading-snug sm:text-sm">{metric.label}</p><p className="mt-0.5 text-[11px] text-[#24132e]/45"><CmsText id="components/MissionsImpact:256c572e98c8adf7" fallback="Missions impact" /></p></div>
+        <div className="min-w-0"><p className="text-xs font-medium leading-snug sm:text-sm">{metric.label}</p><p className="mt-0.5 text-[11px] text-[#24132e]/75"><CmsText id="components/MissionsImpact:256c572e98c8adf7" fallback="Missions impact" /></p></div>
         <p className="ml-auto shrink-0 text-sm font-medium tracking-tight tabular-nums">{metric.value === null ? <span aria-label="Total to be confirmed">&mdash;</span> : <ImpactCounter value={metric.value} suffix={metric.suffix} />}</p>
       </div>)}
     {examples && <p className="absolute -bottom-8 right-0 text-xs text-[#75538f]"><CmsText id="components/MissionsImpact:30cdddadbee6d0a8" fallback="Illustrative figures." /></p>}

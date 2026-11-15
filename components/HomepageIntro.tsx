@@ -56,12 +56,17 @@ export default function HomepageIntro() {
     if (!finished) return;
     dialog.current?.close();
     document.body.style.overflow = "";
+    // Restart keyboard navigation at the top of the page (skip link, then nav), not inside <main>.
+    const body = document.body;
+    body.setAttribute("tabindex", "-1");
+    body.focus({ preventScroll: true });
+    body.removeAttribute("tabindex");
   }, [finished]);
 
   if (finished) return null;
   return <>
     <noscript><style>{`.homepage-intro { display: none !important; }`}</style></noscript>
-    <dialog ref={dialog} open aria-label="Welcome to The Martyrs Church" onCancel={event => event.preventDefault()} data-motion-custom className={`homepage-intro ${playing ? "is-playing" : ""}`}>
+    <dialog ref={dialog} open aria-label="Welcome to The Martyrs Church" onCancel={event => { event.preventDefault(); setFinished(true); }} data-motion-custom className={`homepage-intro ${playing ? "is-playing" : ""}`}>
       <div className="intro-film" aria-hidden="true">
         {frames.map((frame, index) => <div key={frame} className={`intro-frame ${index === frames.length - 1 ? "intro-frame-final" : ""}`} style={{ "--frame-delay": `${index * 180}ms` } as React.CSSProperties}>
           <Image src={frame.startsWith("http") || frame.startsWith("/") ? frame : `/assets/${frame}`} alt="" fill sizes="100vw" quality={65} loading="eager" preload={index === 0} className="object-cover object-center" onLoad={() => { loaded.current.add(frame); if (loaded.current.size === frames.length) start.current?.(); }} />
