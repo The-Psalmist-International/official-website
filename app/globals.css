@@ -7,7 +7,7 @@ body:has(.studio-surface) .cookie-banner { display: none; }
 
 @font-face {
   font-family: 'Season Collection';
-  src: url('/fonts/SeasonCollectionVF-TRIAL.ttf') format('truetype');
+  src: url('/fonts/SeasonCollectionVF.woff2') format('woff2');
   font-weight: 300 900;
   font-style: normal;
   font-display: swap;

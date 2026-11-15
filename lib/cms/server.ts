@@ -10,7 +10,7 @@ export const getCmsContent = cache(async (): Promise<CmsSnapshot> => {
   if (!projectId || !dataset || !/^[a-z0-9]+$/.test(projectId) || !/^[a-z0-9_-]+$/.test(dataset)) return result;
   try {
     // Next owns the cache so a publish webhook does not refill ISR with stale CDN data.
-    const client = createClient({ projectId, dataset, apiVersion: '2025-02-19', perspective: 'published', useCdn: false, token: process.env.SANITY_API_READ_TOKEN, timeout: 5000, maxRetries: 1 });
+    const client = createClient({ projectId, dataset, apiVersion: '2025-02-19', perspective: 'published', useCdn: false, token: process.env.SANITY_API_READ_TOKEN, timeout: 4000, maxRetries: 0 });
     const documents = await client.fetch<Array<Record<string, unknown>>>(`*[_type in ["pageCopy", "siteMedia", "siteLink", "pageSeo"] || _type match "collection_*"]{_type,entries,key,source,href,alt,title,description,"url":image.asset->url,"items":select(key in ["missionGallery","introFrames"] => items,items[]{...,"image":coalesce(imageAsset.asset->url,image),"src":coalesce(srcAsset.asset->url,src),"pdfUrl":coalesce(pdfAsset.asset->url,pdfUrl)})}`, {}, { next: { revalidate: 300, tags: ['site-content'] } });
     for (const doc of documents) {
       if (doc._type === "pageSeo" && typeof doc.key === "string") result.seo[doc.key] = { title: typeof doc.title === "string" ? doc.title : undefined, description: typeof doc.description === "string" ? doc.description : undefined };
