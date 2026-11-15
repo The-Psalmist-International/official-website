@@ -3,12 +3,24 @@
 import Image from '@/components/cms/CmsImage';
 
 import CmsLink from '@/components/cms/CmsLink';
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 
 /** Preserved hero card. Fetches the live stream, falling back to the latest completed stream. */
 export default function YouTubeStreamCard() {
   const [liveStream, setLiveStream] = useState<{ title: string; url: string; isLive: boolean; thumbnail: string } | null>(null);
   const [pillDismissed, setPillDismissed] = useState(false);
+  const [pastHero, setPastHero] = useState(false);
+  const marker = useRef<HTMLSpanElement>(null);
+
+  // Reveal the pill only once the hero section has scrolled out of view.
+  useEffect(() => {
+    const hero = marker.current?.closest("section");
+    if (!hero) return;
+    const observer = new IntersectionObserver(([entry]) => setPastHero(!entry.isIntersecting));
+    observer.observe(hero);
+    return () => observer.disconnect();
+  }, [liveStream]);
 
   useEffect(() => {
     const controller = new AbortController();
@@ -37,9 +49,14 @@ export default function YouTubeStreamCard() {
 
   return (
     <>
-      {/* Mobile: floating pill pinned to the bottom of the viewport. */}
-      {!pillDismissed && (
-        <div className="fixed inset-x-4 bottom-[max(1rem,env(safe-area-inset-bottom))] z-40 md:hidden">
+      <span ref={marker} hidden />
+      {/* Mobile: floating pill, portalled to <body> so it stays fixed across the whole page. */}
+      {!pillDismissed && createPortal(
+        <div
+          aria-hidden={!pastHero}
+          inert={!pastHero}
+          className={`fixed inset-x-4 bottom-[max(1rem,env(safe-area-inset-bottom))] z-40 transition-[translate,opacity] duration-300 ease-out motion-reduce:transition-none md:hidden ${pastHero ? "translate-y-0 opacity-100" : "pointer-events-none translate-y-[calc(100%+2rem)] opacity-0"}`}
+        >
           <div className="flex items-center gap-3 rounded-full border border-white/15 bg-stone-950/85 p-1.5 pr-2 text-white shadow-[0_10px_30px_rgba(0,0,0,0.35)] backdrop-blur-md">
             <CmsLink
               href={liveStream.url}
@@ -72,7 +89,8 @@ export default function YouTubeStreamCard() {
               <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round"><line x1="6" y1="6" x2="18" y2="18" /><line x1="18" y1="6" x2="6" y2="18" /></svg>
             </button>
           </div>
-        </div>
+        </div>,
+        document.body
       )}
 
 <div className="group hidden md:flex flex-col gap-3 w-full max-w-[280px] shrink-0">
